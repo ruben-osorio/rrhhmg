@@ -90,6 +90,7 @@ router.post('/add/' ,
 	[
 		body('nomcurshv').optional({nullable: true, checkFalsy: true}),
 		body('numeral').optional({nullable: true, checkFalsy: true}),
+		body('nivel').optional({nullable: true, checkFalsy: true}),
 	]
 , async function (req:HttpRequest, res:HttpResponse) {
 	try{
@@ -141,6 +142,7 @@ router.post('/edit/:recid' ,
 	[
 		body('nomcurshv').optional({nullable: true, checkFalsy: true}),
 		body('numeral').optional({nullable: true, checkFalsy: true}),
+		body('nivel').optional({nullable: true, checkFalsy: true}),
 	]
 , async (req:HttpRequest, res:HttpResponse) => {
 	try{

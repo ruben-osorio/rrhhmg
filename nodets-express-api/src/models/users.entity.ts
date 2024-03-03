@@ -472,22 +472,14 @@ export default class Users extends BaseModel {
 	static vhojavidaFields(): string[]{
 		return [
 			"id", 
-			"apmaterno", 
-			"usuario", 
-			"foto", 
-			"email", 
-			"telefono", 
 			"carnet", 
 			"expedido", 
-			"appaterno", 
-			"fecha_nacimiento", 
 			"nombre1", 
 			"nombre2", 
-			"genero", 
-			"afp", 
-			"grupo_sanguineo", 
-			"direccion", 
-			"licencia_conducir_cat", 
+			"appaterno", 
+			"apmaterno", 
+			"usuario", 
+			"telefono", 
 			"codgestion"
 		];
 	}
@@ -495,22 +487,48 @@ export default class Users extends BaseModel {
 	static exportVhojavidaFields(): string[]{
 		return [
 			"id", 
-			"apmaterno", 
-			"usuario", 
-			"foto", 
-			"email", 
-			"telefono", 
 			"carnet", 
 			"expedido", 
-			"appaterno", 
-			"fecha_nacimiento", 
 			"nombre1", 
 			"nombre2", 
-			"genero", 
-			"afp", 
-			"grupo_sanguineo", 
-			"direccion", 
-			"licencia_conducir_cat", 
+			"appaterno", 
+			"apmaterno", 
+			"usuario", 
+			"telefono", 
+			"codgestion"
+		];
+	}
+
+	static lhojavidaFields(): string[]{
+		return [
+			"permisos", 
+			"user_role_id", 
+			"id", 
+			"nombre1", 
+			"nombre2", 
+			"appaterno", 
+			"apmaterno", 
+			"carnet", 
+			"expedido", 
+			"telefono", 
+			"fecha_nacimiento", 
+			"codgestion"
+		];
+	}
+
+	static exportLhojavidaFields(): string[]{
+		return [
+			"permisos", 
+			"user_role_id", 
+			"id", 
+			"nombre1", 
+			"nombre2", 
+			"appaterno", 
+			"apmaterno", 
+			"carnet", 
+			"expedido", 
+			"telefono", 
+			"fecha_nacimiento", 
 			"codgestion"
 		];
 	}

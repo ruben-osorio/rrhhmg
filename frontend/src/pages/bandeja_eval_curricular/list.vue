@@ -113,14 +113,17 @@
                                         <q-td  key="nro_item" :props="props">
                                             {{ props.row.nro_item }}
                                         </q-td>
-                                        <q-td  key="id_user" :props="props">
-                                            {{ props.row.id_user }}
-                                        </q-td>
                                         <q-td  key="cv_aprovado" :props="props">
                                             {{ props.row.cv_aprovado }}
                                         </q-td>
                                         <q-td  key="item" :props="props">
                                             {{ props.row.item }}
+                                        </q-td>
+                                        <q-td  key="coduser" :props="props">
+                                            {{ props.row.coduser }}
+                                        </q-td>
+                                        <q-td  key="codgestion" :props="props">
+                                            {{ props.row.codgestion }}
                                         </q-td>
                                     </q-tr>
                                 </template>

@@ -51,6 +51,18 @@
                                                 </div>
                                             </div>
                                         </div>
+                                        <div class="col-12">
+                                            <div class="row">
+                                                <div class="col-sm-3 col-12">
+                                                    Nivel 
+                                                </div>
+                                                <div class="col-sm-9 col-12">
+                                                    <q-input   ref="ctrlnivel" v-model.trim="formData.nivel"  label="Nivel" type="text" placeholder="Escribir Nivel"      
+                                                    class="" :error="isFieldValid('nivel')" :error-message="getFieldError('nivel')">
+                                                    </q-input>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                     <div v-if="showSubmitButton" class="text-center q-my-md">
                                         <q-btn type="submit"    :rounded="false"  color="primary"  no-caps  unelevated    icon-right="send" :loading="saving">
@@ -143,6 +155,7 @@
 	const formDefaultValues = {
 		nomcurshv: "", 
 		numeral: "", 
+		nivel: "", 
 	};
 	
 	const formData = reactive({ ...formDefaultValues });

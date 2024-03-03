@@ -6,6 +6,7 @@ import Alternativahv from './models/alternativahv.entity';
 import Antiguedad from './models/antiguedad.entity';
 import Archivos from './models/archivos.entity';
 import Bandeja_Eval_Curricular from './models/bandeja_eval_curricular.entity';
+import Basicoshv from './models/basicoshv.entity';
 import Calidadhv from './models/calidadhv.entity';
 import Carrerashv from './models/carrerashv.entity';
 import Cas from './models/cas.entity';
@@ -39,7 +40,10 @@ import Experiencia from './models/experiencia.entity';
 import Experienciahv from './models/experienciahv.entity';
 import Extranjeros_Hv from './models/extranjeros_hv.entity';
 import Formdtspers from './models/formdtspers.entity';
+import Formestudios3 from './models/formestudios3.entity';
 import Formestudiossup3 from './models/formestudiossup3.entity';
+import Formidiomas2 from './models/formidiomas2.entity';
+import Formposgestudios2 from './models/formposgestudios2.entity';
 import Fuente from './models/fuente.entity';
 import Genero from './models/genero.entity';
 import Gestion from './models/gestion.entity';
@@ -47,6 +51,7 @@ import Gradocolegiohv from './models/gradocolegiohv.entity';
 import Hojavida from './models/hojavida.entity';
 import Idiomashv from './models/idiomashv.entity';
 import Infouser from './models/infouser.entity';
+import Inst_Bas_Hv from './models/inst_bas_hv.entity';
 import Insthv from './models/insthv.entity';
 import Item_Escala from './models/item_escala.entity';
 import Log_Reportes from './models/log_reportes.entity';
@@ -110,6 +115,7 @@ const DB = {
 	Antiguedad,
 	Archivos,
 	Bandeja_Eval_Curricular,
+	Basicoshv,
 	Calidadhv,
 	Carrerashv,
 	Cas,
@@ -143,7 +149,10 @@ const DB = {
 	Experienciahv,
 	Extranjeros_Hv,
 	Formdtspers,
+	Formestudios3,
 	Formestudiossup3,
+	Formidiomas2,
+	Formposgestudios2,
 	Fuente,
 	Genero,
 	Gestion,
@@ -151,6 +160,7 @@ const DB = {
 	Hojavida,
 	Idiomashv,
 	Infouser,
+	Inst_Bas_Hv,
 	Insthv,
 	Item_Escala,
 	Log_Reportes,

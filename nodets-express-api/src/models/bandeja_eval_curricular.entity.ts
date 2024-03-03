@@ -18,14 +18,17 @@ export default class Bandeja_Eval_Curricular extends BaseModel {
 	@Column({name: 'nro_item' })
 	nro_item: number
 	
-	@Column({name: 'id_user' })
-	id_user: number
-	
 	@Column({name: 'cv_aprovado' })
 	cv_aprovado: string
 	
 	@Column({name: 'item' })
 	item: string
+	
+	@Column({name: 'coduser' })
+	coduser: number
+	
+	@Column({name: 'codgestion' })
+	codgestion: number
 	
 	
 	
@@ -34,9 +37,10 @@ export default class Bandeja_Eval_Curricular extends BaseModel {
 			"id", 
 			"seleccion", 
 			"nro_item", 
-			"id_user", 
 			"cv_aprovado", 
-			"item"
+			"item", 
+			"coduser", 
+			"codgestion"
 		];
 	}
 
@@ -45,9 +49,10 @@ export default class Bandeja_Eval_Curricular extends BaseModel {
 			"id", 
 			"seleccion", 
 			"nro_item", 
-			"id_user", 
 			"cv_aprovado", 
-			"item"
+			"item", 
+			"coduser", 
+			"codgestion"
 		];
 	}
 
@@ -56,9 +61,10 @@ export default class Bandeja_Eval_Curricular extends BaseModel {
 			"id", 
 			"seleccion", 
 			"nro_item", 
-			"id_user", 
 			"cv_aprovado", 
-			"item"
+			"item", 
+			"coduser", 
+			"codgestion"
 		];
 	}
 
@@ -67,9 +73,10 @@ export default class Bandeja_Eval_Curricular extends BaseModel {
 			"id", 
 			"seleccion", 
 			"nro_item", 
-			"id_user", 
 			"cv_aprovado", 
-			"item"
+			"item", 
+			"coduser", 
+			"codgestion"
 		];
 	}
 
@@ -78,9 +85,10 @@ export default class Bandeja_Eval_Curricular extends BaseModel {
 			"id", 
 			"seleccion", 
 			"nro_item", 
-			"id_user", 
 			"cv_aprovado", 
-			"item"
+			"item", 
+			"coduser", 
+			"codgestion"
 		];
 	}
 

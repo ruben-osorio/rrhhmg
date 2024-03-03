@@ -1,6 +1,14 @@
 <template>
     <main class="main-page" id="">
         <template v-if="pageReady">
+            <section class="page-section q-mb-md" >
+                <div class="container-fluid">
+                    <div class="row q-col-gutter-x-md">
+                        <div  class="col comp-grid" >
+                        </div>
+                    </div>
+                </div>
+            </section>
             <template v-if="showHeader">
                 <section class="page-section q-pa-md" >
                     <div class="container">
@@ -41,56 +49,6 @@
                                                 <q-card  class="q-pa-md nice-shadow-16">
                                                     <div class="row q-col-gutter-x-md items-center">
                                                         <div class="col">
-                                                            <div class="text-grey text-weight-medium mb-1">Apmaterno</div>
-                                                            <div class="text-bold">{{ item.apmaterno }}</div>
-                                                        </div>
-                                                    </div>
-                                                </q-card>
-                                            </div>
-                                            <div class="col-12 col-md-4">
-                                                <q-card  class="q-pa-md nice-shadow-16">
-                                                    <div class="row q-col-gutter-x-md items-center">
-                                                        <div class="col">
-                                                            <div class="text-grey text-weight-medium mb-1">Usuario</div>
-                                                            <div class="text-bold">{{ item.usuario }}</div>
-                                                        </div>
-                                                    </div>
-                                                </q-card>
-                                            </div>
-                                            <div class="col-12 col-md-4">
-                                                <q-card  class="q-pa-md nice-shadow-16">
-                                                    <div class="row q-col-gutter-x-md items-center">
-                                                        <div class="col">
-                                                            <div class="text-grey text-weight-medium mb-1">Foto</div>
-                                                            <div class="text-bold">{{ item.foto }}</div>
-                                                        </div>
-                                                    </div>
-                                                </q-card>
-                                            </div>
-                                            <div class="col-12 col-md-4">
-                                                <q-card  class="q-pa-md nice-shadow-16">
-                                                    <div class="row q-col-gutter-x-md items-center">
-                                                        <div class="col">
-                                                            <div class="text-grey text-weight-medium mb-1">Email</div>
-                                                            <div class="text-bold">{{ item.email }}</div>
-                                                        </div>
-                                                    </div>
-                                                </q-card>
-                                            </div>
-                                            <div class="col-12 col-md-4">
-                                                <q-card  class="q-pa-md nice-shadow-16">
-                                                    <div class="row q-col-gutter-x-md items-center">
-                                                        <div class="col">
-                                                            <div class="text-grey text-weight-medium mb-1">Telefono</div>
-                                                            <div class="text-bold">{{ item.telefono }}</div>
-                                                        </div>
-                                                    </div>
-                                                </q-card>
-                                            </div>
-                                            <div class="col-12 col-md-4">
-                                                <q-card  class="q-pa-md nice-shadow-16">
-                                                    <div class="row q-col-gutter-x-md items-center">
-                                                        <div class="col">
                                                             <div class="text-grey text-weight-medium mb-1">Carnet</div>
                                                             <div class="text-bold">{{ item.carnet }}</div>
                                                         </div>
@@ -103,26 +61,6 @@
                                                         <div class="col">
                                                             <div class="text-grey text-weight-medium mb-1">Expedido</div>
                                                             <div class="text-bold">{{ item.expedido }}</div>
-                                                        </div>
-                                                    </div>
-                                                </q-card>
-                                            </div>
-                                            <div class="col-12 col-md-4">
-                                                <q-card  class="q-pa-md nice-shadow-16">
-                                                    <div class="row q-col-gutter-x-md items-center">
-                                                        <div class="col">
-                                                            <div class="text-grey text-weight-medium mb-1">Appaterno</div>
-                                                            <div class="text-bold">{{ item.appaterno }}</div>
-                                                        </div>
-                                                    </div>
-                                                </q-card>
-                                            </div>
-                                            <div class="col-12 col-md-4">
-                                                <q-card  class="q-pa-md nice-shadow-16">
-                                                    <div class="row q-col-gutter-x-md items-center">
-                                                        <div class="col">
-                                                            <div class="text-grey text-weight-medium mb-1">Fecha Nacimiento</div>
-                                                            <div class="text-bold">{{ item.fecha_nacimiento }}</div>
                                                         </div>
                                                     </div>
                                                 </q-card>
@@ -151,8 +89,8 @@
                                                 <q-card  class="q-pa-md nice-shadow-16">
                                                     <div class="row q-col-gutter-x-md items-center">
                                                         <div class="col">
-                                                            <div class="text-grey text-weight-medium mb-1">Genero</div>
-                                                            <div class="text-bold">{{ item.genero }}</div>
+                                                            <div class="text-grey text-weight-medium mb-1">Appaterno</div>
+                                                            <div class="text-bold">{{ item.appaterno }}</div>
                                                         </div>
                                                     </div>
                                                 </q-card>
@@ -161,8 +99,8 @@
                                                 <q-card  class="q-pa-md nice-shadow-16">
                                                     <div class="row q-col-gutter-x-md items-center">
                                                         <div class="col">
-                                                            <div class="text-grey text-weight-medium mb-1">Afp</div>
-                                                            <div class="text-bold">{{ item.afp }}</div>
+                                                            <div class="text-grey text-weight-medium mb-1">Apmaterno</div>
+                                                            <div class="text-bold">{{ item.apmaterno }}</div>
                                                         </div>
                                                     </div>
                                                 </q-card>
@@ -171,52 +109,12 @@
                                                 <q-card  class="q-pa-md nice-shadow-16">
                                                     <div class="row q-col-gutter-x-md items-center">
                                                         <div class="col">
-                                                            <div class="text-grey text-weight-medium mb-1">Grupo Sanguineo</div>
-                                                            <div class="text-bold">{{ item.grupo_sanguineo }}</div>
+                                                            <div class="text-grey text-weight-medium mb-1">Telefono</div>
+                                                            <div class="text-bold">{{ item.telefono }}</div>
                                                         </div>
                                                     </div>
                                                 </q-card>
                                             </div>
-                                            <div class="col-12 col-md-4">
-                                                <q-card  class="q-pa-md nice-shadow-16">
-                                                    <div class="row q-col-gutter-x-md items-center">
-                                                        <div class="col">
-                                                            <div class="text-grey text-weight-medium mb-1">Direccion</div>
-                                                            <div class="text-bold">{{ item.direccion }}</div>
-                                                        </div>
-                                                    </div>
-                                                </q-card>
-                                            </div>
-                                            <div class="col-12 col-md-4">
-                                                <q-card  class="q-pa-md nice-shadow-16">
-                                                    <div class="row q-col-gutter-x-md items-center">
-                                                        <div class="col">
-                                                            <div class="text-grey text-weight-medium mb-1">Licencia Conducir Cat</div>
-                                                            <div class="text-bold">{{ item.licencia_conducir_cat }}</div>
-                                                        </div>
-                                                    </div>
-                                                </q-card>
-                                            </div>
-                                            <div class="col-12 col-md-4">
-                                                <q-card  class="q-pa-md nice-shadow-16">
-                                                    <div class="row q-col-gutter-x-md items-center">
-                                                        <div class="col">
-                                                            <div class="text-grey text-weight-medium mb-1">Codgestion</div>
-                                                            <div class="text-bold">{{ item.codgestion }}</div>
-                                                        </div>
-                                                    </div>
-                                                </q-card>
-                                            </div>
-                                        </div>
-                                        <div class="row q-col-gutter-xs justify-start q-ma-md">
-                                            <template v-if="auth.canManage('users/edit', item.id)">
-                                                <div><q-btn icon="edit" label="Edit" glossy  flat :rounded="false"  no-caps  unelevated   padding="xs" color="positive" title="Editar"  @click="app.openPageDialog({ page:'users/edit', url: `/users/edit/${item.id}` , closeBtn: true })">
-                                                </q-btn></div>
-                                            </template>
-                                            <template v-if="auth.canManage('users/delete', item.id)">
-                                                <div><q-btn icon="delete_sweep" label="Delete" glossy  flat :rounded="false"  no-caps  unelevated   padding="xs" color="negative" title="Borrar"  @click="deleteItem(item.id)">
-                                                </q-btn></div>
-                                            </template>
                                         </div>
                                     </div>
                                     <!-- Detal Page Column -->
@@ -243,7 +141,6 @@
 	import { defineAsyncComponent, computed, ref, toRefs, onMounted } from 'vue';
 	import { useMeta } from 'quasar';
 	import { useApp } from 'src/composables/app.js';
-	import { useAuth } from 'src/composables/auth';
 	import { useViewPage } from 'src/composables/viewpage.js';
 	import { usePageStore } from 'src/stores/page';
 	
@@ -309,7 +206,6 @@
 	
 	const store = usePageStore(props.pageName);
 	const app = useApp(props);
-	const auth = useAuth();
 	
 	const page = useViewPage({store, props}); // where page logics resides
 	

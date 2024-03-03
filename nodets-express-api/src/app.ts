@@ -17,6 +17,7 @@ import AlternativahvController from './controllers/alternativahv';
 import AntiguedadController from './controllers/antiguedad';
 import ArchivosController from './controllers/archivos';
 import BandejaEvalCurricularController from './controllers/bandeja_eval_curricular';
+import BasicoshvController from './controllers/basicoshv';
 import CalidadhvController from './controllers/calidadhv';
 import CarrerashvController from './controllers/carrerashv';
 import CasController from './controllers/cas';
@@ -50,7 +51,10 @@ import ExperienciaController from './controllers/experiencia';
 import ExperienciahvController from './controllers/experienciahv';
 import ExtranjerosHvController from './controllers/extranjeros_hv';
 import FormdtspersController from './controllers/formdtspers';
+import Formestudios3Controller from './controllers/formestudios3';
 import Formestudiossup3Controller from './controllers/formestudiossup3';
+import Formidiomas2Controller from './controllers/formidiomas2';
+import Formposgestudios2Controller from './controllers/formposgestudios2';
 import FuenteController from './controllers/fuente';
 import GeneroController from './controllers/genero';
 import GestionController from './controllers/gestion';
@@ -58,6 +62,7 @@ import GradocolegiohvController from './controllers/gradocolegiohv';
 import HojavidaController from './controllers/hojavida';
 import IdiomashvController from './controllers/idiomashv';
 import InfouserController from './controllers/infouser';
+import InstBasHvController from './controllers/inst_bas_hv';
 import InsthvController from './controllers/insthv';
 import ItemEscalaController from './controllers/item_escala';
 import LogReportesController from './controllers/log_reportes';
@@ -155,6 +160,7 @@ app.use('/api/alternativahv', AlternativahvController)
 app.use('/api/antiguedad', AntiguedadController)
 app.use('/api/archivos', ArchivosController)
 app.use('/api/bandeja_eval_curricular', BandejaEvalCurricularController)
+app.use('/api/basicoshv', BasicoshvController)
 app.use('/api/calidadhv', CalidadhvController)
 app.use('/api/carrerashv', CarrerashvController)
 app.use('/api/cas', CasController)
@@ -188,7 +194,10 @@ app.use('/api/experiencia', ExperienciaController)
 app.use('/api/experienciahv', ExperienciahvController)
 app.use('/api/extranjeros_hv', ExtranjerosHvController)
 app.use('/api/formdtspers', FormdtspersController)
+app.use('/api/formestudios3', Formestudios3Controller)
 app.use('/api/formestudiossup3', Formestudiossup3Controller)
+app.use('/api/formidiomas2', Formidiomas2Controller)
+app.use('/api/formposgestudios2', Formposgestudios2Controller)
 app.use('/api/fuente', FuenteController)
 app.use('/api/genero', GeneroController)
 app.use('/api/gestion', GestionController)
@@ -196,6 +205,7 @@ app.use('/api/gradocolegiohv', GradocolegiohvController)
 app.use('/api/hojavida', HojavidaController)
 app.use('/api/idiomashv', IdiomashvController)
 app.use('/api/infouser', InfouserController)
+app.use('/api/inst_bas_hv', InstBasHvController)
 app.use('/api/insthv', InsthvController)
 app.use('/api/item_escala', ItemEscalaController)
 app.use('/api/log_reportes', LogReportesController)

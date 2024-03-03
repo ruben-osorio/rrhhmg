@@ -31,7 +31,7 @@
         <section class="page-section " >
             <div class="container-fluid">
                 <div class="row q-col-gutter-x-md">
-                    <div  class="col comp-grid" >
+                    <div  class="col-auto comp-grid" >
                         <div class="row q-mb-md q-gutter-sm">
                             <div class="q-px-sm nice-shadow-16" v-if="searchText">
                                 Buscar: 
@@ -70,35 +70,20 @@
                                         <q-td auto-width>
                                             <q-checkbox dense v-model="props.selected"></q-checkbox>
                                         </q-td>
-                                        <q-td  key="idformestsup" :props="props">
-                                            <q-btn padding="xs"   :rounded="false"  color="primary"  no-caps  unelevated   flat :to="`/formestudiossup3/view/${props.row.idformestsup}`">{{ props.row.idformestsup }}</q-btn>
-                                        </q-td>
-                                        <q-td  key="gestionuniv" :props="props">
-                                            {{ props.row.gestionuniv }}
+                                        <q-td  key="carrerauniv" :props="props">
+                                            {{ props.row.carrerauniv }}
                                         </q-td>
                                         <q-td  key="nrotitulo" :props="props">
                                             {{ props.row.nrotitulo }}
                                         </q-td>
-                                        <q-td  key="ciclouniv" :props="props">
-                                            {{ props.row.ciclouniv }}
-                                        </q-td>
-                                        <q-td  key="cursouniv" :props="props">
-                                            {{ props.row.cursouniv }}
-                                        </q-td>
-                                        <q-td  key="carrerauniv" :props="props">
-                                            {{ props.row.carrerauniv }}
-                                        </q-td>
                                         <q-td  key="casaestuniv" :props="props">
                                             {{ props.row.casaestuniv }}
                                         </q-td>
-                                        <q-td  key="codusuario" :props="props">
-                                            {{ props.row.codusuario }}
+                                        <q-td  key="gestionuniv" :props="props">
+                                            {{ props.row.gestionuniv }}
                                         </q-td>
                                         <q-td  key="calidaduniver" :props="props">
                                             {{ props.row.calidaduniver }}
-                                        </q-td>
-                                        <q-td  key="niveluniv" :props="props">
-                                            {{ props.row.niveluniv }}
                                         </q-td>
                                         <q-td key="btnactions" :props="props" auto-width>
                                             <div class="row q-col-gutter-xs justify-end">

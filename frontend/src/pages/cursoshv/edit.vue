@@ -52,6 +52,18 @@
                                                 </div>
                                             </div>
                                         </div>
+                                        <div class="col-12">
+                                            <div class="row">
+                                                <div class="col-sm-3 col-12">
+                                                    Nivel 
+                                                </div>
+                                                <div class="col-sm-9 col-12">
+                                                    <q-input   ref="ctrlnivel" v-model.trim="formData.nivel"  label="Nivel" type="text" placeholder="Escribir Nivel"      
+                                                    class="" :error="isFieldValid('nivel')" :error-message="getFieldError('nivel')">
+                                                    </q-input>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                     <!--[form-content-end]-->
                                     <div v-if="showSubmitButton" class="text-center q-my-md">
@@ -152,6 +164,7 @@
 	const formDefaultValues = Object.assign({
 		nomcurshv: "", 
 		numeral: "", 
+		nivel: "", 
 	}, props.pageData);
 	
 	const formData = reactive({ ...formDefaultValues });

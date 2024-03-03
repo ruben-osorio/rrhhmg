@@ -222,7 +222,7 @@ router.get(['/vhojavida/:recid'], async (req:HttpRequest, res:HttpResponse) => {
 	try{
 		let recid = req.params.recid;
 		let query = Formestudiossup3.getQuery();
-		query.where("codusuario=:recid", { recid });
+		query.where("idformestsup=:recid", { recid });
 		let selectFields = Formestudiossup3.vhojavidaFields();
 		query.select(selectFields);
 		let record = await query.getRawOne();

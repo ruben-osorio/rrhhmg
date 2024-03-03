@@ -18,13 +18,17 @@ export default class Cursoshv extends BaseModel {
 	@Column({name: 'numeral' })
 	numeral: string
 	
+	@Column({name: 'nivel' })
+	nivel: string
+	
 	
 	
 	static listFields(): string[]{
 		return [
 			"idcursoshv", 
 			"nomcurshv", 
-			"numeral"
+			"numeral", 
+			"nivel"
 		];
 	}
 
@@ -32,7 +36,8 @@ export default class Cursoshv extends BaseModel {
 		return [
 			"idcursoshv", 
 			"nomcurshv", 
-			"numeral"
+			"numeral", 
+			"nivel"
 		];
 	}
 
@@ -40,7 +45,8 @@ export default class Cursoshv extends BaseModel {
 		return [
 			"idcursoshv", 
 			"nomcurshv", 
-			"numeral"
+			"numeral", 
+			"nivel"
 		];
 	}
 
@@ -48,7 +54,8 @@ export default class Cursoshv extends BaseModel {
 		return [
 			"idcursoshv", 
 			"nomcurshv", 
-			"numeral"
+			"numeral", 
+			"nivel"
 		];
 	}
 
@@ -56,7 +63,8 @@ export default class Cursoshv extends BaseModel {
 		return [
 			"idcursoshv", 
 			"nomcurshv", 
-			"numeral"
+			"numeral", 
+			"nivel"
 		];
 	}
 
@@ -64,7 +72,8 @@ export default class Cursoshv extends BaseModel {
 	static searchFields(): string{
 		const fields = [
 			"nomcurshv iLIKE :search", 
-			"numeral iLIKE :search",
+			"numeral iLIKE :search", 
+			"nivel iLIKE :search",
 		];
 		return '(' + fields.join(' OR ') + ')';
 	}

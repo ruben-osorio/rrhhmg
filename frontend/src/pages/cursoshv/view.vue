@@ -55,6 +55,16 @@
                                             </div>
                                         </q-card>
                                     </div>
+                                    <div class="col-12 col-md-4">
+                                        <q-card  class="q-pa-md nice-shadow-16">
+                                            <div class="row q-col-gutter-x-md items-center">
+                                                <div class="col">
+                                                    <div class="text-grey text-weight-medium mb-1">Nivel</div>
+                                                    <div class="text-bold">{{ item.nivel }}</div>
+                                                </div>
+                                            </div>
+                                        </q-card>
+                                    </div>
                                 </div>
                                 <div class="row q-col-gutter-xs justify-start q-ma-md">
                                     <template v-if="auth.canView('cursoshv/edit')">

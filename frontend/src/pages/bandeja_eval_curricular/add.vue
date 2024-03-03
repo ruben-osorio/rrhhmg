@@ -45,9 +45,9 @@
                                                     Seleccion 
                                                 </div>
                                                 <div class="col-sm-9 col-12">
-                                                    <q-field  borderless   :error="isFieldValid('seleccion')" :error-message="getFieldError('seleccion')">
-                                                    <q-option-group  ref="ctrlseleccion" v-model="formData.seleccion" type="checkbox" :options="[]"  size="md" ></q-option-group>
-                                                    </q-field>
+                                                    <q-input   ref="ctrlseleccion" v-model.trim="formData.seleccion"  label="Seleccion" type="text" placeholder="Escribir Seleccion"      
+                                                    class="" :error="isFieldValid('seleccion')" :error-message="getFieldError('seleccion')">
+                                                    </q-input>
                                                 </div>
                                             </div>
                                         </div>
@@ -59,18 +59,6 @@
                                                 <div class="col-sm-9 col-12">
                                                     <q-input   ref="ctrlnro_item" v-model.trim="formData.nro_item"  label="Nro Item" type="number" placeholder="Escribir Nro Item"   step="any"    
                                                     class="" :error="isFieldValid('nro_item')" :error-message="getFieldError('nro_item')">
-                                                    </q-input>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-12">
-                                            <div class="row">
-                                                <div class="col-sm-3 col-12">
-                                                    Id User 
-                                                </div>
-                                                <div class="col-sm-9 col-12">
-                                                    <q-input   ref="ctrlid_user" v-model.trim="formData.id_user"  label="Id User" type="number" placeholder="Escribir Id User"   step="any"    
-                                                    class="" :error="isFieldValid('id_user')" :error-message="getFieldError('id_user')">
                                                     </q-input>
                                                 </div>
                                             </div>
@@ -95,6 +83,30 @@
                                                 <div class="col-sm-9 col-12">
                                                     <q-input   ref="ctrlitem" v-model.trim="formData.item"  label="Item" type="text" placeholder="Escribir Item"      
                                                     class="" :error="isFieldValid('item')" :error-message="getFieldError('item')">
+                                                    </q-input>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="row">
+                                                <div class="col-sm-3 col-12">
+                                                    Coduser 
+                                                </div>
+                                                <div class="col-sm-9 col-12">
+                                                    <q-input   ref="ctrlcoduser" v-model.trim="formData.coduser"  label="Coduser" type="number" placeholder="Escribir Coduser"   step="any"    
+                                                    class="" :error="isFieldValid('coduser')" :error-message="getFieldError('coduser')">
+                                                    </q-input>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="row">
+                                                <div class="col-sm-3 col-12">
+                                                    Codgestion 
+                                                </div>
+                                                <div class="col-sm-9 col-12">
+                                                    <q-input   ref="ctrlcodgestion" v-model.trim="formData.codgestion"  label="Codgestion" type="number" placeholder="Escribir Codgestion"   step="any"    
+                                                    class="" :error="isFieldValid('codgestion')" :error-message="getFieldError('codgestion')">
                                                     </q-input>
                                                 </div>
                                             </div>
@@ -190,11 +202,12 @@
 	
 	const formDefaultValues = {
 		id: "", 
-		seleccion: [], 
+		seleccion: "", 
 		nro_item: "", 
-		id_user: "", 
 		cv_aprovado: "", 
 		item: "", 
+		coduser: "", 
+		codgestion: "", 
 	};
 	
 	const formData = reactive({ ...formDefaultValues });
@@ -205,7 +218,8 @@
 		return {
 			id: { required, numeric },
 		nro_item: { numeric },
-		id_user: { numeric }
+		coduser: { numeric },
+		codgestion: { numeric }
 		}
 	});
 	

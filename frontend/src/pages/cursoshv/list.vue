@@ -113,6 +113,9 @@
                                         <q-td  key="numeral" :props="props">
                                             {{ props.row.numeral }}
                                         </q-td>
+                                        <q-td  key="nivel" :props="props">
+                                            {{ props.row.nivel }}
+                                        </q-td>
                                     </q-tr>
                                 </template>
                                 <!-- End of Table Layout-->

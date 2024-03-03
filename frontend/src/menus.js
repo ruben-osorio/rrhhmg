@@ -1,6 +1,6 @@
 
 export const AppMenus = {
-    
+
 	navbarTopRightItems: [],
 	navbarTopLeftItems: [],
 	navbarSideLeftItems: [
@@ -123,14 +123,6 @@ export const AppMenus = {
         "iconcolor": "",
         "target": "",
         "submenu": []
-      },
-      {
-        "path": "/evalcurricular",
-        "label": "Evaluación Curricular",
-        "icon": "extension",
-        "iconcolor": "",
-        "target": "",
-        "submenu": []
       }
     ]
   },
@@ -152,14 +144,6 @@ export const AppMenus = {
       {
         "path": "/roles",
         "label": "Roles",
-        "icon": "extension",
-        "iconcolor": "",
-        "target": "",
-        "submenu": []
-      },
-      {
-        "path": "/users/vhojavida/23",
-        "label": "User VHOJAVIDA",
         "icon": "extension",
         "iconcolor": "",
         "target": "",
@@ -207,7 +191,7 @@ export const AppMenus = {
         "submenu": []
       },
       {
-        "path": "/",
+        "path": "/registro personal",
         "label": "Registro Personal",
         "icon": "extension",
         "iconcolor": "",
@@ -217,12 +201,29 @@ export const AppMenus = {
     ]
   },
   {
-    "path": "/estructura_org/vista",
-    "label": "Estructura Organizacional Vista",
-    "icon": "extension",
+    "path": "",
+    "label": "Selección",
+    "icon": "playlist_add_check",
     "iconcolor": "",
     "target": "",
-    "submenu": []
+    "submenu": [
+      {
+        "path": "/evalcurricular",
+        "label": "Evaluación Curricular",
+        "icon": "extension",
+        "iconcolor": "",
+        "target": "",
+        "submenu": []
+      },
+      {
+        "path": "/users/lhojavida",
+        "label": "Listado HV",
+        "icon": "extension",
+        "iconcolor": "",
+        "target": "",
+        "submenu": []
+      }
+    ]
   },
   {
     "path": "/cursosBasicosEstudios",
@@ -435,6 +436,46 @@ export const AppMenus = {
   {
     "path": "/extranjeros_hv",
     "label": "Extranjeros Hv",
+    "icon": "extension",
+    "iconcolor": "",
+    "target": "",
+    "submenu": []
+  },
+  {
+    "path": "/formposgestudios2",
+    "label": "Formposgestudios2",
+    "icon": "extension",
+    "iconcolor": "",
+    "target": "",
+    "submenu": []
+  },
+  {
+    "path": "/formestudios3",
+    "label": "Formestudios3",
+    "icon": "extension",
+    "iconcolor": "",
+    "target": "",
+    "submenu": []
+  },
+  {
+    "path": "/formidiomas2",
+    "label": "Formidiomas2",
+    "icon": "extension",
+    "iconcolor": "",
+    "target": "",
+    "submenu": []
+  },
+  {
+    "path": "/basicoshv",
+    "label": "Basicoshv",
+    "icon": "extension",
+    "iconcolor": "",
+    "target": "",
+    "submenu": []
+  },
+  {
+    "path": "/inst_bas_hv",
+    "label": "Inst Bas Hv",
     "icon": "extension",
     "iconcolor": "",
     "target": "",
@@ -724,13 +765,6 @@ export const AppMenus = {
     "field": "nro_item"
   },
   {
-    "label": "Id User",
-    "align": "left",
-    "sortable": false,
-    "name": "id_user",
-    "field": "id_user"
-  },
-  {
     "label": "Cv Aprovado",
     "align": "left",
     "sortable": false,
@@ -743,6 +777,50 @@ export const AppMenus = {
     "sortable": false,
     "name": "item",
     "field": "item"
+  },
+  {
+    "label": "Coduser",
+    "align": "left",
+    "sortable": false,
+    "name": "coduser",
+    "field": "coduser"
+  },
+  {
+    "label": "Codgestion",
+    "align": "left",
+    "sortable": false,
+    "name": "codgestion",
+    "field": "codgestion"
+  }
+],
+	BasicoshvListHeaderItems: [
+  {
+    "label": "",
+    "align": "left",
+    "sortable": false,
+    "name": "btnactions",
+    "field": ""
+  },
+  {
+    "label": "Id Bas",
+    "align": "left",
+    "sortable": false,
+    "name": "id_bas",
+    "field": "id_bas"
+  },
+  {
+    "label": "Nombre Bas",
+    "align": "left",
+    "sortable": false,
+    "name": "nombre_bas",
+    "field": "nombre_bas"
+  },
+  {
+    "label": "Abrev Bas",
+    "align": "left",
+    "sortable": false,
+    "name": "abrev_bas",
+    "field": "abrev_bas"
   }
 ],
 	CalidadhvListHeaderItems: [
@@ -1227,6 +1305,13 @@ export const AppMenus = {
     "sortable": false,
     "name": "numeral",
     "field": "numeral"
+  },
+  {
+    "label": "Nivel",
+    "align": "left",
+    "sortable": false,
+    "name": "nivel",
+    "field": "nivel"
   }
 ],
 	DecjuradaListHeaderItems: [
@@ -2051,12 +2136,12 @@ export const AppMenus = {
     "field": "numero_items"
   }
 ],
-	categoriaItems: [    
+	categoriaItems: [
 {value: "OPERATIVO", label: "Operativo"},
 	{value: "EJECUTIVO", label: "Ejecutivo"},
 	{value: "SUPERIOR", label: "Superior"}
     ],
-	haberbasicoItems: [    
+	haberbasicoItems: [
 {value: "true", label: "True"},
 	{value: "false", label: "False"}
     ],
@@ -2304,7 +2389,7 @@ export const AppMenus = {
     "field": "ley"
   }
 ],
-	nivelItems: [    
+	nivelItems: [
 {value: "1", label: "1"},
 	{value: "2", label: "2"},
 	{value: "3", label: "3"},
@@ -3275,80 +3360,184 @@ export const AppMenus = {
     "field": "titpos"
   }
 ],
-	funcionesexpItems: [    
+	funcionesexpItems: [
 {value: "Male", label: "Male"},
 	{value: "Female", label: "Female"}
     ],
+	Formestudios3ListHeaderItems: [
+  {
+    "label": "Institucion",
+    "align": "left",
+    "sortable": false,
+    "name": "institucion",
+    "field": "institucion"
+  },
+  {
+    "label": "Nivel",
+    "align": "left",
+    "sortable": false,
+    "name": "nivelesc",
+    "field": "nivelesc"
+  },
+  {
+    "label": "Nro. Titulo de Bachiller",
+    "align": "left",
+    "sortable": false,
+    "name": "nrotitbachiller",
+    "field": "nrotitbachiller"
+  },
+  {
+    "label": "Titbachiller",
+    "align": "left",
+    "sortable": false,
+    "name": "titbachiller",
+    "field": "titbachiller"
+  },
+  {
+    "label": "Cursoesc",
+    "align": "left",
+    "sortable": false,
+    "name": "cursoesc",
+    "field": "cursoesc"
+  },
+  {
+    "label": "",
+    "align": "right",
+    "sortable": false,
+    "name": "btnactions",
+    "field": ""
+  }
+],
 	Formestudiossup3ListHeaderItems: [
   {
-    "label": "Idformestsup",
-    "align": "left",
-    "sortable": false,
-    "name": "idformestsup",
-    "field": "idformestsup"
-  },
-  {
-    "label": "Gestionuniv",
-    "align": "left",
-    "sortable": false,
-    "name": "gestionuniv",
-    "field": "gestionuniv"
-  },
-  {
-    "label": "Nrotitulo",
-    "align": "left",
-    "sortable": false,
-    "name": "nrotitulo",
-    "field": "nrotitulo"
-  },
-  {
-    "label": "Ciclouniv",
-    "align": "left",
-    "sortable": false,
-    "name": "ciclouniv",
-    "field": "ciclouniv"
-  },
-  {
-    "label": "Cursouniv",
-    "align": "left",
-    "sortable": false,
-    "name": "cursouniv",
-    "field": "cursouniv"
-  },
-  {
-    "label": "Carrerauniv",
+    "label": "Carrera",
     "align": "left",
     "sortable": false,
     "name": "carrerauniv",
     "field": "carrerauniv"
   },
   {
-    "label": "Casaestuniv",
+    "label": "Nro de Título",
+    "align": "left",
+    "sortable": false,
+    "name": "nrotitulo",
+    "field": "nrotitulo"
+  },
+  {
+    "label": "Casa de Estudio",
     "align": "left",
     "sortable": false,
     "name": "casaestuniv",
     "field": "casaestuniv"
   },
   {
-    "label": "Codusuario",
+    "label": "Gestión",
     "align": "left",
     "sortable": false,
-    "name": "codusuario",
-    "field": "codusuario"
+    "name": "gestionuniv",
+    "field": "gestionuniv"
   },
   {
-    "label": "Calidaduniver",
+    "label": "Estado",
     "align": "left",
     "sortable": false,
     "name": "calidaduniver",
     "field": "calidaduniver"
   },
   {
-    "label": "Niveluniv",
+    "label": "",
+    "align": "right",
+    "sortable": false,
+    "name": "btnactions",
+    "field": ""
+  }
+],
+	Formidiomas2ListHeaderItems: [
+  {
+    "label": "Idioma",
     "align": "left",
     "sortable": false,
-    "name": "niveluniv",
-    "field": "niveluniv"
+    "name": "nombreidioma",
+    "field": "nombreidioma"
+  },
+  {
+    "label": "Horas",
+    "align": "left",
+    "sortable": false,
+    "name": "horasingles",
+    "field": "horasingles"
+  },
+  {
+    "label": "Certificado",
+    "align": "left",
+    "sortable": false,
+    "name": "certificadoidioma",
+    "field": "certificadoidioma"
+  },
+  {
+    "label": "Gestión",
+    "align": "left",
+    "sortable": false,
+    "name": "gestioncurso",
+    "field": "gestioncurso"
+  },
+  {
+    "label": "",
+    "align": "right",
+    "sortable": false,
+    "name": "btnactions",
+    "field": ""
+  }
+],
+	Formposgestudios2ListHeaderItems: [
+  {
+    "label": "Mención",
+    "align": "left",
+    "sortable": false,
+    "name": "cursocarrera",
+    "field": "cursocarrera"
+  },
+  {
+    "label": "Nombre",
+    "align": "left",
+    "sortable": false,
+    "name": "nombrecurso",
+    "field": "nombrecurso"
+  },
+  {
+    "label": "Casa de Estudio",
+    "align": "left",
+    "sortable": false,
+    "name": "lugarestudios",
+    "field": "lugarestudios"
+  },
+  {
+    "label": "Gestión",
+    "align": "left",
+    "sortable": false,
+    "name": "gestionestudios",
+    "field": "gestionestudios"
+  },
+  {
+    "label": "Fecha",
+    "align": "left",
+    "sortable": false,
+    "name": "fechatitulo",
+    "field": "fechatitulo"
+  },
+  {
+    "label": "Culminado",
+    "align": "left",
+    "sortable": false,
+    "name": "tienetitulo",
+    "field": "tienetitulo"
+  },
+  {
+    "label": "Modalidad",
+    "align": "left",
+    "sortable": false,
+    "name": "modalidadcursoest",
+    "field": "modalidadcursoest"
   },
   {
     "label": "",
@@ -3418,7 +3607,7 @@ export const AppMenus = {
     "field": ""
   }
 ],
-	habilitadoItems: [    
+	habilitadoItems: [
 {value: "false", label: "INACTIVO"},
 	{value: "true", label: "ACTIVO"}
     ],
@@ -3473,7 +3662,7 @@ export const AppMenus = {
     "field": "id_user"
   }
 ],
-	habilitado2Items: [    
+	habilitado2Items: [
 {value: "true", label: "Activo"},
 	{value: "false", label: "Inactivo"}
     ],
@@ -3707,6 +3896,36 @@ export const AppMenus = {
     "sortable": false,
     "name": "btnactions",
     "field": ""
+  }
+],
+	InstBasHvListHeaderItems: [
+  {
+    "label": "",
+    "align": "left",
+    "sortable": false,
+    "name": "btnactions",
+    "field": ""
+  },
+  {
+    "label": "Id Bas Hv",
+    "align": "left",
+    "sortable": false,
+    "name": "id_bas_hv",
+    "field": "id_bas_hv"
+  },
+  {
+    "label": "Nombre Ib Hv",
+    "align": "left",
+    "sortable": false,
+    "name": "nombre_ib_hv",
+    "field": "nombre_ib_hv"
+  },
+  {
+    "label": "Abrev Hv",
+    "align": "left",
+    "sortable": false,
+    "name": "abrev_hv",
+    "field": "abrev_hv"
   }
 ],
 	InsthvListHeaderItems: [
@@ -4872,7 +5091,7 @@ export const AppMenus = {
     "field": "numero_item"
   }
 ],
-	clasificacionItems: [    
+	clasificacionItems: [
 {value: "SUSTANTIVO", label: "Sustantivo"},
 	{value: "ADMINISTRATIVO", label: "Administrativo"}
     ],
@@ -5306,7 +5525,7 @@ export const AppMenus = {
     "field": "soa_nombre"
   }
 ],
-	clasificacionuoItems: [    
+	clasificacionuoItems: [
 {value: "SUSTANTIVA", label: "SUSTANTIVA"},
 	{value: "ADMINISTRATIVA", label: "ADMINISTRATIVA"}
     ],
@@ -5607,7 +5826,7 @@ export const AppMenus = {
     "field": ""
   }
 ],
-	mesItems: [    
+	mesItems: [
 {value: "1", label: "Enero"},
 	{value: "2", label: "Febrero"},
 	{value: "3", label: "Marzo"},
@@ -5944,6 +6163,13 @@ export const AppMenus = {
   }
 ],
 	UsersListHeaderItems: [
+  {
+    "label": "",
+    "align": "left",
+    "sortable": false,
+    "name": "masterdetailbtn",
+    "field": ""
+  },
   {
     "label": "Permisos",
     "align": "left",
@@ -6353,6 +6579,85 @@ export const AppMenus = {
     "field": ""
   }
 ],
+	UsersLhojavidaHeaderItems: [
+  {
+    "label": "",
+    "align": "left",
+    "sortable": false,
+    "name": "btnactions",
+    "field": ""
+  },
+  {
+    "label": "",
+    "align": "left",
+    "sortable": false,
+    "name": "masterdetailbtn",
+    "field": ""
+  },
+  {
+    "label": "Acción",
+    "align": "left",
+    "sortable": false,
+    "name": "accion",
+    "field": ""
+  },
+  {
+    "label": "Nombre1",
+    "align": "left",
+    "sortable": false,
+    "name": "nombre1",
+    "field": "nombre1"
+  },
+  {
+    "label": "Nombre2",
+    "align": "left",
+    "sortable": false,
+    "name": "nombre2",
+    "field": "nombre2"
+  },
+  {
+    "label": "Appaterno",
+    "align": "left",
+    "sortable": false,
+    "name": "appaterno",
+    "field": "appaterno"
+  },
+  {
+    "label": "Apmaterno",
+    "align": "left",
+    "sortable": false,
+    "name": "apmaterno",
+    "field": "apmaterno"
+  },
+  {
+    "label": "Carnet",
+    "align": "left",
+    "sortable": false,
+    "name": "carnet",
+    "field": "carnet"
+  },
+  {
+    "label": "Expedido",
+    "align": "left",
+    "sortable": false,
+    "name": "expedido",
+    "field": "expedido"
+  },
+  {
+    "label": "Telefono",
+    "align": "left",
+    "sortable": false,
+    "name": "telefono",
+    "field": "telefono"
+  },
+  {
+    "label": "Fecha Nacimiento",
+    "align": "left",
+    "sortable": false,
+    "name": "fecha_nacimiento",
+    "field": "fecha_nacimiento"
+  }
+],
 	UsuariosListHeaderItems: [
   {
     "label": "",
@@ -6750,5 +7055,5 @@ export const AppMenus = {
             ext: 'csv',
         },
     },
-    
+
 }

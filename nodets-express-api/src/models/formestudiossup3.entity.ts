@@ -44,14 +44,12 @@ export default class Formestudiossup3 extends BaseModel {
 	static listFields(): string[]{
 		return [
 			"idformestsup", 
-			"gestionuniv", 
-			"nrotitulo", 
-			"ciclouniv", 
-			"cursouniv", 
 			"carrerauniv", 
+			"nrotitulo", 
 			"casaestuniv", 
-			"codusuario", 
+			"gestionuniv", 
 			"calidaduniver", 
+			"codusuario", 
 			"niveluniv"
 		];
 	}
@@ -59,14 +57,12 @@ export default class Formestudiossup3 extends BaseModel {
 	static exportListFields(): string[]{
 		return [
 			"idformestsup", 
-			"gestionuniv", 
-			"nrotitulo", 
-			"ciclouniv", 
-			"cursouniv", 
 			"carrerauniv", 
+			"nrotitulo", 
 			"casaestuniv", 
-			"codusuario", 
+			"gestionuniv", 
 			"calidaduniver", 
+			"codusuario", 
 			"niveluniv"
 		];
 	}
@@ -149,13 +145,12 @@ export default class Formestudiossup3 extends BaseModel {
 	
 	static searchFields(): string{
 		const fields = [
-			"ciclouniv iLIKE :search", 
-			"cursouniv iLIKE :search", 
 			"carrerauniv iLIKE :search", 
 			"casaestuniv iLIKE :search", 
-			"CAST(codusuario AS TEXT) iLIKE :search", 
+			"ciclouniv iLIKE :search", 
 			"calidaduniver iLIKE :search", 
-			"niveluniv iLIKE :search",
+			"cursouniv iLIKE :search", 
+			"CAST(codusuario AS TEXT) iLIKE :search",
 		];
 		return '(' + fields.join(' OR ') + ')';
 	}

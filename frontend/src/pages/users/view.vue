@@ -31,42 +31,8 @@
                                                 <q-card  class="q-pa-md nice-shadow-16">
                                                     <div class="row q-col-gutter-x-md items-center">
                                                         <div class="col">
-                                                            <div class="text-grey text-weight-medium mb-1">Permisos</div>
-                                                            <div class="text-bold">{{ item.permisos }}</div>
-                                                        </div>
-                                                    </div>
-                                                </q-card>
-                                            </div>
-                                            <div class="col-12 col-md-4">
-                                                <q-card  class="q-pa-md nice-shadow-16">
-                                                    <div class="row q-col-gutter-x-md items-center">
-                                                        <div class="col">
-                                                            <div class="text-grey text-weight-medium mb-1">User Role Id</div>
-                                                            <div class="text-bold">
-                                                                <q-btn v-if="item.user_role_id" @click="app.openPageDialog({ page: 'roles/view', url: `/roles/view/${item.user_role_id}` , closeBtn: true })" padding="xs" flat color="primary" no-caps >
-                                                                    <q-icon name="visibility" size="xs"  class="q-mr-xs"></q-icon>  Roles Detail
-                                                                </q-btn>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </q-card>
-                                            </div>
-                                            <div class="col-12 col-md-4">
-                                                <q-card  class="q-pa-md nice-shadow-16">
-                                                    <div class="row q-col-gutter-x-md items-center">
-                                                        <div class="col">
                                                             <div class="text-grey text-weight-medium mb-1">Jsonunidad</div>
                                                             <div class="text-bold">{{ item.jsonunidad }}</div>
-                                                        </div>
-                                                    </div>
-                                                </q-card>
-                                            </div>
-                                            <div class="col-12 col-md-4">
-                                                <q-card  class="q-pa-md nice-shadow-16">
-                                                    <div class="row q-col-gutter-x-md items-center">
-                                                        <div class="col">
-                                                            <div class="text-grey text-weight-medium mb-1">Id</div>
-                                                            <div class="text-bold">{{ item.id }}</div>
                                                         </div>
                                                     </div>
                                                 </q-card>
@@ -327,16 +293,6 @@
                                                         <div class="col">
                                                             <div class="text-grey text-weight-medium mb-1">Detalle Referencia</div>
                                                             <div class="text-bold">{{ item.detalle_referencia }}</div>
-                                                        </div>
-                                                    </div>
-                                                </q-card>
-                                            </div>
-                                            <div class="col-12 col-md-4">
-                                                <q-card  class="q-pa-md nice-shadow-16">
-                                                    <div class="row q-col-gutter-x-md items-center">
-                                                        <div class="col">
-                                                            <div class="text-grey text-weight-medium mb-1">Codgestion</div>
-                                                            <div class="text-bold">{{ item.codgestion }}</div>
                                                         </div>
                                                     </div>
                                                 </q-card>

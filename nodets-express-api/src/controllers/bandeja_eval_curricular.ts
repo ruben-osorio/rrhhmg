@@ -91,9 +91,10 @@ router.post('/add/' ,
 		body('id').not().isEmpty().isNumeric(),
 		body('seleccion').optional({nullable: true, checkFalsy: true}),
 		body('nro_item').optional({nullable: true, checkFalsy: true}).isNumeric(),
-		body('id_user').optional({nullable: true, checkFalsy: true}).isNumeric(),
 		body('cv_aprovado').optional({nullable: true, checkFalsy: true}),
 		body('item').optional({nullable: true, checkFalsy: true}),
+		body('coduser').optional({nullable: true, checkFalsy: true}).isNumeric(),
+		body('codgestion').optional({nullable: true, checkFalsy: true}).isNumeric(),
 	]
 , async function (req:HttpRequest, res:HttpResponse) {
 	try{
@@ -146,9 +147,10 @@ router.post('/edit/:recid' ,
 		body('id').optional({nullable: true}).not().isEmpty().isNumeric(),
 		body('seleccion').optional({nullable: true, checkFalsy: true}),
 		body('nro_item').optional({nullable: true, checkFalsy: true}).isNumeric(),
-		body('id_user').optional({nullable: true, checkFalsy: true}).isNumeric(),
 		body('cv_aprovado').optional({nullable: true, checkFalsy: true}),
 		body('item').optional({nullable: true, checkFalsy: true}),
+		body('coduser').optional({nullable: true, checkFalsy: true}).isNumeric(),
+		body('codgestion').optional({nullable: true, checkFalsy: true}).isNumeric(),
 	]
 , async (req:HttpRequest, res:HttpResponse) => {
 	try{

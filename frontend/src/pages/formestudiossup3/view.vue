@@ -29,16 +29,6 @@
                                         <q-card  class="q-pa-md nice-shadow-16">
                                             <div class="row q-col-gutter-x-md items-center">
                                                 <div class="col">
-                                                    <div class="text-grey text-weight-medium mb-1">Idformestsup</div>
-                                                    <div class="text-bold">{{ item.idformestsup }}</div>
-                                                </div>
-                                            </div>
-                                        </q-card>
-                                    </div>
-                                    <div class="col-12 col-md-4">
-                                        <q-card  class="q-pa-md nice-shadow-16">
-                                            <div class="row q-col-gutter-x-md items-center">
-                                                <div class="col">
                                                     <div class="text-grey text-weight-medium mb-1">Gestionuniv</div>
                                                     <div class="text-bold">{{ item.gestionuniv }}</div>
                                                 </div>
@@ -99,28 +89,8 @@
                                         <q-card  class="q-pa-md nice-shadow-16">
                                             <div class="row q-col-gutter-x-md items-center">
                                                 <div class="col">
-                                                    <div class="text-grey text-weight-medium mb-1">Codusuario</div>
-                                                    <div class="text-bold">{{ item.codusuario }}</div>
-                                                </div>
-                                            </div>
-                                        </q-card>
-                                    </div>
-                                    <div class="col-12 col-md-4">
-                                        <q-card  class="q-pa-md nice-shadow-16">
-                                            <div class="row q-col-gutter-x-md items-center">
-                                                <div class="col">
                                                     <div class="text-grey text-weight-medium mb-1">Calidaduniver</div>
                                                     <div class="text-bold">{{ item.calidaduniver }}</div>
-                                                </div>
-                                            </div>
-                                        </q-card>
-                                    </div>
-                                    <div class="col-12 col-md-4">
-                                        <q-card  class="q-pa-md nice-shadow-16">
-                                            <div class="row q-col-gutter-x-md items-center">
-                                                <div class="col">
-                                                    <div class="text-grey text-weight-medium mb-1">Niveluniv</div>
-                                                    <div class="text-bold">{{ item.niveluniv }}</div>
                                                 </div>
                                             </div>
                                         </q-card>

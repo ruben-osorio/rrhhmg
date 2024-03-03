@@ -4,6 +4,7 @@
 import express from 'express';
 import utils from '../helpers/utils';
 import DB from '../datasource';
+import { rawQuery } from '../datasource';
 import { HttpRequest, HttpResponse } from '../helpers/http';
 import { body, validationResult, matchedData }  from 'express-validator';
 import { Not, In } from 'typeorm';
@@ -396,4 +397,77 @@ router.get(['/vhojavida/:recid'], async (req:HttpRequest, res:HttpResponse) => {
 		return res.serverError(err);
 	}
 });
+
+
+/**
+ * Route to list users records
+ * @route {GET} /users/index/{fieldname}/{fieldvalue}
+ */
+router.get(['/lhojavida/:fieldname?/:fieldvalue?'], async (req:HttpRequest, res:HttpResponse) => {  
+	try{
+		const query = Users.getQuery();
+		
+		const fieldName = req.params.fieldname;
+		const fieldValue = req.params.fieldvalue;
+		const search = req.query.search;
+		const page = Number(req.query.page) || 1;
+		const limit = Number(req.query.limit) || 5;
+		
+		if (fieldName){
+			 //filter by a single column values
+			query.where(`${fieldName}=:fieldValue`, {fieldValue});
+		}
+		
+		
+		if(search){
+			let searchFields = Users.searchFields(); // get columns to search
+			query.andWhere(searchFields, {search: `%${search}%`});
+		}
+		let allowedRoles = ["user", "admin"];
+		let userRole = req.user.roleName;
+		if(!allowedRoles.includes(userRole)){
+			query.andWhere('id=:userid', { userid: req.user.id });
+		}
+		
+		const selectFields = Users.lhojavidaFields(); //get columns to select
+		query.select(selectFields);
+		
+		// order by field
+		const orderBy = req.getOrderBy('id', 'DESC');
+		if(orderBy){
+			query.orderBy(orderBy.column, orderBy.orderType);
+		}
+		
+		//return records and pager info
+		const pageData = await Users.paginate(query, page, limit);
+		
+		return res.send(pageData);
+	}
+	catch(err) {
+		console.error("has crached", req.path, err);
+		return res.serverError(err);
+	}
+});
+
+router.post('/add_bandeja1', async (req:HttpRequest, res:HttpResponse) => {  
+	try{
+		const query = Users.getQuery();
+		
+		const { valor1, valor2, valor3 } = req.body;
+
+    //	let queryParams = [record.idgestion];
+		let queryParams = ["valor_seleccion","valor_cv_aprovado","valor_item",1, 2];
+    let sqltext = 'CALL registrabandeja1($1, $2, $3, $4, $5)';
+ //   let result = await rawQuery(sqltext, queryParams);
+
+    	await rawQuery(sqltext, queryParams);
+
+    	res.json({ success: true, message: 'Datos agregados correctamente' });
+	}
+	catch(err) {
+		console.error("has crached", req.path, err);
+		return res.serverError(err);
+	}
+});
+
 export default router;
