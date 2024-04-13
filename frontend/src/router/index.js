@@ -26,18 +26,8 @@ let routes = [{
 //almacen routes
 
 //altashv routes
-		{ path: '/altashv', name: 'altashvlist', component: () => import('pages/altashv/list.vue'), props: true },
-		{ path: '/altashv/index/:fieldName?/:fieldValue?', component: () => import('pages/altashv/list.vue'), props: true },
-		{ path: '/altashv/view/:id', name: 'altashvview', component: () => import('pages/altashv/view.vue'), props: true },
-		{ path: '/altashv/add', name: 'altashvadd', component: () => import('pages/altashv/add.vue'), props: true },
-		{ path: '/altashv/edit/:id', name: 'altashvedit', component: () => import('pages/altashv/edit.vue'), props: true },
 
 //alternativahv routes
-		{ path: '/alternativahv', name: 'alternativahvlist', component: () => import('pages/alternativahv/list.vue'), props: true },
-		{ path: '/alternativahv/index/:fieldName?/:fieldValue?', component: () => import('pages/alternativahv/list.vue'), props: true },
-		{ path: '/alternativahv/view/:id', name: 'alternativahvview', component: () => import('pages/alternativahv/view.vue'), props: true },
-		{ path: '/alternativahv/add', name: 'alternativahvadd', component: () => import('pages/alternativahv/add.vue'), props: true },
-		{ path: '/alternativahv/edit/:id', name: 'alternativahvedit', component: () => import('pages/alternativahv/edit.vue'), props: true },
 
 //antiguedad routes
 		{ path: '/antiguedad', name: 'antiguedadlist', component: () => import('pages/antiguedad/list.vue'), props: true },
@@ -68,18 +58,8 @@ let routes = [{
 		{ path: '/basicoshv/edit/:id', name: 'basicoshvedit', component: () => import('pages/basicoshv/edit.vue'), props: true },
 
 //calidadhv routes
-		{ path: '/calidadhv', name: 'calidadhvlist', component: () => import('pages/calidadhv/list.vue'), props: true },
-		{ path: '/calidadhv/index/:fieldName?/:fieldValue?', component: () => import('pages/calidadhv/list.vue'), props: true },
-		{ path: '/calidadhv/view/:id', name: 'calidadhvview', component: () => import('pages/calidadhv/view.vue'), props: true },
-		{ path: '/calidadhv/add', name: 'calidadhvadd', component: () => import('pages/calidadhv/add.vue'), props: true },
-		{ path: '/calidadhv/edit/:id', name: 'calidadhvedit', component: () => import('pages/calidadhv/edit.vue'), props: true },
 
 //carrerashv routes
-		{ path: '/carrerashv', name: 'carrerashvlist', component: () => import('pages/carrerashv/list.vue'), props: true },
-		{ path: '/carrerashv/index/:fieldName?/:fieldValue?', component: () => import('pages/carrerashv/list.vue'), props: true },
-		{ path: '/carrerashv/view/:id', name: 'carrerashvview', component: () => import('pages/carrerashv/view.vue'), props: true },
-		{ path: '/carrerashv/add', name: 'carrerashvadd', component: () => import('pages/carrerashv/add.vue'), props: true },
-		{ path: '/carrerashv/edit/:id', name: 'carrerashvedit', component: () => import('pages/carrerashv/edit.vue'), props: true },
 
 //cas routes
 		{ path: '/cas', name: 'caslist', component: () => import('pages/cas/list.vue'), props: true },
@@ -127,11 +107,6 @@ let routes = [{
 		{ path: '/configuracion/edit/:id', name: 'configuracionedit', component: () => import('pages/configuracion/edit.vue'), props: true },
 
 //cursocolegio routes
-		{ path: '/cursocolegio', name: 'cursocolegiolist', component: () => import('pages/cursocolegio/list.vue'), props: true },
-		{ path: '/cursocolegio/index/:fieldName?/:fieldValue?', component: () => import('pages/cursocolegio/list.vue'), props: true },
-		{ path: '/cursocolegio/view/:id', name: 'cursocolegioview', component: () => import('pages/cursocolegio/view.vue'), props: true },
-		{ path: '/cursocolegio/add', name: 'cursocolegioadd', component: () => import('pages/cursocolegio/add.vue'), props: true },
-		{ path: '/cursocolegio/edit/:id', name: 'cursocolegioedit', component: () => import('pages/cursocolegio/edit.vue'), props: true },
 
 //cursos routes
 		{ path: '/cursos', name: 'cursoslist', component: () => import('pages/cursos/list.vue'), props: true },
@@ -148,11 +123,6 @@ let routes = [{
 		{ path: '/cursosbasicosestudios/edit/:id', name: 'cursosbasicosestudiosedit', component: () => import('pages/cursosbasicosestudios/edit.vue'), props: true },
 
 //cursoshv routes
-		{ path: '/cursoshv', name: 'cursoshvlist', component: () => import('pages/cursoshv/list.vue'), props: true },
-		{ path: '/cursoshv/index/:fieldName?/:fieldValue?', component: () => import('pages/cursoshv/list.vue'), props: true },
-		{ path: '/cursoshv/view/:id', name: 'cursoshvview', component: () => import('pages/cursoshv/view.vue'), props: true },
-		{ path: '/cursoshv/add', name: 'cursoshvadd', component: () => import('pages/cursoshv/add.vue'), props: true },
-		{ path: '/cursoshv/edit/:id', name: 'cursoshvedit', component: () => import('pages/cursoshv/edit.vue'), props: true },
 
 //decjurada routes
 		{ path: '/decjurada', name: 'decjuradalist', component: () => import('pages/decjurada/list.vue'), props: true },
@@ -232,6 +202,13 @@ let routes = [{
 		{ path: '/eo_maestra/add', name: 'eo_maestraadd', component: () => import('pages/eo_maestra/add.vue'), props: true },
 		{ path: '/eo_maestra/edit/:id', name: 'eo_maestraedit', component: () => import('pages/eo_maestra/edit.vue'), props: true },
 
+//equivcursoshv routes
+		{ path: '/equivcursoshv', name: 'equivcursoshvlist', component: () => import('pages/equivcursoshv/list.vue'), props: true },
+		{ path: '/equivcursoshv/index/:fieldName?/:fieldValue?', component: () => import('pages/equivcursoshv/list.vue'), props: true },
+		{ path: '/equivcursoshv/view/:id', name: 'equivcursoshvview', component: () => import('pages/equivcursoshv/view.vue'), props: true },
+		{ path: '/equivcursoshv/add', name: 'equivcursoshvadd', component: () => import('pages/equivcursoshv/add.vue'), props: true },
+		{ path: '/equivcursoshv/edit/:id', name: 'equivcursoshvedit', component: () => import('pages/equivcursoshv/edit.vue'), props: true },
+
 //escala routes
 		{ path: '/escala', name: 'escalalist', component: () => import('pages/escala/list.vue'), props: true },
 		{ path: '/escala/index/:fieldName?/:fieldValue?', component: () => import('pages/escala/list.vue'), props: true },
@@ -274,6 +251,13 @@ let routes = [{
 		{ path: '/eval_curric/add', name: 'eval_curricadd', component: () => import('pages/eval_curric/add.vue'), props: true },
 		{ path: '/eval_curric/edit/:id', name: 'eval_curricedit', component: () => import('pages/eval_curric/edit.vue'), props: true },
 
+//eval_temp_grid routes
+		{ path: '/eval_temp_grid', name: 'eval_temp_gridlist', component: () => import('pages/eval_temp_grid/list.vue'), props: true },
+		{ path: '/eval_temp_grid/index/:fieldName?/:fieldValue?', component: () => import('pages/eval_temp_grid/list.vue'), props: true },
+		{ path: '/eval_temp_grid/view/:id', name: 'eval_temp_gridview', component: () => import('pages/eval_temp_grid/view.vue'), props: true },
+		{ path: '/eval_temp_grid/add', name: 'eval_temp_gridadd', component: () => import('pages/eval_temp_grid/add.vue'), props: true },
+		{ path: '/eval_temp_grid/edit/:id', name: 'eval_temp_gridedit', component: () => import('pages/eval_temp_grid/edit.vue'), props: true },
+
 //evalcurricular routes
 		{ path: '/evalcurricular', name: 'evalcurricularlist', component: () => import('pages/evalcurricular/list.vue'), props: true },
 		{ path: '/evalcurricular/index/:fieldName?/:fieldValue?', component: () => import('pages/evalcurricular/list.vue'), props: true },
@@ -287,6 +271,13 @@ let routes = [{
 		{ path: '/evaluacion/view/:id', name: 'evaluacionview', component: () => import('pages/evaluacion/view.vue'), props: true },
 		{ path: '/evaluacion/add', name: 'evaluacionadd', component: () => import('pages/evaluacion/add.vue'), props: true },
 		{ path: '/evaluacion/edit/:id', name: 'evaluacionedit', component: () => import('pages/evaluacion/edit.vue'), props: true },
+
+//evaluacion_perfil routes
+		{ path: '/evaluacion_perfil', name: 'evaluacion_perfillist', component: () => import('pages/evaluacion_perfil/list.vue'), props: true },
+		{ path: '/evaluacion_perfil/index/:fieldName?/:fieldValue?', component: () => import('pages/evaluacion_perfil/list.vue'), props: true },
+		{ path: '/evaluacion_perfil/view/:id', name: 'evaluacion_perfilview', component: () => import('pages/evaluacion_perfil/view.vue'), props: true },
+		{ path: '/evaluacion_perfil/add', name: 'evaluacion_perfiladd', component: () => import('pages/evaluacion_perfil/add.vue'), props: true },
+		{ path: '/evaluacion_perfil/edit/:id', name: 'evaluacion_perfiledit', component: () => import('pages/evaluacion_perfil/edit.vue'), props: true },
 
 //eventuales routes
 		{ path: '/eventuales', name: 'eventualeslist', component: () => import('pages/eventuales/list.vue'), props: true },
@@ -302,6 +293,13 @@ let routes = [{
 		{ path: '/experiencia/add', name: 'experienciaadd', component: () => import('pages/experiencia/add.vue'), props: true },
 		{ path: '/experiencia/edit/:id', name: 'experienciaedit', component: () => import('pages/experiencia/edit.vue'), props: true },
 
+//experiencia_especifica routes
+		{ path: '/experiencia_especifica', name: 'experiencia_especificalist', component: () => import('pages/experiencia_especifica/list.vue'), props: true },
+		{ path: '/experiencia_especifica/index/:fieldName?/:fieldValue?', component: () => import('pages/experiencia_especifica/list.vue'), props: true },
+		{ path: '/experiencia_especifica/view/:id', name: 'experiencia_especificaview', component: () => import('pages/experiencia_especifica/view.vue'), props: true },
+		{ path: '/experiencia_especifica/add', name: 'experiencia_especificaadd', component: () => import('pages/experiencia_especifica/add.vue'), props: true },
+		{ path: '/experiencia_especifica/edit/:id', name: 'experiencia_especificaedit', component: () => import('pages/experiencia_especifica/edit.vue'), props: true },
+
 //experienciahv routes
 		{ path: '/experienciahv', name: 'experienciahvlist', component: () => import('pages/experienciahv/list.vue'), props: true },
 		{ path: '/experienciahv/index/:fieldName?/:fieldValue?', component: () => import('pages/experienciahv/list.vue'), props: true },
@@ -310,22 +308,19 @@ let routes = [{
 		{ path: '/experienciahv/edit/:id', name: 'experienciahvedit', component: () => import('pages/experienciahv/edit.vue'), props: true },
 
 //extranjeros_hv routes
-		{ path: '/extranjeros_hv', name: 'extranjeros_hvlist', component: () => import('pages/extranjeros_hv/list.vue'), props: true },
-		{ path: '/extranjeros_hv/index/:fieldName?/:fieldValue?', component: () => import('pages/extranjeros_hv/list.vue'), props: true },
-		{ path: '/extranjeros_hv/view/:id', name: 'extranjeros_hvview', component: () => import('pages/extranjeros_hv/view.vue'), props: true },
-		{ path: '/extranjeros_hv/add', name: 'extranjeros_hvadd', component: () => import('pages/extranjeros_hv/add.vue'), props: true },
-		{ path: '/extranjeros_hv/edit/:id', name: 'extranjeros_hvedit', component: () => import('pages/extranjeros_hv/edit.vue'), props: true },
+
+//formacion_guia routes
+		{ path: '/formacion_guia', name: 'formacion_guialist', component: () => import('pages/formacion_guia/list.vue'), props: true },
+		{ path: '/formacion_guia/index/:fieldName?/:fieldValue?', component: () => import('pages/formacion_guia/list.vue'), props: true },
+		{ path: '/formacion_guia/view/:id', name: 'formacion_guiaview', component: () => import('pages/formacion_guia/view.vue'), props: true },
+		{ path: '/formacion_guia/add', name: 'formacion_guiaadd', component: () => import('pages/formacion_guia/add.vue'), props: true },
+		{ path: '/formacion_guia/edit/:id', name: 'formacion_guiaedit', component: () => import('pages/formacion_guia/edit.vue'), props: true },
 
 //formactual routes
 
 //formcurbasicos2 routes
 
 //formdtspers routes
-		{ path: '/formdtspers', name: 'formdtsperslist', component: () => import('pages/formdtspers/list.vue'), props: true },
-		{ path: '/formdtspers/index/:fieldName?/:fieldValue?', component: () => import('pages/formdtspers/list.vue'), props: true },
-		{ path: '/formdtspers/view/:id', name: 'formdtspersview', component: () => import('pages/formdtspers/view.vue'), props: true },
-		{ path: '/formdtspers/add', name: 'formdtspersadd', component: () => import('pages/formdtspers/add.vue'), props: true },
-		{ path: '/formdtspers/edit/:id', name: 'formdtspersedit', component: () => import('pages/formdtspers/edit.vue'), props: true },
 
 //formestudios3 routes
 		{ path: '/formestudios3', name: 'formestudios3list', component: () => import('pages/formestudios3/list.vue'), props: true },
@@ -354,12 +349,6 @@ let routes = [{
 //formotroscursos2 routes
 
 //formposgestudios2 routes
-		{ path: '/formposgestudios2', name: 'formposgestudios2list', component: () => import('pages/formposgestudios2/list.vue'), props: true },
-		{ path: '/formposgestudios2/index/:fieldName?/:fieldValue?', component: () => import('pages/formposgestudios2/list.vue'), props: true },
-		{ path: '/formposgestudios2/view/:id', name: 'formposgestudios2view', component: () => import('pages/formposgestudios2/view.vue'), props: true },
-		{ path: '/formposgestudios2/add', name: 'formposgestudios2add', component: () => import('pages/formposgestudios2/add.vue'), props: true },
-		{ path: '/formposgestudios2/edit/:id', name: 'formposgestudios2edit', component: () => import('pages/formposgestudios2/edit.vue'), props: true },
-		{ path: '/formposgestudios2/vhojavida/:id', name: 'formposgestudios2vhojavida', component: () => import('pages/formposgestudios2/vhojavida.vue'), props: true },
 
 //fuente routes
 		{ path: '/fuente', name: 'fuentelist', component: () => import('pages/fuente/list.vue'), props: true },
@@ -385,12 +374,14 @@ let routes = [{
 
 //gestionciclo routes
 
+//grado_univhv routes
+		{ path: '/grado_univhv', name: 'grado_univhvlist', component: () => import('pages/grado_univhv/list.vue'), props: true },
+		{ path: '/grado_univhv/index/:fieldName?/:fieldValue?', component: () => import('pages/grado_univhv/list.vue'), props: true },
+		{ path: '/grado_univhv/view/:id', name: 'grado_univhvview', component: () => import('pages/grado_univhv/view.vue'), props: true },
+		{ path: '/grado_univhv/add', name: 'grado_univhvadd', component: () => import('pages/grado_univhv/add.vue'), props: true },
+		{ path: '/grado_univhv/edit/:id', name: 'grado_univhvedit', component: () => import('pages/grado_univhv/edit.vue'), props: true },
+
 //gradocolegiohv routes
-		{ path: '/gradocolegiohv', name: 'gradocolegiohvlist', component: () => import('pages/gradocolegiohv/list.vue'), props: true },
-		{ path: '/gradocolegiohv/index/:fieldName?/:fieldValue?', component: () => import('pages/gradocolegiohv/list.vue'), props: true },
-		{ path: '/gradocolegiohv/view/:id', name: 'gradocolegiohvview', component: () => import('pages/gradocolegiohv/view.vue'), props: true },
-		{ path: '/gradocolegiohv/add', name: 'gradocolegiohvadd', component: () => import('pages/gradocolegiohv/add.vue'), props: true },
-		{ path: '/gradocolegiohv/edit/:id', name: 'gradocolegiohvedit', component: () => import('pages/gradocolegiohv/edit.vue'), props: true },
 
 //hojavida routes
 		{ path: '/hojavida', name: 'hojavidalist', component: () => import('pages/hojavida/list.vue'), props: true },
@@ -402,11 +393,6 @@ let routes = [{
 //idiomas routes
 
 //idiomashv routes
-		{ path: '/idiomashv', name: 'idiomashvlist', component: () => import('pages/idiomashv/list.vue'), props: true },
-		{ path: '/idiomashv/index/:fieldName?/:fieldValue?', component: () => import('pages/idiomashv/list.vue'), props: true },
-		{ path: '/idiomashv/view/:id', name: 'idiomashvview', component: () => import('pages/idiomashv/view.vue'), props: true },
-		{ path: '/idiomashv/add', name: 'idiomashvadd', component: () => import('pages/idiomashv/add.vue'), props: true },
-		{ path: '/idiomashv/edit/:id', name: 'idiomashvedit', component: () => import('pages/idiomashv/edit.vue'), props: true },
 
 //infouser routes
 		{ path: '/infouser', name: 'infouserlist', component: () => import('pages/infouser/list.vue'), props: true },
@@ -423,11 +409,6 @@ let routes = [{
 		{ path: '/inst_bas_hv/edit/:id', name: 'inst_bas_hvedit', component: () => import('pages/inst_bas_hv/edit.vue'), props: true },
 
 //insthv routes
-		{ path: '/insthv', name: 'insthvlist', component: () => import('pages/insthv/list.vue'), props: true },
-		{ path: '/insthv/index/:fieldName?/:fieldValue?', component: () => import('pages/insthv/list.vue'), props: true },
-		{ path: '/insthv/view/:id', name: 'insthvview', component: () => import('pages/insthv/view.vue'), props: true },
-		{ path: '/insthv/add', name: 'insthvadd', component: () => import('pages/insthv/add.vue'), props: true },
-		{ path: '/insthv/edit/:id', name: 'insthvedit', component: () => import('pages/insthv/edit.vue'), props: true },
 
 //item_escala routes
 		{ path: '/item_escala', name: 'item_escalalist', component: () => import('pages/item_escala/list.vue'), props: true },
@@ -455,18 +436,8 @@ let routes = [{
 		{ path: '/medida/edit/:id', name: 'medidaedit', component: () => import('pages/medida/edit.vue'), props: true },
 
 //modalidadhv routes
-		{ path: '/modalidadhv', name: 'modalidadhvlist', component: () => import('pages/modalidadhv/list.vue'), props: true },
-		{ path: '/modalidadhv/index/:fieldName?/:fieldValue?', component: () => import('pages/modalidadhv/list.vue'), props: true },
-		{ path: '/modalidadhv/view/:id', name: 'modalidadhvview', component: () => import('pages/modalidadhv/view.vue'), props: true },
-		{ path: '/modalidadhv/add', name: 'modalidadhvadd', component: () => import('pages/modalidadhv/add.vue'), props: true },
-		{ path: '/modalidadhv/edit/:id', name: 'modalidadhvedit', component: () => import('pages/modalidadhv/edit.vue'), props: true },
 
 //nativos_hv routes
-		{ path: '/nativos_hv', name: 'nativos_hvlist', component: () => import('pages/nativos_hv/list.vue'), props: true },
-		{ path: '/nativos_hv/index/:fieldName?/:fieldValue?', component: () => import('pages/nativos_hv/list.vue'), props: true },
-		{ path: '/nativos_hv/view/:id', name: 'nativos_hvview', component: () => import('pages/nativos_hv/view.vue'), props: true },
-		{ path: '/nativos_hv/add', name: 'nativos_hvadd', component: () => import('pages/nativos_hv/add.vue'), props: true },
-		{ path: '/nativos_hv/edit/:id', name: 'nativos_hvedit', component: () => import('pages/nativos_hv/edit.vue'), props: true },
 
 //nivel_eo routes
 		{ path: '/nivel_eo', name: 'nivel_eolist', component: () => import('pages/nivel_eo/list.vue'), props: true },
@@ -485,11 +456,6 @@ let routes = [{
 //nivelformestudios routes
 
 //nivelunivhv routes
-		{ path: '/nivelunivhv', name: 'nivelunivhvlist', component: () => import('pages/nivelunivhv/list.vue'), props: true },
-		{ path: '/nivelunivhv/index/:fieldName?/:fieldValue?', component: () => import('pages/nivelunivhv/list.vue'), props: true },
-		{ path: '/nivelunivhv/view/:id', name: 'nivelunivhvview', component: () => import('pages/nivelunivhv/view.vue'), props: true },
-		{ path: '/nivelunivhv/add', name: 'nivelunivhvadd', component: () => import('pages/nivelunivhv/add.vue'), props: true },
-		{ path: '/nivelunivhv/edit/:id', name: 'nivelunivhvedit', component: () => import('pages/nivelunivhv/edit.vue'), props: true },
 
 //parametros_definicion routes
 		{ path: '/parametros_definicion', name: 'parametros_definicionlist', component: () => import('pages/parametros_definicion/list.vue'), props: true },
@@ -514,6 +480,7 @@ let routes = [{
 		{ path: '/perfilreferencial/add', name: 'perfilreferencialadd', component: () => import('pages/perfilreferencial/add.vue'), props: true },
 		{ path: '/perfilreferencial/edit/:id', name: 'perfilreferencialedit', component: () => import('pages/perfilreferencial/edit.vue'), props: true },
 		{ path: '/perfilreferencial/evalist', name: 'perfilreferencialevalist', component: () => import('pages/perfilreferencial/evalist.vue'), props: true },
+		{ path: '/perfilreferencial/prlist', name: 'perfilreferencialprlist', component: () => import('pages/perfilreferencial/prlist.vue'), props: true },
 
 //permanente routes
 		{ path: '/permanente', name: 'permanentelist', component: () => import('pages/permanente/list.vue'), props: true },
@@ -551,6 +518,7 @@ let routes = [{
 		{ path: '/planilla_presupuestaria/edit/:id', name: 'planilla_presupuestariaedit', component: () => import('pages/planilla_presupuestaria/edit.vue'), props: true },
 		{ path: '/planilla_presupuestaria/agregar', name: 'planilla_presupuestariaagregar', component: () => import('pages/planilla_presupuestaria/agregar.vue'), props: true },
 		{ path: '/planilla_presupuestaria/editar/:id', name: 'planilla_presupuestariaeditar', component: () => import('pages/planilla_presupuestaria/editar.vue'), props: true },
+		{ path: '/planilla_presupuestaria/listeval', name: 'planilla_presupuestarialisteval', component: () => import('pages/planilla_presupuestaria/listeval.vue'), props: true },
 
 //planillas routes
 		{ path: '/planillas', name: 'planillaslist', component: () => import('pages/planillas/list.vue'), props: true },
@@ -604,22 +572,12 @@ let routes = [{
 		{ path: '/poa/edit/:id', name: 'poaedit', component: () => import('pages/poa/edit.vue'), props: true },
 
 //postgradohv routes
-		{ path: '/postgradohv', name: 'postgradohvlist', component: () => import('pages/postgradohv/list.vue'), props: true },
-		{ path: '/postgradohv/index/:fieldName?/:fieldValue?', component: () => import('pages/postgradohv/list.vue'), props: true },
-		{ path: '/postgradohv/view/:id', name: 'postgradohvview', component: () => import('pages/postgradohv/view.vue'), props: true },
-		{ path: '/postgradohv/add', name: 'postgradohvadd', component: () => import('pages/postgradohv/add.vue'), props: true },
-		{ path: '/postgradohv/edit/:id', name: 'postgradohvedit', component: () => import('pages/postgradohv/edit.vue'), props: true },
 
 //preguntas routes
 
 //primaria routes
 
 //primariahv routes
-		{ path: '/primariahv', name: 'primariahvlist', component: () => import('pages/primariahv/list.vue'), props: true },
-		{ path: '/primariahv/index/:fieldName?/:fieldValue?', component: () => import('pages/primariahv/list.vue'), props: true },
-		{ path: '/primariahv/view/:id', name: 'primariahvview', component: () => import('pages/primariahv/view.vue'), props: true },
-		{ path: '/primariahv/add', name: 'primariahvadd', component: () => import('pages/primariahv/add.vue'), props: true },
-		{ path: '/primariahv/edit/:id', name: 'primariahvedit', component: () => import('pages/primariahv/edit.vue'), props: true },
 
 //proveedor routes
 
@@ -654,11 +612,6 @@ let routes = [{
 //secundaria routes
 
 //secundariahv routes
-		{ path: '/secundariahv', name: 'secundariahvlist', component: () => import('pages/secundariahv/list.vue'), props: true },
-		{ path: '/secundariahv/index/:fieldName?/:fieldValue?', component: () => import('pages/secundariahv/list.vue'), props: true },
-		{ path: '/secundariahv/view/:id', name: 'secundariahvview', component: () => import('pages/secundariahv/view.vue'), props: true },
-		{ path: '/secundariahv/add', name: 'secundariahvadd', component: () => import('pages/secundariahv/add.vue'), props: true },
-		{ path: '/secundariahv/edit/:id', name: 'secundariahvedit', component: () => import('pages/secundariahv/edit.vue'), props: true },
 
 //stock routes
 		{ path: '/stock', name: 'stocklist', component: () => import('pages/stock/list.vue'), props: true },
@@ -675,18 +628,8 @@ let routes = [{
 		{ path: '/tab_esc/edit/:id', name: 'tab_escedit', component: () => import('pages/tab_esc/edit.vue'), props: true },
 
 //titbachhv routes
-		{ path: '/titbachhv', name: 'titbachhvlist', component: () => import('pages/titbachhv/list.vue'), props: true },
-		{ path: '/titbachhv/index/:fieldName?/:fieldValue?', component: () => import('pages/titbachhv/list.vue'), props: true },
-		{ path: '/titbachhv/view/:id', name: 'titbachhvview', component: () => import('pages/titbachhv/view.vue'), props: true },
-		{ path: '/titbachhv/add', name: 'titbachhvadd', component: () => import('pages/titbachhv/add.vue'), props: true },
-		{ path: '/titbachhv/edit/:id', name: 'titbachhvedit', component: () => import('pages/titbachhv/edit.vue'), props: true },
 
 //titulocursohv routes
-		{ path: '/titulocursohv', name: 'titulocursohvlist', component: () => import('pages/titulocursohv/list.vue'), props: true },
-		{ path: '/titulocursohv/index/:fieldName?/:fieldValue?', component: () => import('pages/titulocursohv/list.vue'), props: true },
-		{ path: '/titulocursohv/view/:id', name: 'titulocursohvview', component: () => import('pages/titulocursohv/view.vue'), props: true },
-		{ path: '/titulocursohv/add', name: 'titulocursohvadd', component: () => import('pages/titulocursohv/add.vue'), props: true },
-		{ path: '/titulocursohv/edit/:id', name: 'titulocursohvedit', component: () => import('pages/titulocursohv/edit.vue'), props: true },
 
 //tmpmediovacacion routes
 
@@ -711,6 +654,7 @@ let routes = [{
 		{ path: '/users/liseval', name: 'usersliseval', component: () => import('pages/users/liseval.vue'), props: true },
 		{ path: '/users/vhojavida/:id', name: 'usersvhojavida', component: () => import('pages/users/vhojavida.vue'), props: true },
 		{ path: '/users/lhojavida', name: 'userslhojavida', component: () => import('pages/users/lhojavida.vue'), props: true },
+		{ path: '/users/evalusersv', name: 'usersevalusersv', component: () => import('pages/users/evalusersv.vue'), props: true },
 
 //usuarios routes
 		{ path: '/usuarios', name: 'usuarioslist', component: () => import('pages/usuarios/list.vue'), props: true },
@@ -752,6 +696,8 @@ let routes = [{
 //v_gestion routes
 
 //v_gestionplanilas routes
+
+//v_hojavida routes
 
 //v_kardexgral routes
 
@@ -971,6 +917,8 @@ let routes = [{
 //actualiza_gestion_uo_19176 routes
 
 //registrabandeja1_28036 routes
+
+//cargar_datos_en_tabla_temporal_28119 routes
 
 		
 		

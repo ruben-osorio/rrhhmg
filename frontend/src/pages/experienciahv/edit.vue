@@ -148,6 +148,54 @@
                                                 </div>
                                             </div>
                                         </div>
+                                        <div class="col-12">
+                                            <div class="row">
+                                                <div class="col-sm-3 col-12">
+                                                    A 
+                                                </div>
+                                                <div class="col-sm-9 col-12">
+                                                    <q-input   ref="ctrla" v-model.trim="formData.a"  label="A" type="number" placeholder="Escribir A"   step="any"    
+                                                    class="" :error="isFieldValid('a')" :error-message="getFieldError('a')">
+                                                    </q-input>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="row">
+                                                <div class="col-sm-3 col-12">
+                                                    M 
+                                                </div>
+                                                <div class="col-sm-9 col-12">
+                                                    <q-input   ref="ctrlm" v-model.trim="formData.m"  label="M" type="number" placeholder="Escribir M"   step="any"    
+                                                    class="" :error="isFieldValid('m')" :error-message="getFieldError('m')">
+                                                    </q-input>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="row">
+                                                <div class="col-sm-3 col-12">
+                                                    D 
+                                                </div>
+                                                <div class="col-sm-9 col-12">
+                                                    <q-input   ref="ctrld" v-model.trim="formData.d"  label="D" type="number" placeholder="Escribir D"   step="any"    
+                                                    class="" :error="isFieldValid('d')" :error-message="getFieldError('d')">
+                                                    </q-input>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="row">
+                                                <div class="col-sm-3 col-12">
+                                                    Sumatoriatotal 
+                                                </div>
+                                                <div class="col-sm-9 col-12">
+                                                    <q-input   ref="ctrlsumatoriatotal" v-model.trim="formData.sumatoriatotal"  label="Sumatoriatotal" type="text" placeholder="Escribir Sumatoriatotal"      
+                                                    class="" :error="isFieldValid('sumatoriatotal')" :error-message="getFieldError('sumatoriatotal')">
+                                                    </q-input>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                     <!--[form-content-end]-->
                                     <div v-if="showSubmitButton" class="text-center q-my-md">
@@ -255,6 +303,10 @@
 		codgestion: "", 
 		entidad_hv: "", 
 		cargo_hv: "", 
+		a: "", 
+		m: "", 
+		d: "", 
+		sumatoriatotal: "", 
 	}, props.pageData);
 	
 	const formData = reactive({ ...formDefaultValues });
@@ -273,7 +325,10 @@
 	//vuelidate form validation rules
 	const rules = computed(() => {
 		return {
-			idexp_hv: { required, numeric }
+			idexp_hv: { required, numeric },
+		a: { numeric },
+		m: { numeric },
+		d: { numeric }
 		}
 	});
 	

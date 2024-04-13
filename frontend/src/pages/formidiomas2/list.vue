@@ -82,6 +82,12 @@
                                         <q-td  key="gestioncurso" :props="props">
                                             {{ props.row.gestioncurso }}
                                         </q-td>
+                                        <q-td  key="otroidioma" :props="props">
+                                            {{ props.row.otroidioma }}
+                                        </q-td>
+                                        <q-td  key="institucionidioma" :props="props">
+                                            {{ props.row.institucionidioma }}
+                                        </q-td>
                                         <q-td key="btnactions" :props="props" auto-width>
                                             <div class="row q-col-gutter-xs justify-end">
                                                 <q-btn icon="menu" padding="xs" round flat color="grey">

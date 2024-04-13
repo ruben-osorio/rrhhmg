@@ -106,6 +106,30 @@
                                                 </div>
                                             </div>
                                         </div>
+                                        <div class="col-12">
+                                            <div class="row">
+                                                <div class="col-sm-3 col-12">
+                                                    Otroidioma 
+                                                </div>
+                                                <div class="col-sm-9 col-12">
+                                                    <q-input   ref="ctrlotroidioma" v-model.trim="formData.otroidioma"  label="Otroidioma" type="text" placeholder="Escribir Otroidioma"      
+                                                    class="" :error="isFieldValid('otroidioma')" :error-message="getFieldError('otroidioma')">
+                                                    </q-input>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="row">
+                                                <div class="col-sm-3 col-12">
+                                                    Institucionidioma 
+                                                </div>
+                                                <div class="col-sm-9 col-12">
+                                                    <q-input   ref="ctrlinstitucionidioma" v-model.trim="formData.institucionidioma"  label="Institucionidioma" type="text" placeholder="Escribir Institucionidioma"      
+                                                    class="" :error="isFieldValid('institucionidioma')" :error-message="getFieldError('institucionidioma')">
+                                                    </q-input>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                     <!--[form-content-end]-->
                                     <div v-if="showSubmitButton" class="text-center q-my-md">
@@ -210,6 +234,8 @@
 		certificadoidioma: "", 
 		nombreidioma: "", 
 		codusuario: "", 
+		otroidioma: "", 
+		institucionidioma: "", 
 	}, props.pageData);
 	
 	const formData = reactive({ ...formDefaultValues });

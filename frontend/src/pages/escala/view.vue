@@ -195,7 +195,7 @@
                                         <q-card  class="q-pa-md nice-shadow-16">
                                             <div class="row q-col-gutter-x-md items-center">
                                                 <div class="col">
-                                                    <div class="text-grey text-weight-medium mb-1">Denom Total</div>
+                                                    <div class="text-grey text-weight-medium mb-1">Denominación Total</div>
                                                     <div class="text-bold">{{ item.denom_total }}</div>
                                                 </div>
                                             </div>

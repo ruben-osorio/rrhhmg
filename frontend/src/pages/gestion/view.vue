@@ -81,7 +81,7 @@
                                                 <q-card  class="q-pa-md nice-shadow-16">
                                                     <div class="row q-col-gutter-x-md items-center">
                                                         <div class="col">
-                                                            <div class="text-grey text-weight-medium mb-1">Detalle</div>
+                                                            <div class="text-grey text-weight-medium mb-1">Detalle Periodo</div>
                                                             <div class="text-bold">{{$utils.upper( item.detalle )}}</div>
                                                         </div>
                                                     </div>
@@ -91,7 +91,7 @@
                                                 <q-card  class="q-pa-md nice-shadow-16">
                                                     <div class="row q-col-gutter-x-md items-center">
                                                         <div class="col">
-                                                            <div class="text-grey text-weight-medium mb-1">Idgestion</div>
+                                                            <div class="text-grey text-weight-medium mb-1">Código Gestión</div>
                                                             <div class="text-bold">{{ item.idgestion }}</div>
                                                         </div>
                                                     </div>

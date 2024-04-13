@@ -115,6 +115,26 @@
                                                     </div>
                                                 </q-card>
                                             </div>
+                                            <div class="col-12 col-md-4">
+                                                <q-card  class="q-pa-md nice-shadow-16">
+                                                    <div class="row q-col-gutter-x-md items-center">
+                                                        <div class="col">
+                                                            <div class="text-grey text-weight-medium mb-1">Cv Checkb1</div>
+                                                            <div class="text-bold">{{ item.cv_checkb1 }}</div>
+                                                        </div>
+                                                    </div>
+                                                </q-card>
+                                            </div>
+                                            <div class="col-12 col-md-4">
+                                                <q-card  class="q-pa-md nice-shadow-16">
+                                                    <div class="row q-col-gutter-x-md items-center">
+                                                        <div class="col">
+                                                            <div class="text-grey text-weight-medium mb-1">Estado</div>
+                                                            <div class="text-bold">{{ item.estado }}</div>
+                                                        </div>
+                                                    </div>
+                                                </q-card>
+                                            </div>
                                         </div>
                                     </div>
                                     <!-- Detal Page Column -->

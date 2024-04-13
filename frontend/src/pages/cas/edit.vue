@@ -45,10 +45,10 @@
                                         <div class="col-12">
                                             <div class="row">
                                                 <div class="col-sm-3 col-12">
-                                                    Fecha de Recepcion 
+                                                    Fecha de Recepción 
                                                 </div>
                                                 <div class="col-sm-9 col-12">
-                                                    <q-input  ref="ctrlfecha_recepcion" v-model="formData.fecha_recepcion" label="Fecha de Recepcion"    :error="isFieldValid('fecha_recepcion')" :error-message="getFieldError('fecha_recepcion')">
+                                                    <q-input  ref="ctrlfecha_recepcion" v-model="formData.fecha_recepcion" label="Fecha de Recepción"    :error="isFieldValid('fecha_recepcion')" :error-message="getFieldError('fecha_recepcion')">
                                                     <template v-slot:append>
                                                         <q-icon name="date_range" class="cursor-pointer">
                                                         <q-popup-proxy ref="ctrlfecha_recepcion" transition-show="scale" transition-hide="scale">
@@ -110,10 +110,10 @@
                                         <div class="col-12">
                                             <div class="row">
                                                 <div class="col-sm-3 col-12">
-                                                    Monto Cas 
+                                                    Monto CAS 
                                                 </div>
                                                 <div class="col-sm-9 col-12">
-                                                    <q-input   ref="ctrlmonto_cas" v-model.trim="formData.monto_cas"  label="Monto Cas" type="number" placeholder="Escribir Monto Cas"   step="0.1"  readonly  
+                                                    <q-input   ref="ctrlmonto_cas" v-model.trim="formData.monto_cas"  label="Monto CAS" type="number" placeholder="Escribir Monto CAS"   step="0.1"  readonly  
                                                     class="" :error="isFieldValid('monto_cas')" :error-message="getFieldError('monto_cas')">
                                                     </q-input>
                                                 </div>

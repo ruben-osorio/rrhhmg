@@ -150,18 +150,6 @@
                                         <div class="col-12">
                                             <div class="row">
                                                 <div class="col-sm-3 col-12">
-                                                    Ci 
-                                                </div>
-                                                <div class="col-sm-9 col-12">
-                                                    <q-input   ref="ctrlci" v-model.trim="formData.ci"  label="Ci" type="number" placeholder="Escribir Ci"   step="any"    
-                                                    class="" :error="isFieldValid('ci')" :error-message="getFieldError('ci')">
-                                                    </q-input>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-12">
-                                            <div class="row">
-                                                <div class="col-sm-3 col-12">
                                                     Nombre1 
                                                 </div>
                                                 <div class="col-sm-9 col-12">
@@ -179,18 +167,6 @@
                                                 <div class="col-sm-9 col-12">
                                                     <q-input   ref="ctrlnombre2" v-model.trim="formData.nombre2"  label="Nombre2" type="text" placeholder="Escribir Nombre2"      
                                                     class="" :error="isFieldValid('nombre2')" :error-message="getFieldError('nombre2')">
-                                                    </q-input>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-12">
-                                            <div class="row">
-                                                <div class="col-sm-3 col-12">
-                                                    Ci Ext 
-                                                </div>
-                                                <div class="col-sm-9 col-12">
-                                                    <q-input   ref="ctrlci_ext" v-model.trim="formData.ci_ext"  label="Ci Ext" type="text" placeholder="Escribir Ci Ext"      
-                                                    class="" :error="isFieldValid('ci_ext')" :error-message="getFieldError('ci_ext')">
                                                     </q-input>
                                                 </div>
                                             </div>
@@ -375,6 +351,30 @@
                                                 </div>
                                             </div>
                                         </div>
+                                        <div class="col-12">
+                                            <div class="row">
+                                                <div class="col-sm-3 col-12">
+                                                    Cv Checkb1 
+                                                </div>
+                                                <div class="col-sm-9 col-12">
+                                                    <q-input   ref="ctrlcv_checkb1" v-model.trim="formData.cv_checkb1"  label="Cv Checkb1" type="text" placeholder="Escribir Cv Checkb1"      
+                                                    class="" :error="isFieldValid('cv_checkb1')" :error-message="getFieldError('cv_checkb1')">
+                                                    </q-input>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="row">
+                                                <div class="col-sm-3 col-12">
+                                                    Estado 
+                                                </div>
+                                                <div class="col-sm-9 col-12">
+                                                    <q-input   ref="ctrlestado" v-model.trim="formData.estado"  label="Estado" type="text" placeholder="Escribir Estado"      
+                                                    class="" :error="isFieldValid('estado')" :error-message="getFieldError('estado')">
+                                                    </q-input>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                     <div v-if="showSubmitButton" class="text-center q-my-md">
                                         <q-btn type="submit"    :rounded="false"  color="primary"  no-caps  unelevated    icon-right="send" :loading="saving">
@@ -473,10 +473,8 @@
 		telefono: "", 
 		libreta_militar_gestion: "", 
 		fecha_nacimiento: new Date(), 
-		ci: "", 
 		nombre1: "", 
 		nombre2: "", 
-		ci_ext: "", 
 		ci_alf: "", 
 		genero: "", 
 		afp: "", 
@@ -492,6 +490,8 @@
 		detalle_referencia: "", 
 		codgestion: "", 
 		account_status: "", 
+		cv_checkb1: "", 
+		estado: "", 
 	};
 	
 	const formData = reactive({ ...formDefaultValues });
@@ -504,8 +504,7 @@
 		password: { required },
 		confirm_password: {required, sameAs: sameAs(formData.password, 'Password') },
 		email: { required, email },
-		libreta_militar_gestion: { numeric },
-		ci: { numeric }
+		libreta_militar_gestion: { numeric }
 		}
 	});
 	

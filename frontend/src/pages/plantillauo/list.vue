@@ -6,7 +6,7 @@
                     <div class="row justify-between items-center q-col-gutter-md">
                         <div  class="col col-md-auto " >
                             <div class=" text-h6 text-primary" >
-                                Plantillauo
+                                Plantilla Unidad Organizacional
                             </div>
                         </div>
                         <div  class="col-md-auto col-12 " >

@@ -70,9 +70,10 @@
                                                     Titbachiller 
                                                 </div>
                                                 <div class="col-sm-9 col-12">
-                                                    <q-input   ref="ctrltitbachiller" v-model.trim="formData.titbachiller"  label="Titbachiller" type="text" placeholder="Escribir Titbachiller"      
-                                                    class="" :error="isFieldValid('titbachiller')" :error-message="getFieldError('titbachiller')">
-                                                    </q-input>
+                                                    <api-data-source @loaded="response => mapOptionField(response, 'titbachiller')"  api-path="components_data/titbachiller_option_list"  v-slot="req">
+                                                        <q-select    :loading="req.loading"   ref="ctrltitbachiller" emit-value map-options  v-model="formData.titbachiller" :options="req.response" label="Titbachiller"  :error="isFieldValid('titbachiller')" :error-message="getFieldError('titbachiller')">
+                                                        </q-select> 
+                                                    </api-data-source>
                                                 </div>
                                             </div>
                                         </div>
@@ -284,7 +285,7 @@
 	
 	const {  currentRecord: editRecord } = toRefs(store.state);
 	
-	const { load, submitForm, isFieldValid, getFieldError,  } = page.methods;
+	const { load, submitForm, isFieldValid, getFieldError, mapOptionField, } = page.methods;
 	
 	useMeta(() => {
 		return {

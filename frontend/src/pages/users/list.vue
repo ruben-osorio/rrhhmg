@@ -121,17 +121,11 @@
                                                 <q-td  key="fecha_nacimiento" :props="props">
                                                     {{ props.row.fecha_nacimiento }}
                                                 </q-td>
-                                                <q-td  key="ci" :props="props">
-                                                    {{ props.row.ci }}
-                                                </q-td>
                                                 <q-td  key="nombre1" :props="props">
                                                     {{ props.row.nombre1 }}
                                                 </q-td>
                                                 <q-td  key="nombre2" :props="props">
                                                     {{ props.row.nombre2 }}
-                                                </q-td>
-                                                <q-td  key="ci_ext" :props="props">
-                                                    {{ props.row.ci_ext }}
                                                 </q-td>
                                                 <q-td  key="ci_alf" :props="props">
                                                     {{ props.row.ci_alf }}
@@ -177,6 +171,12 @@
                                                 </q-td>
                                                 <q-td  key="account_status" :props="props">
                                                     {{ props.row.account_status }}
+                                                </q-td>
+                                                <q-td  key="cv_checkb1" :props="props">
+                                                    {{ props.row.cv_checkb1 }}
+                                                </q-td>
+                                                <q-td  key="estado" :props="props">
+                                                    {{ props.row.estado }}
                                                 </q-td>
                                                 <q-td key="btnactions" :props="props" auto-width>
                                                     <div class="row q-col-gutter-xs justify-end">

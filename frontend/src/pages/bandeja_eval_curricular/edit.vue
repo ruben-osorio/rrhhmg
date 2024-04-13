@@ -46,9 +46,9 @@
                                                     Seleccion 
                                                 </div>
                                                 <div class="col-sm-9 col-12">
-                                                    <q-input   ref="ctrlseleccion" v-model.trim="formData.seleccion"  label="Seleccion" type="text" placeholder="Escribir Seleccion"      
-                                                    class="" :error="isFieldValid('seleccion')" :error-message="getFieldError('seleccion')">
-                                                    </q-input>
+                                                    <q-field  borderless   :error="isFieldValid('seleccion')" :error-message="getFieldError('seleccion')">
+                                                    <q-option-group  ref="ctrlseleccion" v-model="formData.seleccion" type="checkbox" :options="[]"  size="md" ></q-option-group>
+                                                    </q-field>
                                                 </div>
                                             </div>
                                         </div>
@@ -211,7 +211,7 @@
 	
 	const formDefaultValues = Object.assign({
 		id: "", 
-		seleccion: "", 
+		seleccion: [], 
 		nro_item: "", 
 		cv_aprovado: "", 
 		item: "", 

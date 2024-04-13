@@ -41,6 +41,16 @@
                                                 <q-card  class="q-pa-md nice-shadow-16">
                                                     <div class="row q-col-gutter-x-md items-center">
                                                         <div class="col">
+                                                            <div class="text-grey text-weight-medium mb-1">Id</div>
+                                                            <div class="text-bold">{{ item.id }}</div>
+                                                        </div>
+                                                    </div>
+                                                </q-card>
+                                            </div>
+                                            <div class="col-12 col-md-4">
+                                                <q-card  class="q-pa-md nice-shadow-16">
+                                                    <div class="row q-col-gutter-x-md items-center">
+                                                        <div class="col">
                                                             <div class="text-grey text-weight-medium mb-1">Apmaterno</div>
                                                             <div class="text-bold">{{ item.apmaterno }}</div>
                                                         </div>
@@ -131,16 +141,6 @@
                                                 <q-card  class="q-pa-md nice-shadow-16">
                                                     <div class="row q-col-gutter-x-md items-center">
                                                         <div class="col">
-                                                            <div class="text-grey text-weight-medium mb-1">Ci</div>
-                                                            <div class="text-bold">{{ item.ci }}</div>
-                                                        </div>
-                                                    </div>
-                                                </q-card>
-                                            </div>
-                                            <div class="col-12 col-md-4">
-                                                <q-card  class="q-pa-md nice-shadow-16">
-                                                    <div class="row q-col-gutter-x-md items-center">
-                                                        <div class="col">
                                                             <div class="text-grey text-weight-medium mb-1">Nombre1</div>
                                                             <div class="text-bold">{{ item.nombre1 }}</div>
                                                         </div>
@@ -153,16 +153,6 @@
                                                         <div class="col">
                                                             <div class="text-grey text-weight-medium mb-1">Nombre2</div>
                                                             <div class="text-bold">{{ item.nombre2 }}</div>
-                                                        </div>
-                                                    </div>
-                                                </q-card>
-                                            </div>
-                                            <div class="col-12 col-md-4">
-                                                <q-card  class="q-pa-md nice-shadow-16">
-                                                    <div class="row q-col-gutter-x-md items-center">
-                                                        <div class="col">
-                                                            <div class="text-grey text-weight-medium mb-1">Ci Ext</div>
-                                                            <div class="text-bold">{{ item.ci_ext }}</div>
                                                         </div>
                                                     </div>
                                                 </q-card>
@@ -303,6 +293,26 @@
                                                         <div class="col">
                                                             <div class="text-grey text-weight-medium mb-1">Account Status</div>
                                                             <div class="text-bold">{{ item.account_status }}</div>
+                                                        </div>
+                                                    </div>
+                                                </q-card>
+                                            </div>
+                                            <div class="col-12 col-md-4">
+                                                <q-card  class="q-pa-md nice-shadow-16">
+                                                    <div class="row q-col-gutter-x-md items-center">
+                                                        <div class="col">
+                                                            <div class="text-grey text-weight-medium mb-1">Cv Checkb1</div>
+                                                            <div class="text-bold">{{ item.cv_checkb1 }}</div>
+                                                        </div>
+                                                    </div>
+                                                </q-card>
+                                            </div>
+                                            <div class="col-12 col-md-4">
+                                                <q-card  class="q-pa-md nice-shadow-16">
+                                                    <div class="row q-col-gutter-x-md items-center">
+                                                        <div class="col">
+                                                            <div class="text-grey text-weight-medium mb-1">Estado</div>
+                                                            <div class="text-bold">{{ item.estado }}</div>
                                                         </div>
                                                     </div>
                                                 </q-card>

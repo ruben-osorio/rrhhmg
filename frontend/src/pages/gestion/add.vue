@@ -42,10 +42,10 @@
                                         <div class="col-12">
                                             <div class="row">
                                                 <div class="col-sm-3 col-12">
-                                                    Detalle 
+                                                    Detalle Periodo 
                                                 </div>
                                                 <div class="col-sm-9 col-12">
-                                                    <q-input   ref="ctrldetalle" v-model.trim="formData.detalle"  label="Detalle" type="text" placeholder="Escribir Detalle" hint="Especificar el periodo"     
+                                                    <q-input   ref="ctrldetalle" v-model.trim="formData.detalle"  label="Detalle Periodo" type="text" placeholder="Escribir Detalle Periodo" hint="Especificar el periodo"     
                                                     class="" :error="isFieldValid('detalle')" :error-message="getFieldError('detalle')">
                                                     </q-input>
                                                 </div>

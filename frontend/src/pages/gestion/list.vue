@@ -6,7 +6,7 @@
                     <div class="row justify-between items-center q-col-gutter-md">
                         <div  class="col col-md-auto " >
                             <div class=" text-h6 text-primary" >
-                                Gestion
+                                Gestión
                             </div>
                         </div>
                         <div  class="col-md-auto col-12 " >
@@ -110,7 +110,7 @@
                                                 </q-td>
                                                 <q-td  key="detalle" :props="props">
                                                     <span class="table-inlined-edit">{{$utils.upper( props.row.detalle )}}</span>
-                                                    <inline-edit v-model="props.row.detalle" save-icon="check_circle" cancel-icon="close" :url="`gestion/edit/${ props.row.idgestion }`" field-name="detalle" field-label="Detalle" title="Escribir Detalle">
+                                                    <inline-edit v-model="props.row.detalle" save-icon="check_circle" cancel-icon="close" :url="`gestion/edit/${ props.row.idgestion }`" field-name="detalle" field-label="Detalle Periodo" title="Escribir Detalle Periodo">
                                                     <q-input   ref="listctrldetalle" v-model.trim="props.row.detalle"  label=""  placeholder=""      
                                                     class="" >
                                                     </q-input>

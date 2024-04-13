@@ -41,7 +41,7 @@
                                                 <q-card  class="q-pa-md nice-shadow-16">
                                                     <div class="row q-col-gutter-x-md items-center">
                                                         <div class="col">
-                                                            <div class="text-grey text-weight-medium mb-1">Fecha Recepcion</div>
+                                                            <div class="text-grey text-weight-medium mb-1">Fecha Recepción</div>
                                                             <div class="text-bold">{{$utils.humanDate( item.fecha_recepcion )}}</div>
                                                         </div>
                                                     </div>
@@ -121,7 +121,7 @@
                                                 <q-card  class="q-pa-md nice-shadow-16">
                                                     <div class="row q-col-gutter-x-md items-center">
                                                         <div class="col">
-                                                            <div class="text-grey text-weight-medium mb-1">Dato Cas</div>
+                                                            <div class="text-grey text-weight-medium mb-1">Código Cas</div>
                                                             <div class="text-bold">{{ item.dato_cas }}</div>
                                                         </div>
                                                     </div>
@@ -161,7 +161,7 @@
                                                 <q-card  class="q-pa-md nice-shadow-16">
                                                     <div class="row q-col-gutter-x-md items-center">
                                                         <div class="col">
-                                                            <div class="text-grey text-weight-medium mb-1">Monto Cas</div>
+                                                            <div class="text-grey text-weight-medium mb-1">Monto CAS</div>
                                                             <div class="text-bold">{{ item.monto_cas }}</div>
                                                         </div>
                                                     </div>

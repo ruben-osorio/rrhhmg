@@ -6,7 +6,7 @@
                     <div class="row justify-between items-center q-col-gutter-md">
                         <div  class="col col-md-auto " >
                             <div class=" text-h6 text-primary" >
-                                Cas
+                                C.A.S. ( Calificación Años de Servicio  )
                             </div>
                         </div>
                         <div  class="col-md-auto col-12 " >
@@ -109,14 +109,6 @@
                                                 <q-td auto-width key="masterdetailbtn" :props="props">
                                                     <q-btn @click="setCurrentRecord(props.row)" flat padding="xs" color="primary" no-caps  icon="more_vert">
                                                     </q-btn>
-                                                </q-td>
-                                                <q-td  key="id_cas" :props="props">
-                                                    <q-btn v-if="props.row.id_cas" :to="`/permanente/index/permanente.idpermanente/${props.row.id_cas}`" padding="xs" flat color="primary" no-caps >
-                                                        <q-icon name="visibility" size="xs"  class="q-mr-xs"></q-icon>  Permanente
-                                                    </q-btn>
-                                                </q-td>
-                                                <q-td  key="idpermanente" :props="props">
-                                                    {{ props.row.idpermanente }}
                                                 </q-td>
                                                 <q-td  key="dato_cas" :props="props">
                                                     {{ props.row.dato_cas }}

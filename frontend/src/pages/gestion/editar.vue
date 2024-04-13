@@ -31,10 +31,10 @@
                                         <div class="col-12">
                                             <div class="row">
                                                 <div class="col-sm-3 col-12">
-                                                    ID Gestión *
+                                                    Código Gestión *
                                                 </div>
                                                 <div class="col-sm-9 col-12">
-                                                    <q-input   ref="ctrlidgestion" v-model.trim="formData.idgestion"  label="ID Gestión" type="text" placeholder="Escribir ID Gestión"      
+                                                    <q-input   ref="ctrlidgestion" v-model.trim="formData.idgestion"  label="Código Gestión" type="text" placeholder="Escribir Código Gestión"      
                                                     class="" :error="isFieldValid('idgestion')" :error-message="getFieldError('idgestion')">
                                                     </q-input>
                                                 </div>
@@ -55,10 +55,10 @@
                                         <div class="col-12">
                                             <div class="row">
                                                 <div class="col-sm-3 col-12">
-                                                    Detalle 
+                                                    Detalle Periodo 
                                                 </div>
                                                 <div class="col-sm-9 col-12">
-                                                    <q-input   ref="ctrldetalle" v-model.trim="formData.detalle"  label="Detalle" type="text" placeholder="Escribir Detalle"      
+                                                    <q-input   ref="ctrldetalle" v-model.trim="formData.detalle"  label="Detalle Periodo" type="text" placeholder="Escribir Detalle Periodo"      
                                                     class="" :error="isFieldValid('detalle')" :error-message="getFieldError('detalle')">
                                                     </q-input>
                                                 </div>

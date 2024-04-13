@@ -6,16 +6,10 @@
                     <div class="row justify-between items-center q-col-gutter-md">
                         <div  class="col col-md-auto " >
                             <div class=" text-h6 text-primary" >
-                                Usuarios
+                                Postulante
                             </div>
                         </div>
                         <div  class="col-md-auto col-12 " >
-                            <template v-if="auth.canView('/usuarios/add')">
-                                <q-btn       :rounded="false"  size=""  color="primary" no-caps  unelevated   :to="`/usuarios/add`" class="" >
-                                    <q-icon name="add"></q-icon>                                
-                                    Agregar nuevo 
-                                </q-btn>
-                            </template>
                         </div>
                         <div  class="col-md-auto col-12 " >
                             <q-input debounce="1000"  placeholder="Buscar" v-model="searchText" >

@@ -12,8 +12,8 @@
                         <div  class="col-md-auto col-12 " >
                             <template v-if="auth.canView('/users/add')">
                                 <q-btn       :rounded="false"  size=""  color="primary" no-caps  unelevated   :to="`/users/add`" class="" >
-                                    <q-icon name="add"></q-icon>
-                                    Agregar nuevo
+                                    <q-icon name="add"></q-icon>                                
+                                    Agregar nuevo 
                                 </q-btn>
                             </template>
                         </div>
@@ -34,7 +34,7 @@
                     <div  class="col-auto comp-grid" >
                         <div class="row q-mb-md q-gutter-sm">
                             <div class="q-px-sm nice-shadow-16" v-if="searchText">
-                                Buscar:
+                                Buscar: 
                                 <q-chip icon="search" removable @remove="clearSearch()" :label="searchText">
                                 </q-chip>
                             </div>
@@ -50,18 +50,18 @@
                                 <div class="col">
                                     <!-- page records template -->
                                     <div >
-                                        <q-table
+                                        <q-table 
                                         :flat="true"
                                         table-header-class="text-h4 bg-grey-2"
                                         :bordered="false"
-                                        :columns="app.menus.UsersLhojavidaHeaderItems"
+                                        :columns="app.menus.UsersLhojavidaHeaderItems" 
                                         :rows="records"
                                         :binary-state-sort="true"
                                         separator="horizontal"
                                         :dense="true"
                                         v-model:selected="selectedItems"
                                         selection="multiple"
-                                        row-key="id"
+                                        row-key="id" 
                                         v-model:pagination="pagination"
                                         hide-bottom
                                         @request="setPagination"
@@ -85,14 +85,6 @@
                                                                             <q-item-section>View</q-item-section>
                                                                         </q-item>
                                                                     </template>
-                                                                    <template v-if="auth.canManage('users/edit', props.row.id)">
-                                                                        <q-item link clickable v-ripple :to="`/users/edit/${props.row.id}`">
-                                                                            <q-item-section>
-                                                                                <q-icon color="positive" size="sm" name="edit"></q-icon>
-                                                                            </q-item-section>
-                                                                            <q-item-section>Edit</q-item-section>
-                                                                        </q-item>
-                                                                    </template>
                                                                     <template v-if="auth.canManage('users/delete', props.row.id)">
                                                                         <q-item link clickable v-ripple @click="deleteItem(props.row.id)">
                                                                             <q-item-section>
@@ -110,11 +102,10 @@
                                                     <q-btn @click="setCurrentRecord(props.row)" flat padding="xs" color="primary" no-caps  icon="more_vert">
                                                     </q-btn>
                                                 </q-td>
-
-                                                <q-td auto-width key="accion" :props="props">
-                                                <q-btn flat padding="xs" color="primary" no-caps @click="performAction(props.row)">
-                                                    CVC
-                                                </q-btn>
+                                                <q-td  key="id" :props="props">
+                                                    <q-btn v-if="props.row.id" @click="app.openPageDialog({ page: 'evaluacion_perfil/edit', url: `/evaluacion_perfil/edit/${props.row.id}` , closeBtn: true })" padding="xs" flat color="primary" no-caps >
+                                                        <q-icon name="visibility" size="xs"  class="q-mr-xs"></q-icon>  EVC
+                                                    </q-btn>
                                                 </q-td>
                                                 <q-td  key="nombre1" :props="props">
                                                     {{ props.row.nombre1 }}
@@ -137,8 +128,8 @@
                                                 <q-td  key="telefono" :props="props">
                                                     {{ props.row.telefono }}
                                                 </q-td>
-                                                <q-td  key="fecha_nacimiento" :props="props">
-                                                    {{ props.row.fecha_nacimiento }}
+                                                <q-td  key="estado" :props="props">
+                                                    {{ props.row.estado }}
                                                 </q-td>
                                             </q-tr>
                                         </template>
@@ -151,7 +142,7 @@
                                     <!-- page loading indicator template -->
                                     <template v-if="loading">
                                         <q-inner-loading :showing="loading">
-                                            <q-spinner color="primary" size="30px">
+                                            <q-spinner color="primary" size="30px"> 
                                             </q-spinner>
                                         </q-inner-loading>
                                     </template>
@@ -188,7 +179,7 @@
                                                             <q-pagination  color="primary"  v-model="pagination.page" :direction-links="true" :boundary-links="true" :max-pages="5" :boundary-numbers="true" :max="totalPages"></q-pagination>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </div>  
                                             </div>
                                         </div>
                                     </template>
@@ -208,18 +199,13 @@
     </main>
 </template>
 <script setup>
-
-    import { StorageService } from 'src/services/storage';
-    import { ApiService } from 'src/services/api';
-	import { defineAsyncComponent, computed, ref, toRefs, onMounted, reactive } from 'vue';
+	import { defineAsyncComponent, computed, ref, toRefs, onMounted } from 'vue';
 	import { useMeta } from 'quasar';
 	import { useApp } from 'src/composables/app';
 	import { useAuth } from 'src/composables/auth';
 	import { useListPage } from 'src/composables/listpage';
 	import { usePageStore } from 'src/stores/page';
-    import { useAddPage } from 'src/composables/addpage';
-
-
+	
 	const props = defineProps({
 		primaryKey : {
 			type : String,
@@ -316,10 +302,10 @@
 			default: 'desc', //desc or asc
 		},
 	});
-
+	
 	const app = useApp();
 	const auth = useAuth();
-
+	
 	const defaultStoreState = {
 		filters: {
 		},
@@ -334,147 +320,34 @@
 		primaryKey: props.primaryKey
 	}
 	const store = usePageStore(props.pageName,  defaultStoreState);
-
+	
 	// page hooks where logics resides
 	const page = useListPage({ store, props });
-
+	
 	const {records, filters, currentRecord, totalRecords,  selectedItems, expandedRows, pagination,} = toRefs(store.state);
 	const { pageReady, loading, searchText, } = toRefs(page.state);
-
+	
 	const {     totalPages, recordsPosition, } = page.computedProps;
-
+	
 	//page methods
 	const { load,     clearSearch,  setPagination, deleteItem, setCurrentRecord, isCurrentRecord,        } = page.methods;
-
+	
 	const pageTitle = computed({
 		get: function () {
 			return "Evaluación Curricular"
 		}
 	});
 	const masterDetailPage = computed(() => defineAsyncComponent(() => import("./detail-pages.vue")));
-
+	
 	useMeta(() => {
 		return {
 			title: pageTitle.value //set browser title
 		}
 	});
-
-
-    //Inicio Cambio ADD
-
-    //Fin Cambio ADD
-/*
-    const getToken2 = async () => {
-    try {
-
-        const response = await axios.post('http://localhost:8063/api/auth/login', {
-            username: "made",
-            password: "Roacorp48"
-        });
-
-        if (response.data.token) {
-            console.log('Devolviendo token:' + response.data.token );
-            return response.data.token;
-        } else {
-            throw new Error('No se recibió un token de autenticación.');
-        }
-    } catch (error) {
-        throw new Error('Error al obtener el token: ' + error.message);
-    }
-    };
-
-
-*/
-
-
-
-
-    const performAction = async (row) => {
-
-        try {
-
-            const confirmed = window.confirm('¿Estás seguro de seleccionar el CV?');
-
-            if (!confirmed) {
-                // El usuario canceló la acción
-                return;
-            }
-
-			const response = await ApiService.post('/users/add_bandeja1', {
-            valor1: row.valor1,
-            valor2: row.valor2,
-            valor3: row.valor3,
-            });
-			const record = response.data;
-		//	return record;
-
-            if (response.data.success) {
-            console.log('Datos agregados correctamente');
-            // Puedes realizar acciones adicionales después de una operación exitosa
-        } else {
-            console.error('Error al agregar datos:', response.data.message);
-        }
-
-		}
-		catch (err) {
-			throw err;
-		}
-    };
-
-        //try {
-
-        /*
-        const authToken = await getToken();
-
-
-
-        // Configurar los encabezados de la solicitud con el token
-        const headers = {
-            'Authorization': `Bearer ${authToken}`,
-            'Content-Type': 'application/json',
-            'X-CSRF-Token': await getCSRFToken()
-        };
-        */
-
-        /*
-        axios.defaults.baseURL = 'http://localhost:8063/api';
-        axios.defaults.headers.post['Content-Type']  = 'application/json';
-        let token = StorageService.getToken();
-        if (token) {
-            console.log('Devolviendo token:' + token );
-            axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
-
-        }
-
-
-
-        // Realizar la solicitud HTTP al endpoint '/add_bandeja1'
-        const response = await axios.post('/add_bandeja1', {
-            valor1: row.valor1,
-            valor2: row.valor2,
-            valor3: row.valor3,
-        });
-
-
-
-        // Verificar la respuesta del servidor
-        if (response.data.success) {
-            console.log('Datos agregados correctamente');
-            // Puedes realizar acciones adicionales después de una operación exitosa
-        } else {
-            console.error('Error al agregar datos:', response.data.message);
-        }
-    } catch (error) {
-        console.error('Error en la solicitud HTTP:', error);
-    }
-
-};
-*/
-
-onMounted(()=>{
+	
+	onMounted(()=>{ 
 		load();
 	});
-
 </script>
 <style scoped>
 </style>

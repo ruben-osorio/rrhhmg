@@ -24,87 +24,77 @@
                     <div class="row q-col-gutter-x-md">
                         <div  class="col comp-grid" >
                             <div >
-                                <div class="q-mb-3 row q-col-gutter-md justify-start">
-                                    <div class="col-12 col-md-4">
-                                        <q-card  class="q-pa-md nice-shadow-16">
-                                            <div class="row q-col-gutter-x-md items-center">
-                                                <div class="col">
-                                                    <div class="text-grey text-weight-medium mb-1">Id</div>
-                                                    <div class="text-bold">{{ item.id }}</div>
-                                                </div>
+                                <div class="row q-col-gutter-x-md ">
+                                    <div class="col">
+                                        <div class="q-mb-3 row q-col-gutter-md justify-start">
+                                            <div class="col-12 col-md-4">
+                                                <q-card  class="q-pa-md nice-shadow-16">
+                                                    <div class="row q-col-gutter-x-md items-center">
+                                                        <div class="col">
+                                                            <div class="text-grey text-weight-medium mb-1">Id</div>
+                                                            <div class="text-bold">{{ item.id }}</div>
+                                                        </div>
+                                                    </div>
+                                                </q-card>
                                             </div>
+                                            <div class="col-12 col-md-4">
+                                                <q-card  class="q-pa-md nice-shadow-16">
+                                                    <div class="row q-col-gutter-x-md items-center">
+                                                        <div class="col">
+                                                            <div class="text-grey text-weight-medium mb-1">Seleccion</div>
+                                                            <div class="text-bold">{{ item.seleccion }}</div>
+                                                        </div>
+                                                    </div>
+                                                </q-card>
+                                            </div>
+                                            <div class="col-12 col-md-4">
+                                                <q-card  class="q-pa-md nice-shadow-16">
+                                                    <div class="row q-col-gutter-x-md items-center">
+                                                        <div class="col">
+                                                            <div class="text-grey text-weight-medium mb-1">Nro Item</div>
+                                                            <div class="text-bold">{{ item.nro_item }}</div>
+                                                        </div>
+                                                    </div>
+                                                </q-card>
+                                            </div>
+                                            <div class="col-12 col-md-4">
+                                                <q-card  class="q-pa-md nice-shadow-16">
+                                                    <div class="row q-col-gutter-x-md items-center">
+                                                        <div class="col">
+                                                            <div class="text-grey text-weight-medium mb-1">Cv Aprovado</div>
+                                                            <div class="text-bold">{{ item.cv_aprovado }}</div>
+                                                        </div>
+                                                    </div>
+                                                </q-card>
+                                            </div>
+                                            <div class="col-12 col-md-4">
+                                                <q-card  class="q-pa-md nice-shadow-16">
+                                                    <div class="row q-col-gutter-x-md items-center">
+                                                        <div class="col">
+                                                            <div class="text-grey text-weight-medium mb-1">Item</div>
+                                                            <div class="text-bold">{{ item.item }}</div>
+                                                        </div>
+                                                    </div>
+                                                </q-card>
+                                            </div>
+                                        </div>
+                                        <div class="row q-col-gutter-xs justify-start q-ma-md">
+                                            <template v-if="auth.canView('bandeja_eval_curricular/edit')">
+                                                <div><q-btn icon="edit" label="Edit" glossy  flat :rounded="false"  no-caps  unelevated   padding="xs" color="positive" title="Editar"  @click="app.openPageDialog({ page:'bandeja_eval_curricular/edit', url: `/bandeja_eval_curricular/edit/${item.id}` , closeBtn: true })">
+                                                </q-btn></div>
+                                            </template>
+                                            <template v-if="auth.canView('bandeja_eval_curricular/delete')">
+                                                <div><q-btn icon="delete_sweep" label="Delete" glossy  flat :rounded="false"  no-caps  unelevated   padding="xs" color="negative" title="Borrar"  @click="deleteItem(item.id)">
+                                                </q-btn></div>
+                                            </template>
+                                        </div>
+                                    </div>
+                                    <!-- Detal Page Column -->
+                                    <div class="col-12" v-if="currentRecord && !isSubPage">
+                                        <q-card  :flat="isSubPage" class="q-my-md nice-shadow-16">
+                                            <component :is="masterDetailPage" :scroll-into-view="false"></component>
                                         </q-card>
                                     </div>
-                                    <div class="col-12 col-md-4">
-                                        <q-card  class="q-pa-md nice-shadow-16">
-                                            <div class="row q-col-gutter-x-md items-center">
-                                                <div class="col">
-                                                    <div class="text-grey text-weight-medium mb-1">Seleccion</div>
-                                                    <div class="text-bold">{{ item.seleccion }}</div>
-                                                </div>
-                                            </div>
-                                        </q-card>
-                                    </div>
-                                    <div class="col-12 col-md-4">
-                                        <q-card  class="q-pa-md nice-shadow-16">
-                                            <div class="row q-col-gutter-x-md items-center">
-                                                <div class="col">
-                                                    <div class="text-grey text-weight-medium mb-1">Nro Item</div>
-                                                    <div class="text-bold">{{ item.nro_item }}</div>
-                                                </div>
-                                            </div>
-                                        </q-card>
-                                    </div>
-                                    <div class="col-12 col-md-4">
-                                        <q-card  class="q-pa-md nice-shadow-16">
-                                            <div class="row q-col-gutter-x-md items-center">
-                                                <div class="col">
-                                                    <div class="text-grey text-weight-medium mb-1">Cv Aprovado</div>
-                                                    <div class="text-bold">{{ item.cv_aprovado }}</div>
-                                                </div>
-                                            </div>
-                                        </q-card>
-                                    </div>
-                                    <div class="col-12 col-md-4">
-                                        <q-card  class="q-pa-md nice-shadow-16">
-                                            <div class="row q-col-gutter-x-md items-center">
-                                                <div class="col">
-                                                    <div class="text-grey text-weight-medium mb-1">Item</div>
-                                                    <div class="text-bold">{{ item.item }}</div>
-                                                </div>
-                                            </div>
-                                        </q-card>
-                                    </div>
-                                    <div class="col-12 col-md-4">
-                                        <q-card  class="q-pa-md nice-shadow-16">
-                                            <div class="row q-col-gutter-x-md items-center">
-                                                <div class="col">
-                                                    <div class="text-grey text-weight-medium mb-1">Coduser</div>
-                                                    <div class="text-bold">{{ item.coduser }}</div>
-                                                </div>
-                                            </div>
-                                        </q-card>
-                                    </div>
-                                    <div class="col-12 col-md-4">
-                                        <q-card  class="q-pa-md nice-shadow-16">
-                                            <div class="row q-col-gutter-x-md items-center">
-                                                <div class="col">
-                                                    <div class="text-grey text-weight-medium mb-1">Codgestion</div>
-                                                    <div class="text-bold">{{ item.codgestion }}</div>
-                                                </div>
-                                            </div>
-                                        </q-card>
-                                    </div>
-                                </div>
-                                <div class="row q-col-gutter-xs justify-start q-ma-md">
-                                    <template v-if="auth.canView('bandeja_eval_curricular/edit')">
-                                        <div><q-btn icon="edit" label="Edit" glossy  flat :rounded="false"  no-caps  unelevated   padding="xs" color="positive" title="Editar"  @click="app.openPageDialog({ page:'bandeja_eval_curricular/edit', url: `/bandeja_eval_curricular/edit/${item.id}` , closeBtn: true })">
-                                        </q-btn></div>
-                                    </template>
-                                    <template v-if="auth.canView('bandeja_eval_curricular/delete')">
-                                        <div><q-btn icon="delete_sweep" label="Delete" glossy  flat :rounded="false"  no-caps  unelevated   padding="xs" color="negative" title="Borrar"  @click="deleteItem(item.id)">
-                                        </q-btn></div>
-                                    </template>
                                 </div>
                             </div>
                         </div>
@@ -120,7 +110,7 @@
     </main>
 </template>
 <script setup>
-	import {  computed, ref, toRefs, onMounted } from 'vue';
+	import { defineAsyncComponent, computed, ref, toRefs, onMounted } from 'vue';
 	import { useMeta } from 'quasar';
 	import { useApp } from 'src/composables/app.js';
 	import { useAuth } from 'src/composables/auth';
@@ -199,6 +189,7 @@
 	
 	const  { load, deleteItem,    } = page.methods;
 	
+	const masterDetailPage = computed(() => defineAsyncComponent(() => import("./detail-pages.vue")));
 	
 	useMeta(() => {
 		return {

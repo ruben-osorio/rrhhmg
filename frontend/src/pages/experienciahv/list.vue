@@ -131,6 +131,18 @@
                                         <q-td  key="cargo_hv" :props="props">
                                             {{ props.row.cargo_hv }}
                                         </q-td>
+                                        <q-td  key="a" :props="props">
+                                            {{ props.row.a }}
+                                        </q-td>
+                                        <q-td  key="m" :props="props">
+                                            {{ props.row.m }}
+                                        </q-td>
+                                        <q-td  key="d" :props="props">
+                                            {{ props.row.d }}
+                                        </q-td>
+                                        <q-td  key="sumatoriatotal" :props="props">
+                                            {{ props.row.sumatoriatotal }}
+                                        </q-td>
                                     </q-tr>
                                 </template>
                                 <!-- End of Table Layout-->

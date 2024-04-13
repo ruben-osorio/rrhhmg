@@ -6,7 +6,7 @@
                     <div class="row justify-between items-center q-col-gutter-md">
                         <div  class="col col-md-auto " >
                             <div class=" text-h6 text-primary" >
-                                Perfilreferencial
+                                Perfil Referencial
                             </div>
                         </div>
                         <div  class="col-md-auto col-12 " >
@@ -99,18 +99,6 @@
                                         </q-td>
                                         <q-td  key="obsele" :props="props">
                                             {{ props.row.obsele }}
-                                        </q-td>
-                                        <q-td  key="codgestion" :props="props">
-                                            {{ props.row.codgestion }}
-                                        </q-td>
-                                        <q-td  key="idref" :props="props">
-                                            <q-btn padding="xs"   :rounded="false"  color="primary"  no-caps  unelevated   flat :to="`/perfilreferencial/view/${props.row.idref}`">{{ props.row.idref }}</q-btn>
-                                        </q-td>
-                                        <q-td  key="especifica" :props="props">
-                                            {{ props.row.especifica }}
-                                        </q-td>
-                                        <q-td  key="general" :props="props">
-                                            {{ props.row.general }}
                                         </q-td>
                                         <q-td key="btnactions" :props="props" auto-width>
                                             <div class="row q-col-gutter-xs justify-end">

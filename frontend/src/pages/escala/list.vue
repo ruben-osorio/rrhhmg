@@ -5,7 +5,7 @@
                 <div class="row justify-between q-col-gutter-md">
                     <div  class="col col-md-auto comp-grid" >
                         <div class=" text-h6 text-bold" >
-                            Escala
+                            Escala Salarial
                         </div>
                         <q-separator class="q-my-sm"></q-separator>
                     </div>

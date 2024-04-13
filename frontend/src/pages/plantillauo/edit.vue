@@ -31,10 +31,10 @@
                                         <div class="col-md-12 col-12">
                                             <div class="row">
                                                 <div class="col-sm-3 col-12">
-                                                    Nombre *
+                                                    Nombre Unidad Organizacional *
                                                 </div>
                                                 <div class="col-sm-9 col-12">
-                                                    <q-input   ref="ctrlnombreuo" v-model.trim="formData.nombreuo"  label="Nombre" type="text" placeholder="Escribir Nombre"      
+                                                    <q-input   ref="ctrlnombreuo" v-model.trim="formData.nombreuo"  label="Nombre Unidad Organizacional" type="text" placeholder="Escribir Nombre Unidad Organizacional"      
                                                     class="" :error="isFieldValid('nombreuo')" :error-message="getFieldError('nombreuo')">
                                                     </q-input>
                                                 </div>

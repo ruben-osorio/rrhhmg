@@ -99,7 +99,7 @@
                                         <q-card  class="q-pa-md nice-shadow-16">
                                             <div class="row q-col-gutter-x-md items-center">
                                                 <div class="col">
-                                                    <div class="text-grey text-weight-medium mb-1">Nombreuo</div>
+                                                    <div class="text-grey text-weight-medium mb-1">Nombre Unidad Organizacional</div>
                                                     <div class="text-bold">{{ item.nombreuo }}</div>
                                                 </div>
                                             </div>

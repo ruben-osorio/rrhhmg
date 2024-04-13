@@ -114,18 +114,6 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-12">
-                                            <div class="row">
-                                                <div class="col-sm-3 col-12">
-                                                    Especifica 
-                                                </div>
-                                                <div class="col-sm-9 col-12">
-                                                    <q-input   ref="ctrlespecifica" v-model.trim="formData.especifica"  label="Especifica" type="text" placeholder="Escribir Especifica"      
-                                                    class="" :error="isFieldValid('especifica')" :error-message="getFieldError('especifica')">
-                                                    </q-input>
-                                                </div>
-                                            </div>
-                                        </div>
                                         <div class="col-md-2 col-12">
                                             <div class="row">
                                                 <div class="col-sm-3 col-12">
@@ -269,7 +257,6 @@
 		anioelg: "", 
 		meselg: "", 
 		obselg: "", 
-		especifica: "", 
 		anioele: "", 
 		mesele: "", 
 		obsele: "", 
