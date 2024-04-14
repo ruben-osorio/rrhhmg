@@ -54,17 +54,11 @@ export default class Users extends BaseModel {
 	@Column({name: 'fecha_nacimiento' })
 	fecha_nacimiento: string
 	
-	@Column({name: 'ci' })
-	ci: number
-	
 	@Column({name: 'nombre1' })
 	nombre1: string
 	
 	@Column({name: 'nombre2' })
 	nombre2: string
-	
-	@Column({name: 'ci_ext' })
-	ci_ext: string
 	
 	@Column({name: 'ci_alf' })
 	ci_alf: string
@@ -111,6 +105,12 @@ export default class Users extends BaseModel {
 	@Column({name: 'account_status' })
 	account_status: string
 	
+	@Column({name: 'cv_checkb1' })
+	cv_checkb1: string
+	
+	@Column({name: 'estado' })
+	estado: string
+	
 	
 	
 	static listFields(): string[]{
@@ -129,10 +129,8 @@ export default class Users extends BaseModel {
 			"appaterno", 
 			"libreta_militar_gestion", 
 			"fecha_nacimiento", 
-			"ci", 
 			"nombre1", 
 			"nombre2", 
-			"ci_ext", 
 			"ci_alf", 
 			"genero", 
 			"afp", 
@@ -147,7 +145,9 @@ export default class Users extends BaseModel {
 			"numero_referencia", 
 			"detalle_referencia", 
 			"codgestion", 
-			"account_status"
+			"account_status", 
+			"cv_checkb1", 
+			"estado"
 		];
 	}
 
@@ -167,10 +167,8 @@ export default class Users extends BaseModel {
 			"appaterno", 
 			"libreta_militar_gestion", 
 			"fecha_nacimiento", 
-			"ci", 
 			"nombre1", 
 			"nombre2", 
-			"ci_ext", 
 			"ci_alf", 
 			"genero", 
 			"afp", 
@@ -185,7 +183,9 @@ export default class Users extends BaseModel {
 			"numero_referencia", 
 			"detalle_referencia", 
 			"codgestion", 
-			"account_status"
+			"account_status", 
+			"cv_checkb1", 
+			"estado"
 		];
 	}
 
@@ -204,10 +204,8 @@ export default class Users extends BaseModel {
 			"appaterno", 
 			"libreta_militar_gestion", 
 			"fecha_nacimiento", 
-			"ci", 
 			"nombre1", 
 			"nombre2", 
-			"ci_ext", 
 			"ci_alf", 
 			"genero", 
 			"afp", 
@@ -222,7 +220,9 @@ export default class Users extends BaseModel {
 			"numero_referencia", 
 			"detalle_referencia", 
 			"codgestion", 
-			"account_status"
+			"account_status", 
+			"cv_checkb1", 
+			"estado"
 		];
 	}
 
@@ -241,10 +241,8 @@ export default class Users extends BaseModel {
 			"appaterno", 
 			"libreta_militar_gestion", 
 			"fecha_nacimiento", 
-			"ci", 
 			"nombre1", 
 			"nombre2", 
-			"ci_ext", 
 			"ci_alf", 
 			"genero", 
 			"afp", 
@@ -259,7 +257,9 @@ export default class Users extends BaseModel {
 			"numero_referencia", 
 			"detalle_referencia", 
 			"codgestion", 
-			"account_status"
+			"account_status", 
+			"cv_checkb1", 
+			"estado"
 		];
 	}
 
@@ -268,7 +268,6 @@ export default class Users extends BaseModel {
 			"permisos", 
 			"user_role_id", 
 			"jsonunidad", 
-			"id", 
 			"apmaterno", 
 			"usuario", 
 			"foto", 
@@ -278,10 +277,8 @@ export default class Users extends BaseModel {
 			"appaterno", 
 			"libreta_militar_gestion", 
 			"fecha_nacimiento", 
-			"ci", 
 			"nombre1", 
 			"nombre2", 
-			"ci_ext", 
 			"ci_alf", 
 			"genero", 
 			"afp", 
@@ -296,7 +293,10 @@ export default class Users extends BaseModel {
 			"numero_referencia", 
 			"detalle_referencia", 
 			"codgestion", 
-			"account_status"
+			"account_status", 
+			"id", 
+			"cv_checkb1", 
+			"estado"
 		];
 	}
 
@@ -315,10 +315,8 @@ export default class Users extends BaseModel {
 			"appaterno", 
 			"libreta_militar_gestion", 
 			"fecha_nacimiento", 
-			"ci", 
 			"nombre1", 
 			"nombre2", 
-			"ci_ext", 
 			"ci_alf", 
 			"genero", 
 			"afp", 
@@ -333,7 +331,9 @@ export default class Users extends BaseModel {
 			"numero_referencia", 
 			"detalle_referencia", 
 			"codgestion", 
-			"account_status"
+			"account_status", 
+			"cv_checkb1", 
+			"estado"
 		];
 	}
 
@@ -352,10 +352,8 @@ export default class Users extends BaseModel {
 			"appaterno", 
 			"libreta_militar_gestion", 
 			"fecha_nacimiento", 
-			"ci", 
 			"nombre1", 
 			"nombre2", 
-			"ci_ext", 
 			"ci_alf", 
 			"genero", 
 			"afp", 
@@ -370,7 +368,9 @@ export default class Users extends BaseModel {
 			"numero_referencia", 
 			"detalle_referencia", 
 			"codgestion", 
-			"account_status"
+			"account_status", 
+			"cv_checkb1", 
+			"estado"
 		];
 	}
 
@@ -389,10 +389,8 @@ export default class Users extends BaseModel {
 			"appaterno", 
 			"libreta_militar_gestion", 
 			"fecha_nacimiento", 
-			"ci", 
 			"nombre1", 
 			"nombre2", 
-			"ci_ext", 
 			"ci_alf", 
 			"genero", 
 			"afp", 
@@ -407,7 +405,9 @@ export default class Users extends BaseModel {
 			"numero_referencia", 
 			"detalle_referencia", 
 			"codgestion", 
-			"account_status"
+			"account_status", 
+			"cv_checkb1", 
+			"estado"
 		];
 	}
 
@@ -426,17 +426,17 @@ export default class Users extends BaseModel {
 			"appaterno", 
 			"libreta_militar_gestion", 
 			"fecha_nacimiento", 
-			"ci", 
 			"nombre1", 
 			"nombre2", 
-			"ci_ext", 
 			"ci_alf", 
 			"genero", 
 			"afp", 
 			"grupo_sanguineo", 
 			"licencia_conducir_nro", 
 			"licencia_conducir_cat", 
-			"id"
+			"id", 
+			"cv_checkb1", 
+			"estado"
 		];
 	}
 
@@ -455,17 +455,17 @@ export default class Users extends BaseModel {
 			"appaterno", 
 			"libreta_militar_gestion", 
 			"fecha_nacimiento", 
-			"ci", 
 			"nombre1", 
 			"nombre2", 
-			"ci_ext", 
 			"ci_alf", 
 			"genero", 
 			"afp", 
 			"grupo_sanguineo", 
 			"licencia_conducir_nro", 
 			"licencia_conducir_cat", 
-			"id"
+			"id", 
+			"cv_checkb1", 
+			"estado"
 		];
 	}
 
@@ -480,7 +480,9 @@ export default class Users extends BaseModel {
 			"apmaterno", 
 			"usuario", 
 			"telefono", 
-			"codgestion"
+			"codgestion", 
+			"cv_checkb1", 
+			"estado"
 		];
 	}
 
@@ -495,7 +497,9 @@ export default class Users extends BaseModel {
 			"apmaterno", 
 			"usuario", 
 			"telefono", 
-			"codgestion"
+			"codgestion", 
+			"cv_checkb1", 
+			"estado"
 		];
 	}
 
@@ -511,8 +515,8 @@ export default class Users extends BaseModel {
 			"carnet", 
 			"expedido", 
 			"telefono", 
-			"fecha_nacimiento", 
-			"codgestion"
+			"codgestion", 
+			"estado"
 		];
 	}
 
@@ -528,7 +532,31 @@ export default class Users extends BaseModel {
 			"carnet", 
 			"expedido", 
 			"telefono", 
-			"fecha_nacimiento", 
+			"codgestion", 
+			"estado"
+		];
+	}
+
+	static evalusersvFields(): string[]{
+		return [
+			"id", 
+			"carnet", 
+			"apmaterno", 
+			"appaterno", 
+			"nombre1", 
+			"nombre2", 
+			"codgestion"
+		];
+	}
+
+	static exportEvalusersvFields(): string[]{
+		return [
+			"id", 
+			"carnet", 
+			"apmaterno", 
+			"appaterno", 
+			"nombre1", 
+			"nombre2", 
 			"codgestion"
 		];
 	}
@@ -543,10 +571,8 @@ export default class Users extends BaseModel {
 			"carnet iLIKE :search", 
 			"expedido iLIKE :search", 
 			"appaterno iLIKE :search", 
-			"CAST(ci AS TEXT) iLIKE :search", 
 			"nombre1 iLIKE :search", 
 			"nombre2 iLIKE :search", 
-			"ci_ext iLIKE :search", 
 			"ci_alf iLIKE :search", 
 			"genero iLIKE :search", 
 			"afp iLIKE :search", 
@@ -561,7 +587,8 @@ export default class Users extends BaseModel {
 			"numero_referencia iLIKE :search", 
 			"detalle_referencia iLIKE :search", 
 			"codgestion iLIKE :search", 
-			"account_status iLIKE :search",
+			"account_status iLIKE :search", 
+			"estado iLIKE :search",
 		];
 		return '(' + fields.join(' OR ') + ')';
 	}

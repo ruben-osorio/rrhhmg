@@ -99,7 +99,6 @@ export default class Formestudiossup3 extends BaseModel {
 
 	static editFields(): string[]{
 		return [
-			"idformestsup", 
 			"gestionuniv", 
 			"nrotitulo", 
 			"ciclouniv", 
@@ -108,7 +107,8 @@ export default class Formestudiossup3 extends BaseModel {
 			"casaestuniv", 
 			"codusuario", 
 			"calidaduniver", 
-			"niveluniv"
+			"niveluniv", 
+			"idformestsup"
 		];
 	}
 
@@ -147,10 +147,10 @@ export default class Formestudiossup3 extends BaseModel {
 		const fields = [
 			"carrerauniv iLIKE :search", 
 			"casaestuniv iLIKE :search", 
-			"ciclouniv iLIKE :search", 
 			"calidaduniver iLIKE :search", 
-			"cursouniv iLIKE :search", 
-			"CAST(codusuario AS TEXT) iLIKE :search",
+			"CAST(codusuario AS TEXT) iLIKE :search", 
+			"ciclouniv iLIKE :search", 
+			"cursouniv iLIKE :search",
 		];
 		return '(' + fields.join(' OR ') + ')';
 	}

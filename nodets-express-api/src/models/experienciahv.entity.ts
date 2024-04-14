@@ -36,6 +36,18 @@ export default class Experienciahv extends BaseModel {
 	@Column({name: 'cargo_hv' })
 	cargo_hv: string
 	
+	@Column({name: 'a' })
+	a: number
+	
+	@Column({name: 'm' })
+	m: number
+	
+	@Column({name: 'd' })
+	d: number
+	
+	@Column({name: 'sumatoriatotal' })
+	sumatoriatotal: string
+	
 	
 	
 	static listFields(): string[]{
@@ -48,7 +60,11 @@ export default class Experienciahv extends BaseModel {
 			"sumatoria", 
 			"codgestion", 
 			"entidad_hv", 
-			"cargo_hv"
+			"cargo_hv", 
+			"a", 
+			"m", 
+			"d", 
+			"sumatoriatotal"
 		];
 	}
 
@@ -62,7 +78,11 @@ export default class Experienciahv extends BaseModel {
 			"sumatoria", 
 			"codgestion", 
 			"entidad_hv", 
-			"cargo_hv"
+			"cargo_hv", 
+			"a", 
+			"m", 
+			"d", 
+			"sumatoriatotal"
 		];
 	}
 
@@ -76,7 +96,11 @@ export default class Experienciahv extends BaseModel {
 			"sumatoria", 
 			"codgestion", 
 			"entidad_hv", 
-			"cargo_hv"
+			"cargo_hv", 
+			"a", 
+			"m", 
+			"d", 
+			"sumatoriatotal"
 		];
 	}
 
@@ -90,7 +114,11 @@ export default class Experienciahv extends BaseModel {
 			"sumatoria", 
 			"codgestion", 
 			"entidad_hv", 
-			"cargo_hv"
+			"cargo_hv", 
+			"a", 
+			"m", 
+			"d", 
+			"sumatoriatotal"
 		];
 	}
 
@@ -104,7 +132,11 @@ export default class Experienciahv extends BaseModel {
 			"sumatoria", 
 			"codgestion", 
 			"entidad_hv", 
-			"cargo_hv"
+			"cargo_hv", 
+			"a", 
+			"m", 
+			"d", 
+			"sumatoriatotal"
 		];
 	}
 
@@ -116,7 +148,8 @@ export default class Experienciahv extends BaseModel {
 			"sumatoria iLIKE :search", 
 			"codgestion iLIKE :search", 
 			"entidad_hv iLIKE :search", 
-			"cargo_hv iLIKE :search",
+			"cargo_hv iLIKE :search", 
+			"sumatoriatotal iLIKE :search",
 		];
 		return '(' + fields.join(' OR ') + ')';
 	}

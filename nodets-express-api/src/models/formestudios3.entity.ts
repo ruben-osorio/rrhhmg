@@ -31,7 +31,7 @@ export default class Formestudios3 extends BaseModel {
 	nivelesc: string
 	
 	@Column({name: 'codusuario' })
-	codusuario: string
+	codusuario: number
 	
 	@Column({name: 'codgestion' })
 	codgestion: string
@@ -125,7 +125,7 @@ export default class Formestudios3 extends BaseModel {
 			"nivelesc iLIKE :search", 
 			"titbachiller iLIKE :search", 
 			"cursoesc iLIKE :search", 
-			"codusuario iLIKE :search", 
+			"CAST(codusuario AS TEXT) iLIKE :search", 
 			"codgestion iLIKE :search", 
 			"primaria iLIKE :search",
 		];

@@ -65,10 +65,7 @@ export default class Perfilreferencial extends BaseModel {
 			"anioele", 
 			"mesele", 
 			"obsele", 
-			"codgestion", 
-			"idref", 
-			"especifica", 
-			"general"
+			"idref"
 		];
 	}
 
@@ -84,10 +81,7 @@ export default class Perfilreferencial extends BaseModel {
 			"anioele", 
 			"mesele", 
 			"obsele", 
-			"codgestion", 
-			"idref", 
-			"especifica", 
-			"general"
+			"idref"
 		];
 	}
 
@@ -139,7 +133,6 @@ export default class Perfilreferencial extends BaseModel {
 			"anioelg", 
 			"meselg", 
 			"obselg", 
-			"especifica", 
 			"anioele", 
 			"mesele", 
 			"obsele", 
@@ -176,16 +169,31 @@ export default class Perfilreferencial extends BaseModel {
 		];
 	}
 
+	static prlistFields(): string[]{
+		return [
+			"idref", 
+			"nivelref", 
+			"denomref", 
+			"codgestion"
+		];
+	}
+
+	static exportPrlistFields(): string[]{
+		return [
+			"idref", 
+			"nivelref", 
+			"denomref", 
+			"codgestion"
+		];
+	}
+
 	
 	static searchFields(): string{
 		const fields = [
 			"denomref iLIKE :search", 
 			"formacadref iLIKE :search", 
 			"obselg iLIKE :search", 
-			"obsele iLIKE :search", 
-			"codgestion iLIKE :search", 
-			"especifica iLIKE :search", 
-			"general iLIKE :search",
+			"obsele iLIKE :search",
 		];
 		return '(' + fields.join(' OR ') + ')';
 	}

@@ -68,8 +68,8 @@ export default class Plantillauo extends BaseModel {
 			"codgestion", 
 			"clasificacionuo", 
 			"sigla", 
-			"idpuo", 
-			"soa_nombre"
+			"soa_nombre", 
+			"idpuo"
 		];
 	}
 
@@ -85,8 +85,8 @@ export default class Plantillauo extends BaseModel {
 			"codgestion", 
 			"clasificacionuo", 
 			"sigla", 
-			"idpuo", 
-			"soa_nombre"
+			"soa_nombre", 
+			"idpuo"
 		];
 	}
 
@@ -105,8 +105,8 @@ export default class Plantillauo extends BaseModel {
 			"dependenciauo", 
 			"niveluo", 
 			"sigla", 
-			"idpuo", 
-			"soa_nombre"
+			"soa_nombre", 
+			"idpuo"
 		];
 	}
 
@@ -125,8 +125,8 @@ export default class Plantillauo extends BaseModel {
 			"dependenciauo", 
 			"niveluo", 
 			"sigla", 
-			"idpuo", 
-			"soa_nombre"
+			"soa_nombre", 
+			"idpuo"
 		];
 	}
 
@@ -155,10 +155,10 @@ export default class Plantillauo extends BaseModel {
 			"codgestion iLIKE :search", 
 			"clasificacionuo iLIKE :search", 
 			"sigla iLIKE :search", 
+			"soa_nombre iLIKE :search", 
 			"dependenciauo iLIKE :search", 
 			"niveluo iLIKE :search", 
-			"prefijosoa iLIKE :search", 
-			"soa_nombre iLIKE :search",
+			"prefijosoa iLIKE :search",
 		];
 		return '(' + fields.join(' OR ') + ')';
 	}

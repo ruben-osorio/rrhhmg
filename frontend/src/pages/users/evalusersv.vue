@@ -28,7 +28,7 @@
                     <div  class="col comp-grid" >
                         <div class="row q-mb-md q-gutter-sm">
                             <div class="q-px-sm nice-shadow-16" v-if="searchText">
-                                Buscar: 
+                                Buscar:
                                 <q-chip icon="search" removable @remove="clearSearch()" :label="searchText">
                                 </q-chip>
                             </div>
@@ -44,18 +44,18 @@
                                 <div class="col">
                                     <!-- page records template -->
                                     <div >
-                                        <q-table 
+                                        <q-table
                                         :flat="true"
                                         table-header-class="text-h4 bg-grey-2"
                                         :bordered="false"
-                                        :columns="app.menus.UsersEvalusersvHeaderItems" 
+                                        :columns="app.menus.UsersEvalusersvHeaderItems"
                                         :rows="records"
                                         :binary-state-sort="true"
                                         separator="horizontal"
                                         :dense="true"
                                         v-model:selected="selectedItems"
                                         selection="multiple"
-                                        row-key="id" 
+                                        row-key="id"
                                         v-model:pagination="pagination"
                                         hide-bottom
                                         @request="setPagination"
@@ -64,7 +64,7 @@
                                         <template v-slot:body="props">
                                             <q-tr :class="{selected: isCurrentRecord(props.row)}" :props="props">
                                                 <q-td auto-width>
-                                                    <q-checkbox dense v-model="props.selected"></q-checkbox>
+                                                    <q-checkbox dense v-model="props.selected" @click="handleClick(props.row)"></q-checkbox>
                                                 </q-td>
                                                 <q-td key="btnactions" :props="props" auto-width>
                                                     <div class="row q-col-gutter-xs justify-end">
@@ -117,7 +117,7 @@
                                     <!-- page loading indicator template -->
                                     <template v-if="loading">
                                         <q-inner-loading :showing="loading">
-                                            <q-spinner color="primary" size="30px"> 
+                                            <q-spinner color="primary" size="30px">
                                             </q-spinner>
                                         </q-inner-loading>
                                     </template>
@@ -154,7 +154,7 @@
                                                             <q-pagination  color="primary"  v-model="pagination.page" :direction-links="true" :boundary-links="true" :max-pages="5" :boundary-numbers="true" :max="totalPages"></q-pagination>
                                                         </div>
                                                     </div>
-                                                </div>  
+                                                </div>
                                             </div>
                                         </div>
                                     </template>
@@ -180,7 +180,8 @@
 	import { useAuth } from 'src/composables/auth';
 	import { useListPage } from 'src/composables/listpage';
 	import { usePageStore } from 'src/stores/page';
-	
+  import { useDatosBasicosStore } from 'src/stores/storex';
+
 	const props = defineProps({
 		primaryKey : {
 			type : String,
@@ -256,7 +257,7 @@
 		},
 		limit: {
 			type: Number,
-			default: 4,
+			default: 1,
 		},
 		mergeRecords: {
 			type: Boolean,
@@ -277,10 +278,26 @@
 			default: 'desc', //desc or asc
 		},
 	});
-	
+
 	const app = useApp();
 	const auth = useAuth();
-	
+
+
+    const handleClick = (row) => {
+    // Lógica adicional si es necesario
+        sendDatosbasicos(row.appaterno, row.apmaterno, row.nombre1, row.id);
+    };
+
+
+
+    const sendDatosbasicos = (appaterno, apmaterno, nombre1, codusuario) => {
+        console.log('Emitiendo desde list.vue :' + codusuario);
+        const datosBasicosStore = useDatosBasicosStore();
+        // datosBasicosStore.setDatosBasicos({ appaterno, apmaterno, nombre1 });
+        // datosBasicosStore.setDatosBasicos({ appaterno: 'valor', apmaterno: 'valor', nombre1: 'valor' });
+        datosBasicosStore.updateDatosBasicos({ appaterno, apmaterno, nombre1, codusuario });
+    };
+
 	const defaultStoreState = {
 		filters: {
 		},
@@ -295,32 +312,34 @@
 		primaryKey: props.primaryKey
 	}
 	const store = usePageStore(props.pageName,  defaultStoreState);
-	
+
 	// page hooks where logics resides
 	const page = useListPage({ store, props });
-	
+
 	const {records, filters, currentRecord, totalRecords,  selectedItems, expandedRows, pagination,} = toRefs(store.state);
 	const { pageReady, loading, searchText, } = toRefs(page.state);
-	
+
 	const {     totalPages, recordsPosition, } = page.computedProps;
-	
+
 	//page methods
 	const { load,     clearSearch,  setPagination, deleteItem, setCurrentRecord, isCurrentRecord,        } = page.methods;
-	
+
 	const pageTitle = computed({
 		get: function () {
 			return "Postulante"
 		}
 	});
 	const masterDetailPage = computed(() => defineAsyncComponent(() => import("./detail-pages.vue")));
-	
+
 	useMeta(() => {
 		return {
 			title: pageTitle.value //set browser title
 		}
 	});
-	
-	onMounted(()=>{ 
+
+
+
+	onMounted(()=>{
 		load();
 	});
 </script>

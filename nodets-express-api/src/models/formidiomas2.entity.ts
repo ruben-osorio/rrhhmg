@@ -30,6 +30,12 @@ export default class Formidiomas2 extends BaseModel {
 	@Column({name: 'codusuario' })
 	codusuario: string
 	
+	@Column({name: 'otroidioma' })
+	otroidioma: string
+	
+	@Column({name: 'institucionidioma' })
+	institucionidioma: string
+	
 	
 	
 	static listFields(): string[]{
@@ -40,7 +46,9 @@ export default class Formidiomas2 extends BaseModel {
 			"gestioncurso", 
 			"idformidioma", 
 			"tipoidioma", 
-			"codusuario"
+			"codusuario", 
+			"otroidioma", 
+			"institucionidioma"
 		];
 	}
 
@@ -52,7 +60,9 @@ export default class Formidiomas2 extends BaseModel {
 			"gestioncurso", 
 			"idformidioma", 
 			"tipoidioma", 
-			"codusuario"
+			"codusuario", 
+			"otroidioma", 
+			"institucionidioma"
 		];
 	}
 
@@ -64,7 +74,9 @@ export default class Formidiomas2 extends BaseModel {
 			"tipoidioma", 
 			"certificadoidioma", 
 			"nombreidioma", 
-			"codusuario"
+			"codusuario", 
+			"otroidioma", 
+			"institucionidioma"
 		];
 	}
 
@@ -76,7 +88,9 @@ export default class Formidiomas2 extends BaseModel {
 			"tipoidioma", 
 			"certificadoidioma", 
 			"nombreidioma", 
-			"codusuario"
+			"codusuario", 
+			"otroidioma", 
+			"institucionidioma"
 		];
 	}
 
@@ -84,11 +98,13 @@ export default class Formidiomas2 extends BaseModel {
 		return [
 			"gestioncurso", 
 			"horasingles", 
-			"idformidioma", 
 			"tipoidioma", 
 			"certificadoidioma", 
 			"nombreidioma", 
-			"codusuario"
+			"codusuario", 
+			"idformidioma", 
+			"otroidioma", 
+			"institucionidioma"
 		];
 	}
 
@@ -98,7 +114,9 @@ export default class Formidiomas2 extends BaseModel {
 			"nombreidioma iLIKE :search", 
 			"certificadoidioma iLIKE :search", 
 			"tipoidioma iLIKE :search", 
-			"codusuario iLIKE :search",
+			"codusuario iLIKE :search", 
+			"otroidioma iLIKE :search", 
+			"institucionidioma iLIKE :search",
 		];
 		return '(' + fields.join(' OR ') + ')';
 	}

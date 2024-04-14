@@ -4,7 +4,6 @@
 import express from 'express';
 import utils from '../helpers/utils';
 import DB from '../datasource';
-import { rawQuery } from '../datasource';
 import { HttpRequest, HttpResponse } from '../helpers/http';
 import { body, validationResult, matchedData }  from 'express-validator';
 import { Not, In } from 'typeorm';
@@ -107,10 +106,8 @@ router.post('/add/' ,
 		body('telefono').optional({nullable: true, checkFalsy: true}),
 		body('libreta_militar_gestion').optional({nullable: true, checkFalsy: true}).isNumeric(),
 		body('fecha_nacimiento').optional({nullable: true, checkFalsy: true}),
-		body('ci').optional({nullable: true, checkFalsy: true}).isNumeric(),
 		body('nombre1').optional({nullable: true, checkFalsy: true}),
 		body('nombre2').optional({nullable: true, checkFalsy: true}),
-		body('ci_ext').optional({nullable: true, checkFalsy: true}),
 		body('ci_alf').optional({nullable: true, checkFalsy: true}),
 		body('genero').optional({nullable: true, checkFalsy: true}),
 		body('afp').optional({nullable: true, checkFalsy: true}),
@@ -126,6 +123,8 @@ router.post('/add/' ,
 		body('detalle_referencia').optional({nullable: true, checkFalsy: true}),
 		body('codgestion').optional({nullable: true, checkFalsy: true}),
 		body('account_status').optional({nullable: true, checkFalsy: true}),
+		body('cv_checkb1').optional({nullable: true, checkFalsy: true}),
+		body('estado').optional({nullable: true, checkFalsy: true}),
 	]
 , async function (req:HttpRequest, res:HttpResponse) {
 	try{
@@ -217,10 +216,8 @@ router.post('/edit/:recid' ,
 		body('appaterno').optional({nullable: true, checkFalsy: true}),
 		body('libreta_militar_gestion').optional({nullable: true, checkFalsy: true}).isNumeric(),
 		body('fecha_nacimiento').optional({nullable: true, checkFalsy: true}),
-		body('ci').optional({nullable: true, checkFalsy: true}).isNumeric(),
 		body('nombre1').optional({nullable: true, checkFalsy: true}),
 		body('nombre2').optional({nullable: true, checkFalsy: true}),
-		body('ci_ext').optional({nullable: true, checkFalsy: true}),
 		body('ci_alf').optional({nullable: true, checkFalsy: true}),
 		body('genero').optional({nullable: true, checkFalsy: true}),
 		body('afp').optional({nullable: true, checkFalsy: true}),
@@ -236,6 +233,8 @@ router.post('/edit/:recid' ,
 		body('detalle_referencia').optional({nullable: true, checkFalsy: true}),
 		body('codgestion').optional({nullable: true, checkFalsy: true}),
 		body('account_status').optional({nullable: true, checkFalsy: true}),
+		body('cv_checkb1').optional({nullable: true, checkFalsy: true}),
+		body('estado').optional({nullable: true, checkFalsy: true}),
 	]
 , async (req:HttpRequest, res:HttpResponse) => {
 	try{
@@ -423,6 +422,8 @@ router.get(['/lhojavida/:fieldname?/:fieldvalue?'], async (req:HttpRequest, res:
 			let searchFields = Users.searchFields(); // get columns to search
 			query.andWhere(searchFields, {search: `%${search}%`});
 		}
+		query.andWhere("codgestion in (select idgestion from gestion where habilitado=true)");
+query.andWhere("cv_checkb1=false");
 		let allowedRoles = ["user", "admin"];
 		let userRole = req.user.roleName;
 		if(!allowedRoles.includes(userRole)){
@@ -449,25 +450,54 @@ router.get(['/lhojavida/:fieldname?/:fieldvalue?'], async (req:HttpRequest, res:
 	}
 });
 
-router.post('/add_bandeja1', async (req:HttpRequest, res:HttpResponse) => {  
+
+/**
+ * Route to list users records
+ * @route {GET} /users/index/{fieldname}/{fieldvalue}
+ */
+router.get(['/evalusersv/:fieldname?/:fieldvalue?'], async (req:HttpRequest, res:HttpResponse) => {  
 	try{
 		const query = Users.getQuery();
 		
-		const { valor1, valor2, valor3 } = req.body;
-
-    //	let queryParams = [record.idgestion];
-		let queryParams = ["valor_seleccion","valor_cv_aprovado","valor_item",1, 2];
-    let sqltext = 'CALL registrabandeja1($1, $2, $3, $4, $5)';
- //   let result = await rawQuery(sqltext, queryParams);
-
-    	await rawQuery(sqltext, queryParams);
-
-    	res.json({ success: true, message: 'Datos agregados correctamente' });
+		const fieldName = req.params.fieldname;
+		const fieldValue = req.params.fieldvalue;
+		const search = req.query.search;
+		const page = Number(req.query.page) || 1;
+		const limit = Number(req.query.limit) || 4;
+		
+		if (fieldName){
+			 //filter by a single column values
+			query.where(`${fieldName}=:fieldValue`, {fieldValue});
+		}
+		
+		
+		if(search){
+			let searchFields = Users.searchFields(); // get columns to search
+			query.andWhere(searchFields, {search: `%${search}%`});
+		}
+		let allowedRoles = ["user", "admin"];
+		let userRole = req.user.roleName;
+		if(!allowedRoles.includes(userRole)){
+			query.andWhere('id=:userid', { userid: req.user.id });
+		}
+		
+		const selectFields = Users.evalusersvFields(); //get columns to select
+		query.select(selectFields);
+		
+		// order by field
+		const orderBy = req.getOrderBy('id', 'DESC');
+		if(orderBy){
+			query.orderBy(orderBy.column, orderBy.orderType);
+		}
+		
+		//return records and pager info
+		const pageData = await Users.paginate(query, page, limit);
+		
+		return res.send(pageData);
 	}
 	catch(err) {
 		console.error("has crached", req.path, err);
 		return res.serverError(err);
 	}
 });
-
 export default router;

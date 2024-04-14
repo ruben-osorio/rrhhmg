@@ -317,6 +317,22 @@ router.get('/soa_option_list', async (req:HttpRequest, res:HttpResponse) => {
 
 
  /**
+ * Route to get item_option_list records
+ * @route {GET} /components_data/item_option_list
+ */
+router.get('/item_option_list', async (req:HttpRequest, res:HttpResponse) => {
+	try{
+		let sqltext = `SELECT numero_item AS value,numero_item AS label FROM planilla_presupuestaria ORDER BY numero_item` ;
+		let records = await rawQuery(sqltext );
+		return res.send(records);
+	}
+	catch(err){
+		return res.serverError(err);
+	}
+});
+
+
+ /**
  * Route to get codevaluacion_option_list records
  * @route {GET} /components_data/codevaluacion_option_list
  */
@@ -376,6 +392,22 @@ router.get('/experiencia_cargo_autofill', async (req:HttpRequest, res:HttpRespon
 		let queryParams = [];
 		queryParams.push(req.query.value)
 		let records = await rawQuery(sqltext , queryParams);
+		return res.send(records);
+	}
+	catch(err){
+		return res.serverError(err);
+	}
+});
+
+
+ /**
+ * Route to get titbachiller_option_list records
+ * @route {GET} /components_data/titbachiller_option_list
+ */
+router.get('/titbachiller_option_list', async (req:HttpRequest, res:HttpResponse) => {
+	try{
+		let sqltext = `SELECT tiene AS value,tiene AS label FROM titbachhv ORDER BY tiene` ;
+		let records = await rawQuery(sqltext );
 		return res.send(records);
 	}
 	catch(err){

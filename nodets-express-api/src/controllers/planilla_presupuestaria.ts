@@ -332,4 +332,50 @@ router.post('/editar/:recid' ,
 		return res.serverError(err);
 	}
 });
+
+
+/**
+ * Route to list planilla_presupuestaria records
+ * @route {GET} /planilla_presupuestaria/index/{fieldname}/{fieldvalue}
+ */
+router.get(['/listeval/:fieldname?/:fieldvalue?'], async (req:HttpRequest, res:HttpResponse) => {  
+	try{
+		const query = Planilla_Presupuestaria.getQuery();
+		
+		const fieldName = req.params.fieldname;
+		const fieldValue = req.params.fieldvalue;
+		const search = req.query.search;
+		const page = Number(req.query.page) || 1;
+		const limit = Number(req.query.limit) || 4;
+		
+		if (fieldName){
+			 //filter by a single column values
+			query.where(`${fieldName}=:fieldValue`, {fieldValue});
+		}
+		
+		
+		if(search){
+			let searchFields = Planilla_Presupuestaria.searchFields(); // get columns to search
+			query.andWhere(searchFields, {search: `%${search}%`});
+		}
+		
+		const selectFields = Planilla_Presupuestaria.listevalFields(); //get columns to select
+		query.select(selectFields);
+		
+		// order by field
+		const orderBy = req.getOrderBy('idplanillapres', 'DESC');
+		if(orderBy){
+			query.orderBy(orderBy.column, orderBy.orderType);
+		}
+		
+		//return records and pager info
+		const pageData = await Planilla_Presupuestaria.paginate(query, page, limit);
+		
+		return res.send(pageData);
+	}
+	catch(err) {
+		console.error("has crached", req.path, err);
+		return res.serverError(err);
+	}
+});
 export default router;

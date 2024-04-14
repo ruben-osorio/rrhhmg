@@ -37,8 +37,6 @@ export default class Bandeja_Eval_Curricular extends BaseModel {
 			"id", 
 			"seleccion", 
 			"nro_item", 
-			"cv_aprovado", 
-			"item", 
 			"coduser", 
 			"codgestion"
 		];
@@ -49,8 +47,6 @@ export default class Bandeja_Eval_Curricular extends BaseModel {
 			"id", 
 			"seleccion", 
 			"nro_item", 
-			"cv_aprovado", 
-			"item", 
 			"coduser", 
 			"codgestion"
 		];

@@ -7,19 +7,19 @@ import DB from '../datasource';
 import { HttpRequest, HttpResponse } from '../helpers/http';
 import { body, validationResult, matchedData }  from 'express-validator';
 import { In } from 'typeorm';
-const Experienciahv = DB.Experienciahv;
+const Experiencia_Especifica = DB.Experiencia_Especifica;
 const router = express.Router();
 
 
 
 
 /**
- * Route to list experienciahv records
- * @route {GET} /experienciahv/index/{fieldname}/{fieldvalue}
+ * Route to list experiencia_especifica records
+ * @route {GET} /experiencia_especifica/index/{fieldname}/{fieldvalue}
  */
 router.get(['/', '/index/:fieldname?/:fieldvalue?'], async (req:HttpRequest, res:HttpResponse) => {  
 	try{
-		const query = Experienciahv.getQuery();
+		const query = Experiencia_Especifica.getQuery();
 		
 		const fieldName = req.params.fieldname;
 		const fieldValue = req.params.fieldvalue;
@@ -34,21 +34,21 @@ router.get(['/', '/index/:fieldname?/:fieldvalue?'], async (req:HttpRequest, res
 		
 		
 		if(search){
-			let searchFields = Experienciahv.searchFields(); // get columns to search
+			let searchFields = Experiencia_Especifica.searchFields(); // get columns to search
 			query.andWhere(searchFields, {search: `%${search}%`});
 		}
 		
-		const selectFields = Experienciahv.listFields(); //get columns to select
+		const selectFields = Experiencia_Especifica.listFields(); //get columns to select
 		query.select(selectFields);
 		
 		// order by field
-		const orderBy = req.getOrderBy('idexp_hv', 'DESC');
+		const orderBy = req.getOrderBy('id_ee', 'DESC');
 		if(orderBy){
 			query.orderBy(orderBy.column, orderBy.orderType);
 		}
 		
 		//return records and pager info
-		const pageData = await Experienciahv.paginate(query, page, limit);
+		const pageData = await Experiencia_Especifica.paginate(query, page, limit);
 		
 		return res.send(pageData);
 	}
@@ -60,15 +60,15 @@ router.get(['/', '/index/:fieldname?/:fieldvalue?'], async (req:HttpRequest, res
 
 
 /**
- * Route to view Experienciahv record
- * @route {GET} /experienciahv/view/{recid}
+ * Route to view Experiencia_Especifica record
+ * @route {GET} /experiencia_especifica/view/{recid}
  */
 router.get(['/view/:recid'], async (req:HttpRequest, res:HttpResponse) => {
 	try{
 		let recid = req.params.recid;
-		let query = Experienciahv.getQuery();
-		query.where("idexp_hv=:recid", { recid });
-		let selectFields = Experienciahv.viewFields();
+		let query = Experiencia_Especifica.getQuery();
+		query.where("id_ee=:recid", { recid });
+		let selectFields = Experiencia_Especifica.viewFields();
 		query.select(selectFields);
 		let record = await query.getRawOne();
 		if(!record){
@@ -83,24 +83,13 @@ router.get(['/view/:recid'], async (req:HttpRequest, res:HttpResponse) => {
 
 
 /**
- * Route to insert Experienciahv record
- * @route {POST} /experienciahv/add
+ * Route to insert Experiencia_Especifica record
+ * @route {POST} /experiencia_especifica/add
  */
 router.post('/add/' , 
 	[
-		body('idexp_hv').not().isEmpty().isNumeric(),
-		body('f_inicio_hv').optional({nullable: true, checkFalsy: true}),
-		body('f_fin_hv').optional({nullable: true, checkFalsy: true}),
-		body('funciones_hv').optional({nullable: true, checkFalsy: true}),
-		body('codusuario').optional({nullable: true, checkFalsy: true}),
-		body('sumatoria').optional({nullable: true, checkFalsy: true}),
-		body('codgestion').optional({nullable: true, checkFalsy: true}),
-		body('entidad_hv').optional({nullable: true, checkFalsy: true}),
-		body('cargo_hv').optional({nullable: true, checkFalsy: true}),
-		body('a').optional({nullable: true, checkFalsy: true}).isNumeric(),
-		body('m').optional({nullable: true, checkFalsy: true}).isNumeric(),
-		body('d').optional({nullable: true, checkFalsy: true}).isNumeric(),
-		body('sumatoriatotal').optional({nullable: true, checkFalsy: true}),
+		body('id_evaluacionperfil').optional({nullable: true, checkFalsy: true}).isNumeric(),
+		body('detalle_ee').optional({nullable: true, checkFalsy: true}),
 	]
 , async function (req:HttpRequest, res:HttpResponse) {
 	try{
@@ -111,8 +100,8 @@ router.post('/add/' ,
 		}
 		let modeldata = matchedData(req, { locations: ['body'] }); // get the validated data
 		
-		//save Experienciahv record
-		let record = await Experienciahv.save(modeldata);
+		//save Experiencia_Especifica record
+		let record = await Experiencia_Especifica.save(modeldata);
 		
 		return res.send(record);
 	} catch(err){
@@ -122,15 +111,15 @@ router.post('/add/' ,
 
 
 /**
- * Route to get  Experienciahv record for edit
- * @route {GET} /experienciahv/edit/{recid}
+ * Route to get  Experiencia_Especifica record for edit
+ * @route {GET} /experiencia_especifica/edit/{recid}
  */
 router.get('/edit/:recid', async (req:HttpRequest, res:HttpResponse) => {
 	try{
 		let recid = req.params.recid;
-		let query = Experienciahv.getQuery();
-		const editFields = Experienciahv.editFields(); // get fields to edit
-		query.where("idexp_hv=:recid", { recid });
+		let query = Experiencia_Especifica.getQuery();
+		const editFields = Experiencia_Especifica.editFields(); // get fields to edit
+		query.where("id_ee=:recid", { recid });
 		query.select(editFields);
 		let record = await query.getRawOne();
 		if(!record){
@@ -145,24 +134,14 @@ router.get('/edit/:recid', async (req:HttpRequest, res:HttpResponse) => {
 
 
 /**
- * Route to update  Experienciahv record
- * @route {POST} /experienciahv/edit/{recid}
+ * Route to update  Experiencia_Especifica record
+ * @route {POST} /experiencia_especifica/edit/{recid}
  */
 router.post('/edit/:recid' , 
 	[
-		body('idexp_hv').optional({nullable: true}).not().isEmpty().isNumeric(),
-		body('f_inicio_hv').optional({nullable: true, checkFalsy: true}),
-		body('f_fin_hv').optional({nullable: true, checkFalsy: true}),
-		body('funciones_hv').optional({nullable: true, checkFalsy: true}),
-		body('codusuario').optional({nullable: true, checkFalsy: true}),
-		body('sumatoria').optional({nullable: true, checkFalsy: true}),
-		body('codgestion').optional({nullable: true, checkFalsy: true}),
-		body('entidad_hv').optional({nullable: true, checkFalsy: true}),
-		body('cargo_hv').optional({nullable: true, checkFalsy: true}),
-		body('a').optional({nullable: true, checkFalsy: true}).isNumeric(),
-		body('m').optional({nullable: true, checkFalsy: true}).isNumeric(),
-		body('d').optional({nullable: true, checkFalsy: true}).isNumeric(),
-		body('sumatoriatotal').optional({nullable: true, checkFalsy: true}),
+		body('id_ee').optional({nullable: true}).not().isEmpty().isNumeric(),
+		body('id_evaluacionperfil').optional({nullable: true, checkFalsy: true}).isNumeric(),
+		body('detalle_ee').optional({nullable: true, checkFalsy: true}),
 	]
 , async (req:HttpRequest, res:HttpResponse) => {
 	try{
@@ -173,11 +152,11 @@ router.post('/edit/:recid' ,
 		}
 		const recid = req.params.recid;
 		
-		const editFields = Experienciahv.editFields();  // get fields to edit
+		const editFields = Experiencia_Especifica.editFields();  // get fields to edit
 		
 		let modeldata = matchedData(req, { locations: ['body'], includeOptionals: true }); // get validated data
-		const query = Experienciahv.getQuery();
-		query.where("idexp_hv=:recid", { recid });
+		const query = Experiencia_Especifica.getQuery();
+		query.where("id_ee=:recid", { recid });
 		query.select(editFields);
 		const record = await query.getRawOne();
 		if(!record){
@@ -194,15 +173,15 @@ router.post('/edit/:recid' ,
 
 
 /**
- * Route to delete Experienciahv record by table primary key
+ * Route to delete Experiencia_Especifica record by table primary key
  * Multi delete supported by recid separated by comma(,)
- * @route {GET} /experienciahv/delete/{recid}
+ * @route {GET} /experiencia_especifica/delete/{recid}
  */
 router.get('/delete/:recid', async (req:HttpRequest, res:HttpResponse) => {
 	try{
 		const recid = (req.params.recid || '').split(',');
-		const query = Experienciahv.getQuery();
-		query.where({'idexp_hv': In(recid)});
+		const query = Experiencia_Especifica.getQuery();
+		query.where({'id_ee': In(recid)});
 		 
 		const records = await query.getMany();
 		if(!records){

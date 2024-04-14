@@ -47,8 +47,8 @@ export default class Eval_Curric extends BaseModel {
 
 	static editFields(): string[]{
 		return [
-			"id_ec", 
-			"listado_hoja"
+			"listado_hoja", 
+			"id_ec"
 		];
 	}
 

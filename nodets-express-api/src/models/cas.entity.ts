@@ -58,29 +58,27 @@ export default class Cas extends BaseModel {
 	
 	static listFields(): string[]{
 		return [
-			"id_cas", 
-			"idpermanente", 
 			"dato_cas", 
 			"fecha_recepcion", 
 			"anios_serv", 
 			"meses_serv", 
 			"dias_serv", 
 			"monto_cas", 
-			"incremento"
+			"incremento", 
+			"id_cas"
 		];
 	}
 
 	static exportListFields(): string[]{
 		return [
-			"id_cas", 
-			"idpermanente", 
 			"dato_cas", 
 			"fecha_recepcion", 
 			"anios_serv", 
 			"meses_serv", 
 			"dias_serv", 
 			"monto_cas", 
-			"incremento"
+			"incremento", 
+			"id_cas"
 		];
 	}
 

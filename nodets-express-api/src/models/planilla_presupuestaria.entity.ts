@@ -156,6 +156,36 @@ export default class Planilla_Presupuestaria extends BaseModel {
 		];
 	}
 
+	static listevalFields(): string[]{
+		return [
+			"idplanillapres", 
+			"descrip_puesto", 
+			"denominacion_cargo", 
+			"numero_item", 
+			"haber_basico", 
+			"unidad_organiz", 
+			"fuente", 
+			"clasificacion", 
+			"codgestion", 
+			"nivel"
+		];
+	}
+
+	static exportListevalFields(): string[]{
+		return [
+			"idplanillapres", 
+			"descrip_puesto", 
+			"denominacion_cargo", 
+			"numero_item", 
+			"haber_basico", 
+			"unidad_organiz", 
+			"fuente", 
+			"clasificacion", 
+			"codgestion", 
+			"nivel"
+		];
+	}
+
 	
 	static searchFields(): string{
 		const fields = [

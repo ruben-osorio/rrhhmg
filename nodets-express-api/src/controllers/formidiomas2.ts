@@ -94,6 +94,8 @@ router.post('/add/' ,
 		body('certificadoidioma').optional({nullable: true, checkFalsy: true}),
 		body('nombreidioma').optional({nullable: true, checkFalsy: true}),
 		body('codusuario').optional({nullable: true, checkFalsy: true}),
+		body('otroidioma').optional({nullable: true, checkFalsy: true}),
+		body('institucionidioma').optional({nullable: true, checkFalsy: true}),
 	]
 , async function (req:HttpRequest, res:HttpResponse) {
 	try{
@@ -149,6 +151,8 @@ router.post('/edit/:recid' ,
 		body('certificadoidioma').optional({nullable: true, checkFalsy: true}),
 		body('nombreidioma').optional({nullable: true, checkFalsy: true}),
 		body('codusuario').optional({nullable: true, checkFalsy: true}),
+		body('otroidioma').optional({nullable: true, checkFalsy: true}),
+		body('institucionidioma').optional({nullable: true, checkFalsy: true}),
 	]
 , async (req:HttpRequest, res:HttpResponse) => {
 	try{

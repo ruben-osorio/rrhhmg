@@ -31,7 +31,7 @@ export default class Formposgestudios2 extends BaseModel {
 	nombrecurso: string
 	
 	@Column({name: 'codusuario' })
-	codusuario: string
+	codusuario: number
 	
 	@Column({name: 'modalidadcursoest' })
 	modalidadcursoest: string
@@ -154,7 +154,7 @@ export default class Formposgestudios2 extends BaseModel {
 			"lugarestudios iLIKE :search", 
 			"tienetitulo iLIKE :search", 
 			"codgestion iLIKE :search", 
-			"codusuario iLIKE :search", 
+			"CAST(codusuario AS TEXT) iLIKE :search", 
 			"modalidadcursoest iLIKE :search",
 		];
 		return '(' + fields.join(' OR ') + ')';
