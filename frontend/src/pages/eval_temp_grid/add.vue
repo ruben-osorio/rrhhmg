@@ -34,113 +34,166 @@
                             <div class="">
                                 <div class="reset-grid">
                                     <listeval-planillapresupuestaria-page ref="planillaPresupuestariaListPage"  :show-header="true" :show-breadcrumbs="true" :show-footer="false" :paginate="true">
-                                    <prlist-perfilreferencial-page ref="perfilreferencialListPage"  :limit="2" :show-header="true" :show-breadcrumbs="true" :show-footer="false" :paginate="true">
-                                    </prlist-perfilreferencial-page>
+                                        </listeval-planillapresupuestaria-page>
                                 </div>
                             </div>
                         </div>
-                        <div  class="col-6 col-md-6 comp-grid" >
-                            <div class="page-section q-mb-md" >
-                                <div class="container-fluid">
-                                    <div class="row q-col-gutter-x-md">
-                                        <div  class="col-sm-12 comp-grid" >
-                                            <div >
-                                                <q-form ref="observer" @submit.prevent="submitForm()">
-                                                <q-card  :flat="isSubPage" class="q-pa-md nice-shadow-16">
-                                                    <div class="row q-col-gutter-x-md">
-                                                        <input name="ctrlcodusuario"  ref="ctrlcodusuario" v-model="formData.codusuario" type="hidden" />
-                                                        <input name="ctrlidref"  ref="ctrlidref" v-model="formData.idref" type="hidden" />
-                                                        <div class="col-md-8 col-12">
-                                                            <div class="row">
-                                                                <div class="col-sm-3 col-12">
-                                                                    Formación 1
-                                                                </div>
-                                                                <div class="col-sm-9 col-12">
-                                                                    <q-input   ref="ctrlultimo_secund_perfil" v-model.trim="formData.ultimo_secund_perfil"  label="Formación 1" type="text" placeholder="Escribir Formación 1"
-                                                                    class="" :error="isFieldValid('ultimo_secund_perfil')" :error-message="getFieldError('ultimo_secund_perfil')">
-                                                                    </q-input>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-md-4 col-12">
-                                                            <div class="row">
-                                                                <div class="col-sm-3 col-12">
-                                                                    Cumple
-                                                                </div>
-                                                                <div class="col-sm-9 col-12">
-                                                                    <q-field  borderless   :error="isFieldValid('estadof1')" :error-message="getFieldError('estadof1')">
-                                                                    <q-option-group  ref="ctrlestadof1" v-model="formData.estadof1" :options="app.menus.estadof1Items"  inline size="xs" ></q-option-group>
-                                                                    </q-field>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-md-8 col-12">
-                                                            <div class="row">
-                                                                <div class="col-sm-3 col-12">
-                                                                    Formación 2
-                                                                </div>
-                                                                <div class="col-sm-9 col-12">
-                                                                    <q-input   ref="ctrlultimo_universit_perfil" v-model.trim="formData.ultimo_universit_perfil"  label="Formación 2" type="text" placeholder="Escribir Formación 2"
-                                                                    class="" :error="isFieldValid('ultimo_universit_perfil')" :error-message="getFieldError('ultimo_universit_perfil')">
-                                                                    </q-input>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-md-4 col-12">
-                                                            <div class="row">
-                                                                <div class="col-sm-3 col-12">
-                                                                    Cumple
-                                                                </div>
-                                                                <div class="col-sm-9 col-12">
-                                                                    <q-field  borderless   :error="isFieldValid('estadof2')" :error-message="getFieldError('estadof2')">
-                                                                    <q-option-group  ref="ctrlestadof2" v-model="formData.estadof2" :options="app.menus.estadof1Items"  inline size="sm" ></q-option-group>
-                                                                    </q-field>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-md-8 col-12">
-                                                            <div class="row">
-                                                                <div class="col-sm-3 col-12">
-                                                                    Formación 3
-                                                                </div>
-                                                                <div class="col-sm-9 col-12">
-                                                                    <q-input   ref="ctrlpostgrado_perfil" v-model.trim="formData.postgrado_perfil"  label="Formación 3" type="text" placeholder="Escribir Formación 3"
-                                                                    class="" :error="isFieldValid('postgrado_perfil')" :error-message="getFieldError('postgrado_perfil')">
-                                                                    </q-input>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-md-4 col-12">
-                                                            <div class="row">
-                                                                <div class="col-sm-3 col-12">
-                                                                    Cumple
-                                                                </div>
-                                                                <div class="col-sm-9 col-12">
-                                                                    <q-field  borderless   :error="isFieldValid('estadof3')" :error-message="getFieldError('estadof3')">
-                                                                    <q-option-group  ref="ctrlestadof3" v-model="formData.estadof3" :options="app.menus.estadof1Items"  inline size="xs" ></q-option-group>
-                                                                    </q-field>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <input name="ctrldenominacion"  ref="ctrldenominacion" v-model="formData.denominacion" type="hidden" />
-                                                    </div>
-                                                    <div v-if="showSubmitButton" class="text-center q-my-md">
-                                                        <q-btn type="submit"    :rounded="false"  color="primary"  no-caps  unelevated    icon-right="send" :loading="saving">
-                                                            {{ submitButtonLabel }}
-                                                            <template v-slot:loading>
-                                                                <q-spinner-oval />
-                                                            </template>
-                                                        </q-btn>
-                                                    </div>
-                                                </q-card>
-                                                </q-form>
-                                                <slot :submit="submitForm" :saving="saving"></slot>
-                                            </div>
+                        <p></p>
+
+                        <div  class="col-12 col-lg-12 col-md-12 comp-grid" >
+
+                            <div  class="col col-md-auto " >
+                                <div class=" text-h6 text-primary" >
+                                    EVALUACIÓN
+                                </div>
+                                <p></p>
+                            </div>
+
+                            <div class="">
+                                <div class="reset-grid">
+
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="text-h7">POSTULANTE {{ `${newNombre1} ${newAppaterno} ${newApmaterno}` }}</div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="text-h7">PERFIL CARGO</div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="text-h7">ACCIÓN</div>
                                         </div>
                                     </div>
+
+
+                                    <div class="row">
+                                        <!-- Primera fila -->
+                                        <div class="col-md-4">
+                                            <!-- Card 1 -->
+                                            <q-card class="no-shadow" bordered>
+                                                <q-card-section>
+                                                    <div class="text-h6 text-grey-8">
+                                                        Formación Académica
+                                                    </div>
+                                                </q-card-section>
+                                                <q-separator />
+                                                <q-card-section>
+                                                    {{ `${data.Ncalidaduniver} - ${data.Nniveluniv} - ${data.Ncarrerauniv} - ${data.Ngestionuniv}` }}
+                                                </q-card-section>
+                                            </q-card>
+                                        </div>
+
+                                        <div class="col-md-4">
+                                            <!-- Card 2 -->
+                                            <q-card class="no-shadow" bordered>
+                                                <q-card-section>
+                                                    <div class="text-h6 text-grey-8">
+                                                        Formación según perfil
+                                                    </div>
+                                                </q-card-section>
+                                                <q-separator />
+                                                <q-card-section>
+                                                    {{ `${dataPC.Nformacadref} - ${dataPC.Nobselg} - ${dataPC.Nobsele} ` }}
+
+                                                </q-card-section>
+
+                                            </q-card>
+                                        </div>
+
+                                        <div class="col-md-4">
+                                            <!-- Card 3 -->
+                                            <q-card class="no-shadow" bordered>
+
+                                                <q-separator />
+
+                                                <q-card-actions align="left">
+                                                    <q-btn label="Cumple" class="text-capitalize q-ma-sm" color="indigo-7" />
+
+                                                    <q-btn label="No cumple" class="text-capitalize q-ma-sm" color="indigo-7" />
+                                                </q-card-actions>
+                                                <q-card-section>
+
+
+                                                </q-card-section>
+                                            </q-card>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="text-h5"></div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="text-h5"> </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="text-h5"></div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="row">
+                                        <!-- Primera fila -->
+                                        <div class="col-md-4">
+                                            <!-- Card 1 -->
+                                            <q-card class="no-shadow" bordered>
+                                                <q-card-section>
+                                                    <div class="text-h6 text-grey-8">
+                                                        Experiencia General
+                                                    </div>
+                                                </q-card-section>
+                                                <q-separator />
+                                                <q-card-section>
+                                                    Contenido de la Card 1
+                                                </q-card-section>
+                                                <q-card-actions align="left">
+                                                    <q-btn label="Botón 1" class="text-capitalize q-ma-sm" color="indigo-7" />
+                                                </q-card-actions>
+                                            </q-card>
+                                        </div>
+
+                                        <div class="col-md-4">
+                                            <!-- Card 2 -->
+                                            <q-card class="no-shadow" bordered>
+                                                <q-card-section>
+                                                    <div class="text-h6 text-grey-8">
+                                                        Experiencia Perfil
+                                                    </div>
+                                                </q-card-section>
+                                                <q-separator />
+                                                <q-card-section>
+                                                    Contenido de la Card 2
+                                                </q-card-section>
+                                                <q-card-actions align="left">
+                                                    <q-btn label="Botón 2" class="text-capitalize q-ma-sm" color="indigo-7" />
+                                                </q-card-actions>
+                                            </q-card>
+                                        </div>
+
+                                        <div class="col-md-4">
+                                            <!-- Card 3 -->
+                                            <q-card class="no-shadow" bordered>
+                                                <q-card-section>
+                                                    <div class="text-h6 text-grey-8">
+                                                        Acción
+                                                    </div>
+                                                </q-card-section>
+                                                <q-separator />
+                                                <q-card-section>
+                                                    Contenido de la Card 3
+                                                </q-card-section>
+                                                <q-card-actions align="left">
+                                                    <q-btn label="Botón 3" class="text-capitalize q-ma-sm" color="indigo-7" />
+                                                </q-card-actions>
+                                            </q-card>
+                                        </div>
+                                    </div>
+
+
+
                                 </div>
                             </div>
                         </div>
+
                     </div>
                 </div>
             </section>
@@ -199,24 +252,7 @@
 
                         </div>
 
-                        <div  class="col-md-2" >
 
-                            <q-card class="no-shadow" bordered>
-                                <q-card-section>
-                                <div class="text-h6 text-grey-8">
-                                    Académico
-                                </div>
-                                </q-card-section>
-                                <q-separator/>
-                                <q-card-section>
-                                    {{ `${data.Ncalidaduniver} - ${data.Nniveluniv} - ${data.Ncarrerauniv} - ${data.Ngestionuniv}` }}
-                                </q-card-section>
-                                <q-card-actions align="left">
-                                <q-btn label="CUMPLE" class="text-capitalize q-ma-sm" color="indigo-7"/>
-                                </q-card-actions>
-                            </q-card>
-
-                        </div>
 
                         <div  class="col-md-2" >
 
@@ -403,10 +439,12 @@
 	import { useApp } from 'src/composables/app';
 	import { useAddPage } from 'src/composables/addpage';
 	import evalusersvUsersPage from "../users/evalusersv.vue";
-    import prlistPerfilreferencialPage from "../perfilreferencial/prlist.vue";
+    import listevalPlanillapresupuestariaPage from "../planilla_presupuestaria/listeval.vue";
+ //   import prlistPerfilreferencialPage from "../perfilreferencial/prlist.vue";
  //   import  storex  from 'src/stores/storex';
     import { useDatosBasicosStore } from 'src/stores/storex';
     import { onMounted } from 'vue';
+    import { usePlanillaPStore } from 'src/stores/storepp';
 
 	const props = defineProps({
 		pageName : {
@@ -471,20 +509,7 @@
     const newAppaterno = ref('');
     const newApmaterno = ref('');
     const newCodusuario = ref('');
-/*
-    const Ncalidaduniver = ref('');
-    const Nniveluniv = ref('');
-    const Ncarrerauniv = ref('');
-    const Ngestionuniv = ref('');
-*/
-/*
-    const data = {
-        Ncalidaduniver: '',
-        Nniveluniv: '',
-        Ncarrerauniv: '',
-        Ngestionuniv: ''
-    };
-*/
+
     const data = ref({
         Ncalidaduniver: '',
         Nniveluniv: '',
@@ -502,14 +527,23 @@
 
     onBeforeMount(async () => {
     const datosBasicosStore = useDatosBasicosStore();
-    // Suscribirse a cambios en el estado de appaterno
     const unsubscribe = datosBasicosStore.$subscribe((mutation) => {
         if (mutation.storeId === 'datosBasicos') {
             handleDatosbasicosChange(datosBasicosStore.appaterno, datosBasicosStore.apmaterno, datosBasicosStore.nombre1, datosBasicosStore.codusuario);
             performAction(datosBasicosStore.codusuario);
         }
         });
-        onUnmounted(unsubscribe); // Asegúrate de desuscribirte cuando el componente se desmonte
+
+
+    const PlanillaPStore = usePlanillaPStore();
+    const unsubscribePP = PlanillaPStore.$subscribe((mutation) => {
+        if (mutation.storeId === 'datosPlanillaP') {
+            handleDatosbasicosChangePP(PlanillaPStore.nivel, PlanillaPStore.clasificacion, PlanillaPStore.fuente, PlanillaPStore.cargo, PlanillaPStore.puesto);
+            performActionPC(PlanillaPStore.nivel);
+        }
+        });
+
+        onUnmounted(unsubscribe, unsubscribePP); // Asegúrate de desuscribirte cuando el componente se desmonte
     });
 
 
@@ -559,6 +593,80 @@
     };
 
     /* Tabla Experiencia General */
+
+
+    /*Formacion segun perfil Inicio*/
+    const newNivel = ref('');
+    const newClasificacion= ref('');
+    const newFuente = ref('');
+    const newCargo = ref('');
+
+    const dataPC = ref({
+        Nnivelref: '',
+        Ndenomref: '',
+        Nhaberbasicoref: '',
+        Nformacadref: '',
+        Nanioelg: '',
+        Nmeselg: '',
+        Nobselg: '',
+        Nanioele: '',
+        Nmesele: '',
+        Nobsele: ''
+
+    });
+
+    const handleDatosbasicosChangePP = (nivel, clasificacion, fuente, cargo, puesto) => {
+        console.log('Nuevo clasificacion:', clasificacion);
+        newNivel.value = nivel;
+        newClasificacion.value = clasificacion;
+        newFuente.value = fuente;
+        newCargo.value = cargo;
+    };
+
+
+    const performActionPC = async (nivel) => {
+        console.log('performActionPC:', nivel);
+        try {
+
+            const url = `/perfilreferencial/index/nivelref/${nivel}`;
+            const response = await ApiService.get(url);
+            const recordP = response.data;
+        //	return record;
+
+            if (recordP && recordP.records && recordP.records.length > 0) {
+                console.log('Datos obtenidos:', JSON.stringify(recordP));
+                const recordDataP = recordP.records[0];
+                /*
+                Ncalidaduniver.value = recordData.calidaduniver;
+                Nniveluniv.value = recordData.niveluniv;
+                Ncarrerauniv.value = recordData.carrerauniv;
+                Ngestionuniv.value = recordData.gestionuniv;
+                */
+                dataPC.value.Nnivelref = recordDataP.nivelref;
+                dataPC.value.Ndenomref = recordDataP.denomref;
+                dataPC.value.Nhaberbasicoref = recordDataP.haberbasicoref;
+                dataPC.value.Nformacadref = recordDataP.formacadref;
+                dataPC.value.Nanioelg = recordDataP.anioelg;
+                dataPC.value.Nmeselg = recordDataP.meselg;
+                dataPC.value.Nobselg = recordDataP.obselg;
+                dataPC.value.Nanioele = recordDataP.anioele;
+                dataPC.value.Nmesele = recordDataP.mesele;
+                dataPC.value.Nobsele = recordDataP.obsele;
+
+                console.log('Ndenomref:', dataPC.value.Ndenomref);
+                // Puedes realizar acciones adicionales después de una operación exitosa
+            } else {
+                console.error('Error: No se encontraron datos de perfil');
+            }
+
+        }
+        catch (err) {
+            console.error('Error al realizar la solicitud:', err);
+            throw err;
+        }
+    };
+    /*Formacion segun perfil Fin*/
+
 
     const experienciahv = ref([
   {
@@ -631,6 +739,8 @@ const columns = ref([
 	}
 	const {  saving, pageReady,   } = toRefs(page.state);
 	const { submitForm, isFieldValid, getFieldError, mapOptionField } = page.methods;
+
+
 	useMeta(() => {
 		return {
 			//set browser title
@@ -641,6 +751,7 @@ const columns = ref([
 	defineExpose({
 		page
 	});
+
 </script>
 <style scoped>
 </style>

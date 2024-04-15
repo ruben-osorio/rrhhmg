@@ -54,17 +54,19 @@
                                         separator="horizontal"
                                         :dense="true"
                                         v-model:selected="selectedItems"
-                                        selection="multiple"
+                                        selection="single"
                                         row-key="id"
                                         v-model:pagination="pagination"
                                         hide-bottom
                                         @request="setPagination"
-                                        :loading="loading">
+                                        :loading="loading"
+                                        @update:selected="handleSelectionChange">
+
                                         <!-- Start of Table Layout -->
                                         <template v-slot:body="props">
                                             <q-tr :class="{selected: isCurrentRecord(props.row)}" :props="props">
                                                 <q-td auto-width>
-                                                    <q-checkbox dense v-model="props.selected" @click="handleClick(props.row)"></q-checkbox>
+                                                    <q-checkbox dense v-model="props.selected" ></q-checkbox>
                                                 </q-td>
                                                 <q-td key="btnactions" :props="props" auto-width>
                                                     <div class="row q-col-gutter-xs justify-end">
@@ -180,7 +182,7 @@
 	import { useAuth } from 'src/composables/auth';
 	import { useListPage } from 'src/composables/listpage';
 	import { usePageStore } from 'src/stores/page';
-  import { useDatosBasicosStore } from 'src/stores/storex';
+    import { useDatosBasicosStore } from 'src/stores/storex';
 
 	const props = defineProps({
 		primaryKey : {
@@ -336,6 +338,33 @@
 			title: pageTitle.value //set browser title
 		}
 	});
+
+    const handleSelectionChange = (newSelectedItems) => {
+        // Itera sobre las filas seleccionadas
+        for (const item of newSelectedItems) {
+            // Accede a la propiedad "carnet" de cada fila seleccionada
+       //     const carnet = item.carnet;
+        //    console.log('Carnet:', carnet);
+
+            sendDatosbasicos(item.appaterno, item.apmaterno, item.nombre1, item.id);
+        }
+/*
+        if (item && item['<target>']) {
+            // Accede al objeto de fila dentro del Proxy
+            const rowObject = item['<target>']; // Reemplaza <target> con la propiedad real que contiene el objeto de fila
+            console.log('Fila seleccionada:', rowObject);
+
+            // Verifica si rowObject es válido antes de acceder a sus propiedades
+            if (rowObject) {
+                // Accede a las propiedades individuales del objeto de fila
+                const id = rowObject.id;
+                const carnet = rowObject.carnet;
+                const appaterno = rowObject.appaterno;
+                // Y así sucesivamente para otras propiedades que necesites
+            }
+        }
+        */
+    };
 
 
 
