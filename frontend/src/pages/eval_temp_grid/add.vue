@@ -92,8 +92,8 @@
                                                 </q-card-section>
                                                 <q-separator />
                                                 <q-card-section>
-                                                    {{ `${dataPC.Nformacadref} - ${dataPC.Nobselg} - ${dataPC.Nobsele} ` }}
-
+                                                    {{ `${dataPC.Nformacadref} ` }} <br>
+                                                    {{ `${dataPC.Nobselg} - ${dataPC.Nobsele} ` }}
                                                 </q-card-section>
 
                                             </q-card>
@@ -143,11 +143,27 @@
                                                 </q-card-section>
                                                 <q-separator />
                                                 <q-card-section>
-                                                    Contenido de la Card 1
+
+
+                                                <q-list bordered separator>
+                                                    <q-item v-for="(record, index) in recordEG.records" :key="index">
+                                                        <q-item-section>
+                                                        <q-item-label header>
+                                                            {{ record.entidad_hv }}
+                                                        </q-item-label>
+                                                        <q-item-label>
+                                                            <span>Fecha de inicio: {{ record.f_inicio_hv }}</span><br>
+                                                            <span>Fecha de fin: {{ record.f_fin_hv }}</span><br>
+                                                            <span>Funciones: {{ record.funciones_hv }}</span><br>
+                                                            <span>Cargo: {{ record.cargo_hv }}</span><br>
+                                                            <!-- Agrega más campos según sea necesario -->
+                                                        </q-item-label>
+                                                        </q-item-section>
+                                                    </q-item>
+                                                </q-list>
+
                                                 </q-card-section>
-                                                <q-card-actions align="left">
-                                                    <q-btn label="Botón 1" class="text-capitalize q-ma-sm" color="indigo-7" />
-                                                </q-card-actions>
+
                                             </q-card>
                                         </div>
 
@@ -161,11 +177,11 @@
                                                 </q-card-section>
                                                 <q-separator />
                                                 <q-card-section>
-                                                    Contenido de la Card 2
+
+                                                    {{ `${dataPC.Nanioelg} años, ${dataPC.Nmeselg} meses\n${dataPC.Nobselg}` }}
+
                                                 </q-card-section>
-                                                <q-card-actions align="left">
-                                                    <q-btn label="Botón 2" class="text-capitalize q-ma-sm" color="indigo-7" />
-                                                </q-card-actions>
+
                                             </q-card>
                                         </div>
 
@@ -190,6 +206,80 @@
 
 
 
+
+                                    <div class="row">
+                                        <!-- Primera fila -->
+                                        <div class="col-md-4">
+                                            <!-- Card 1 -->
+                                            <q-card class="no-shadow" bordered>
+                                                <q-card-section>
+                                                    <div class="text-h6 text-grey-8">
+                                                        Experiencia Específica
+                                                    </div>
+                                                </q-card-section>
+                                                <q-separator />
+                                                <q-card-section>
+                                                    <q-table
+                                                        :rows="recordEG.records"
+
+                                                        :columns="columnsEG"
+                                                        row-key="idexp_hv" >
+                                                        <template v-slot:body-cell-entidad_hv="props">
+                                                        {{ props.row.entidad_hv }}
+                                                        </template>
+
+                                                        <template v-slot:body-cell-funciones_hv="props">
+                                                        {{ props.row.funciones_hv }}
+                                                        </template>
+
+                                                        <!-- Agrega más columnas según sea necesario -->
+                                                    </q-table>
+                                                </q-card-section>
+
+                                            </q-card>
+                                        </div>
+
+
+                                        <div class="col-md-4">
+                                            <!-- Card 2 -->
+                                            <q-card class="no-shadow" bordered>
+                                                <q-card-section>
+                                                    <div class="text-h6 text-grey-8">
+                                                        Experiencia Perfil Específica
+                                                    </div>
+                                                </q-card-section>
+                                                <q-separator />
+                                                <q-card-section>
+
+                                                    {{ `${dataPC.Nanioele} años, ${dataPC.Nmesele} meses <br> ${dataPC.Nobsele}` }}
+
+                                                </q-card-section>
+
+                                            </q-card>
+                                        </div>
+
+                                        <div class="col-md-4">
+                                            <!-- Card 3 -->
+                                            <q-card class="no-shadow" bordered>
+                                                <q-card-section>
+                                                    <div class="text-h6 text-grey-8">
+                                                        Acción
+                                                    </div>
+                                                </q-card-section>
+                                                <q-separator />
+                                                <q-card-section>
+                                                    Contenido de la Card 3
+                                                </q-card-section>
+                                                <q-card-actions align="left">
+                                                    <q-btn label="Botón 3" class="text-capitalize q-ma-sm" color="indigo-7" />
+                                                </q-card-actions>
+                                            </q-card>
+                                        </div>
+                                    </div>
+
+
+
+
                                 </div>
                             </div>
                         </div>
@@ -197,236 +287,7 @@
                     </div>
                 </div>
             </section>
-            <section class="page-section q-mb-md" >
-                <div class="container-fluid">
-                    <div class="row q-col-gutter-x-md">
-                        <div  class="col-md-2" >
 
-                                    <q-card bordered class="no-shadow">
-                                        <q-item>
-                                            <q-item-section avatar>
-                                                <q-avatar size="60px" class="shadow-10">
-                                                    <!-- Aquí puedes proporcionar una URL de imagen fija -->
-                                                    <img src="ruta/a/tu/imagen.jpg" alt="Avatar">
-                                                </q-avatar>
-                                            </q-item-section>
-
-                                            <q-item-section>
-                                                <!-- Proporciona nombres, descripciones y correos electrónicos fijos -->
-                                                <q-item-label class="text-grey-8 text-weight-bold">Nombre Fijo</q-item-label>
-                                                <q-item-label caption>
-                                                    Descripción Fija
-                                                </q-item-label>
-                                                <q-item-label class="text-grey-8">
-                                                    email@example.com
-                                                </q-item-label>
-                                            </q-item-section>
-
-
-                                        </q-item>
-
-                                        <q-separator></q-separator>
-                                        <q-card-section>
-                                            <div class="q-pa-sm text-grey-8">
-                                                <!-- Puedes proporcionar un texto de introducción fijo -->
-                                                Intro: At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis atque corrupti quos dolores et...
-                                            </div>
-                                        </q-card-section>
-                                    </q-card>
-
-                        </div>
-                        <div  class="col-md-2" >
-
-                            <q-card class="no-shadow" bordered>
-                                <q-card-section>
-                                <div class="text-h6 text-grey-8">
-                                    {{ `${newNombre1} ${newAppaterno} ${newApmaterno}` }}
-                                </div>
-                                </q-card-section>
-                                <q-separator/>
-                                <q-card-section>
-                                    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
-                                </q-card-section>
-
-                            </q-card>
-
-                        </div>
-
-
-
-                        <div  class="col-md-2" >
-
-                            <q-card class="no-shadow" bordered>
-                                <q-card-section>
-                                <div class="text-h6 text-grey-8">
-                                    Experiencia General
-                                </div>
-                                </q-card-section>
-                                <q-separator/>
-                                <q-card-section>
-                                    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
-                                </q-card-section>
-                                <q-card-actions align="left">
-                                <q-btn label="CUMPLE" class="text-capitalize q-ma-sm" color="indigo-7"/>
-                                </q-card-actions>
-                            </q-card>
-
-                        </div>
-
-                        <div  class="col-md-2" >
-
-                            <q-card class="no-shadow" bordered>
-                                <q-card-section>
-                                <div class="text-h6 text-grey-8">
-                                    Experiencia Específica
-                                </div>
-                                </q-card-section>
-                                <q-separator/>
-                                <q-card-section>
-                                    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
-                                </q-card-section>
-                                <q-card-actions align="left">
-                                <q-btn label="CUMPLE" class="text-capitalize q-ma-sm" color="indigo-7"/>
-                                </q-card-actions>
-                            </q-card>
-
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section class="page-section q-mb-md" >
-                <div class="row q-col-gutter-x-lg">
-                <div class="col-sm-6">
-                    <div class="mb-3">
-                        <h5>Experiencia General</h5>
-
-                    </div>
-                    <q-table
-                        :rows="experienciahv"
-                        :columns="columns"
-                        row-key="idexp_hv"
-                        >
-                        <template v-slot:body-cell-Entidad="props">
-                            <q-td :props="props">
-                            {{ props.row.entidad_hv }}
-                            </q-td>
-                        </template>
-                        <template v-slot:body-cell-Cargo="props">
-                            <q-td :props="props">
-                            {{ props.row.cargo_hv }}
-                            </q-td>
-                        </template>
-                        <template v-slot:body-cell-Funciones="props">
-                            <q-td :props="props">
-                            {{ props.row.funciones_hv }}
-                            </q-td>
-                        </template>
-                        <template v-slot:body-cell-FInicio="props">
-                            <q-td :props="props">
-                            {{ props.row.f_inicio_hv }}
-                            </q-td>
-                        </template>
-                        <template v-slot:body-cell-FFin="props">
-                            <q-td :props="props">
-                            {{ props.row.f_fin_hv }}
-                            </q-td>
-                        </template>
-                        <template v-slot:body-cell-CodGestion="props">
-                            <q-td :props="props">
-                            {{ props.row.codgestion }}
-                            </q-td>
-                        </template>
-                        <template v-slot:body-cell-CodUsuario="props">
-                            <q-td :props="props">
-                            {{ props.row.codusuario }}
-                            </q-td>
-                        </template>
-                        <template v-slot:body-cell-Sumatoria="props">
-                            <q-td :props="props">
-                            {{ props.row.sumatoria }}
-                            </q-td>
-                        </template>
-                        <template v-slot:body-cell-SumatoriaTotal="props">
-                            <q-td :props="props">
-                            {{ props.row.sumatoriatotal }}
-                            </q-td>
-                        </template>
-                        <template v-slot:body-cell-Duration="props">
-                            <q-td :props="props">
-                            {{ props.row.a }} years {{ props.row.m }} months {{ props.row.d }} days
-                            </q-td>
-                        </template>
-                    </q-table>
-
-                </div>
-
-
-                <div class="col-sm-6">
-                    <div class="mb-3">
-                        <h5>Experiencia Específica</h5>
-
-                    </div>
-                    <q-table
-                        :rows="experienciahv"
-                        :columns="columns"
-                        row-key="idexp_hv"
-                        >
-                        <template v-slot:body-cell-Entidad="props">
-                            <q-td :props="props">
-                            {{ props.row.entidad_hv }}
-                            </q-td>
-                        </template>
-                        <template v-slot:body-cell-Cargo="props">
-                            <q-td :props="props">
-                            {{ props.row.cargo_hv }}
-                            </q-td>
-                        </template>
-                        <template v-slot:body-cell-Funciones="props">
-                            <q-td :props="props">
-                            {{ props.row.funciones_hv }}
-                            </q-td>
-                        </template>
-                        <template v-slot:body-cell-FInicio="props">
-                            <q-td :props="props">
-                            {{ props.row.f_inicio_hv }}
-                            </q-td>
-                        </template>
-                        <template v-slot:body-cell-FFin="props">
-                            <q-td :props="props">
-                            {{ props.row.f_fin_hv }}
-                            </q-td>
-                        </template>
-                        <template v-slot:body-cell-CodGestion="props">
-                            <q-td :props="props">
-                            {{ props.row.codgestion }}
-                            </q-td>
-                        </template>
-                        <template v-slot:body-cell-CodUsuario="props">
-                            <q-td :props="props">
-                            {{ props.row.codusuario }}
-                            </q-td>
-                        </template>
-                        <template v-slot:body-cell-Sumatoria="props">
-                            <q-td :props="props">
-                            {{ props.row.sumatoria }}
-                            </q-td>
-                        </template>
-                        <template v-slot:body-cell-SumatoriaTotal="props">
-                            <q-td :props="props">
-                            {{ props.row.sumatoriatotal }}
-                            </q-td>
-                        </template>
-                        <template v-slot:body-cell-Duration="props">
-                            <q-td :props="props">
-                            {{ props.row.a }} years {{ props.row.m }} months {{ props.row.d }} days
-                            </q-td>
-                        </template>
-                    </q-table>
-
-                </div>
-                </div>
-            </section>
         </template>
     </main>
 </template>
@@ -527,10 +388,13 @@
 
     onBeforeMount(async () => {
     const datosBasicosStore = useDatosBasicosStore();
+
     const unsubscribe = datosBasicosStore.$subscribe((mutation) => {
         if (mutation.storeId === 'datosBasicos') {
             handleDatosbasicosChange(datosBasicosStore.appaterno, datosBasicosStore.apmaterno, datosBasicosStore.nombre1, datosBasicosStore.codusuario);
             performAction(datosBasicosStore.codusuario);
+            // handleExperienciaGralChange (ExpGralStore.idexp_hv, ExpGralStore.f_inicio_hv, ExpGralStore.f_fin_hv, ExpGralStore.funciones_hv, ExpGralStore.codusuario, ExpGralStore.sumatoria, ExpGralStore.codgestion, ExpGralStore.entidad_hv, ExpGralStore.cargo_hv, ExpGralStore.anyo, ExpGralStore.mes, ExpGralStore.dia, ExpGralStore.sumatoriatotal);
+            performActionExpGral(datosBasicosStore.codusuario);
         }
         });
 
@@ -540,6 +404,8 @@
         if (mutation.storeId === 'datosPlanillaP') {
             handleDatosbasicosChangePP(PlanillaPStore.nivel, PlanillaPStore.clasificacion, PlanillaPStore.fuente, PlanillaPStore.cargo, PlanillaPStore.puesto);
             performActionPC(PlanillaPStore.nivel);
+
+
         }
         });
 
@@ -668,38 +534,87 @@
     /*Formacion segun perfil Fin*/
 
 
-    const experienciahv = ref([
-  {
-    idexp_hv: 1,
-    entidad_hv: 'Empresa 1',
-    cargo_hv: 'Cargo 1',
 
-    f_inicio_hv: '2022-01-01',
-    f_fin_hv: '2023-01-01',
-    codgestion: 'Gestión 1',
+    /*Experiencia inicio*/
 
-    sumatoria: 'Sumatoria 1',
-    sumatoriatotal: 'Sumatoria Total 1',
-    a: 1,
-    m: 0,
-    d: 0
-  },
-  // Agrega más datos aquí según sea necesario
-]);
+    const dataEx = ref({
+        Nidexp_hv: '',
+        Nf_inicio_hv: '',
+        Nf_fin_hv: '',
+        Nfunciones_hv: '',
+        Ncodusuario: '',
+        Nsumatoria: '',
+        Ncodgestion: '',
+        Nentidad_hv: '',
+        Ncargo_hv: '',
+        Nanyo: '',
+        Nmes: '',
+        Ndia: '',
+        Nsumatoriatotal: ''
+    });
 
-const columns = ref([
-  { name: 'Entidad', required: true, label: 'Entidad', align: 'left', field: 'entidad_hv', sortable: true },
-  { name: 'Cargo', required: true, label: 'Cargo', align: 'left', field: 'cargo_hv', sortable: true },
+    const handleExperienciaGralChange = (idexp_hv, f_inicio_hv, f_fin_hv, funciones_hv, codusuario, sumatoria, codgestion, entidad_hv, cargo_hv, anyo, mes, dia, sumatoriatotal) => {
+        console.log('funciones_hv:', funciones_hv);
+         newIdexp_hv = idexp_hv;
+         newF_inicio_hv = f_inicio_hv;
+         newF_fin_hv = f_fin_hv;
+         newFunciones_hv = funciones_hv;
+         newCodusuario = codusuario;
+         newSumatoria = sumatoria;
+         newCodgestion = codgestion;
+         newEntidad_hv = entidad_hv;
+         newCargo_hv = cargo_hv;
+         newAnyo = anyo;
+         newMes = mes;
+         newDia = dia;
+         newSumatoriatotal = sumatoriatotal;
+    };
 
-  { name: 'FInicio', required: true, label: 'Fecha de Inicio', align: 'left', field: 'f_inicio_hv', sortable: true },
-  { name: 'FFin', required: true, label: 'Fecha de Fin', align: 'left', field: 'f_fin_hv', sortable: true },
-  { name: 'CodGestion', required: true, label: 'Código de Gestión', align: 'left', field: 'codgestion', sortable: true },
+    const recordEG = ref({});
 
-  { name: 'Sumatoria', required: true, label: 'Sumatoria', align: 'left', field: 'sumatoria', sortable: true },
-  { name: 'SumatoriaTotal', required: true, label: 'Sumatoria Total', align: 'left', field: 'sumatoriatotal', sortable: true },
-  { name: 'Duration', required: true, label: 'Duración', align: 'left', field: '', sortable: false }
-]);
+    const performActionExpGral = async (codusuario) => {
+        console.log('performActionExpGral:', codusuario);
+        try {
 
+            const url = `/experienciahv/index/codusuario/${codusuario}`;
+            const response = await ApiService.get(url);
+            recordEG.value = response.data;
+        //	return record;
+
+    //      if (recordEG && recordEG.records && recordEG.records.length > 0) {
+            if (recordEG.value && Array.isArray(recordEG.value.records) && recordEG.value.records.length > 0) {
+                console.log('Datos obtenidos:', JSON.stringify(recordEG.value));
+                const recordDataEG = recordEG.value.records[0];
+
+                dataEx.value.Nidexp_hv = recordDataEG.idexp_hv;
+                dataEx.value.Nf_inicio_hv = recordDataEG.f_inicio_hv;
+                dataEx.value.Nf_fin_hv = recordDataEG.f_fin_hv;
+                dataEx.value.Nfunciones_hv = recordDataEG.funciones_hv;
+
+                console.log('Nfunciones_hv:', dataEx.value.Nfunciones_hv);
+            } else {
+                console.error('Error: No se encontraron datos de experiencoa de trabajo');
+            }
+
+        }
+        catch (err) {
+            console.error('Error al realizar la solicitud:', err);
+            throw err;
+        }
+    };
+
+    const columnsEG = ref([
+                    { name: 'entidad_hv', label: 'Entidad' },
+                    { name: 'f_inicio_hv', label: 'Fecha de Inicio' },
+                    { name: 'f_fin_hv', label: 'Fecha de Fin' },
+                    { name: 'funciones_hv', label: 'Funciones' },
+                    { name: 'cargo_hv', label: 'Cargo' },
+                    // Agrega más columnas según sea necesario
+                    ]);
+    /*Experiencia fin*/
+
+
+    const selectedItems = ref([]);
     /* Tabla EG fin */
 
 	const store = usePageStore(props.pageName);
