@@ -77,7 +77,12 @@
                                                 </q-card-section>
                                                 <q-separator />
                                                 <q-card-section>
-                                                    {{ `${data.Ncalidaduniver} - ${data.Nniveluniv} - ${data.Ncarrerauniv} - ${data.Ngestionuniv}` }}
+
+
+                                                    {{ `${dataFS3.Ncursoesc} - ${dataFS3.Ninstitucion} - ${dataFS3.Nnivelesc} - TÍTULO: ${dataFS3.Ntitbachiller}` }}
+                                                    <br>
+                                                    {{ `${data.Ncarrerauniv}  - ${data.Ncalidaduniver} - ${data.Nniveluniv}` }}
+
                                                 </q-card-section>
                                             </q-card>
                                         </div>
@@ -92,8 +97,10 @@
                                                 </q-card-section>
                                                 <q-separator />
                                                 <q-card-section>
+
+
                                                     {{ `${dataPC.Nformacadref} ` }} <br>
-                                                    {{ `${dataPC.Nobselg} - ${dataPC.Nobsele} ` }}
+                                                  <!-- quitado el 21 abril   {{ `${dataPC.Nobselg} - ${dataPC.Nobsele} - ${dataPC.Nanioelg} AÑOS - ${dataPC.Nmeselg}` }}  -->
                                                 </q-card-section>
 
                                             </q-card>
@@ -153,17 +160,32 @@
                                                         </q-item-label>
                                                         <q-item-label>
                                                             <span>Fecha de inicio: {{ record.f_inicio_hv }}</span><br>
-                                                            <span>Fecha de fin: {{ record.f_fin_hv }}</span><br>
-                                                            <span>Funciones: {{ record.funciones_hv }}</span><br>
+                                                       <!--21 ABRIL     <span>Fecha de fin: {{ record.f_fin_hv }}</span><br>  -->
+                                                          <!--  <span>Funciones: {{ record.funciones_hv }}</span><br>    -->
                                                             <span>Cargo: {{ record.cargo_hv }}</span><br>
                                                             <!-- Agrega más campos según sea necesario -->
                                                         </q-item-label>
+                                                        <span>Sumatoria: {{ record.sumatoria }}</span>
                                                         </q-item-section>
                                                     </q-item>
+
                                                 </q-list>
 
                                                 </q-card-section>
 
+                                                <q-card-section>
+
+                                                    <div class="text-h6 text-grey-8">
+                                                    Sumatoria Total:
+                                                        <template v-if="sumTotal.totA || sumTotal.totM">
+                                                            {{ `${sumTotal.totA}` }} años, {{ `${sumTotal.totM}` }} meses
+                                                        </template>
+                                                        <template v-else>
+                                                            Sin datos
+                                                        </template>
+                                                    </div>
+
+                                                </q-card-section>
                                             </q-card>
                                         </div>
 
@@ -178,8 +200,8 @@
                                                 <q-separator />
                                                 <q-card-section>
 
-                                                    {{ `${dataPC.Nanioelg} años, ${dataPC.Nmeselg} meses\n${dataPC.Nobselg}` }}
-
+                                                   <!-- 21 ABRIL  {{ `${dataPC.Nanioelg} años, ${dataPC.Nmeselg} meses\n${dataPC.Nobselg}` }} -->
+																{{ dataPC.Nobselg}}
                                                 </q-card-section>
 
                                             </q-card>
@@ -190,16 +212,26 @@
                                             <q-card class="no-shadow" bordered>
                                                 <q-card-section>
                                                     <div class="text-h6 text-grey-8">
-                                                        Acción
+                                                        Estado
                                                     </div>
                                                 </q-card-section>
                                                 <q-separator />
                                                 <q-card-section>
-                                                    Contenido de la Card 3
+                                                    <q-chip
+                                                        v-if="EstadoExpPerfil == 'CUMPLE'" color="teal"   text-color="white" icon="check">
+                                                        CUMPLE
+                                                    </q-chip>
+                                                    <q-chip
+                                                        v-else
+                                                        class="glossy"
+                                                        color="orange"
+                                                        text-color="white"
+                                                        icon="exclamation"
+                                                        >
+                                                        NO CUMPLE
+                                                    </q-chip>
                                                 </q-card-section>
-                                                <q-card-actions align="left">
-                                                    <q-btn label="Botón 3" class="text-capitalize q-ma-sm" color="indigo-7" />
-                                                </q-card-actions>
+
                                             </q-card>
                                         </div>
                                     </div>
@@ -221,18 +253,25 @@
                                                 <q-card-section>
                                                     <q-table
                                                         :rows="recordEG.records"
-
-                                                        :columns="columnsEG"
+                                                        :columns="[...columnsEG, { name: 'select', label: 'Seleccionar', align: 'center' }]"
                                                         row-key="idexp_hv" >
+
+                                                        <template v-slot:body-cell-select="props">
+                                                            <q-checkbox v-model="props.row.selected"></q-checkbox>
+                                                        </template>
+
                                                         <template v-slot:body-cell-entidad_hv="props">
                                                         {{ props.row.entidad_hv }}
+                                                        </template>
+
+                                                        <template v-slot:body-cell-f_inicio_hv="props">
+                                                           Fecha Inicio:  {{ formatDate(props.row.f_inicio_hv) }}
                                                         </template>
 
                                                         <template v-slot:body-cell-funciones_hv="props">
                                                         {{ props.row.funciones_hv }}
                                                         </template>
 
-                                                        <!-- Agrega más columnas según sea necesario -->
                                                     </q-table>
                                                 </q-card-section>
 
@@ -251,8 +290,8 @@
                                                 <q-separator />
                                                 <q-card-section>
 
-                                                    {{ `${dataPC.Nanioele} años, ${dataPC.Nmesele} meses <br> ${dataPC.Nobsele}` }}
-
+                                               <!-- 21 ABRIL  {{ `${dataPC.Nanioele} años, ${dataPC.Nmesele} meses <br> ${dataPC.Nobsele}` }}  -->
+													{{ dataPC.Nobsele }}
                                                 </q-card-section>
 
                                             </q-card>
@@ -263,16 +302,14 @@
                                             <q-card class="no-shadow" bordered>
                                                 <q-card-section>
                                                     <div class="text-h6 text-grey-8">
-                                                        Acción
+                                                        Estado
                                                     </div>
                                                 </q-card-section>
                                                 <q-separator />
                                                 <q-card-section>
                                                     Contenido de la Card 3
                                                 </q-card-section>
-                                                <q-card-actions align="left">
-                                                    <q-btn label="Botón 3" class="text-capitalize q-ma-sm" color="indigo-7" />
-                                                </q-card-actions>
+
                                             </q-card>
                                         </div>
                                     </div>
@@ -366,6 +403,64 @@
 		},
 	});
 
+
+    const formatDate = (dateString) => {
+    const date = new Date(dateString);
+    const day = date.getDate().toString().padStart(2, '0');
+    const month = (date.getMonth() + 1).toString().padStart(2, '0'); // Los meses comienzan desde 0
+    const year = date.getFullYear();
+    return `${day}/${month}/${year}`;
+    };
+
+   // const sumTotal = ref('');
+const sumTotal = ref({ totA: 0, totM: 0, totD: 0 });
+const recordEG = ref({ records: [] });
+let totA = 0;
+let totM = 0;
+let totD = 0;
+
+const EstadoExpPerfil = ref(' sdvd CUMPLE');
+function actualizarEstadoExpPerfil(sumTotalaux, dataPCNob) {
+    console.log('datos de cumplimiento sumTot:', sumTotalaux , ' dataPCNob: ', dataPCNob )
+    if (sumTotalaux >= dataPCNob) {
+      EstadoExpPerfil.value = 'CUMPLE';
+    } else {
+      EstadoExpPerfil.value = 'NO';
+    }
+}
+const sumaTotal = () => {
+        let totA = 0;
+        let totM = 0;
+        let totD = 0;
+
+        for ( const rec of recordEG.value.records )
+        {
+            totA += rec.a || 0;
+            totM += rec.m || 0;
+            totD += rec.d || 0;
+        }
+
+        if (totD >= 30) {
+        // Incrementar meses en 1 por cada 31 días
+        totM += Math.floor(totD / 30);
+        // Restar los días adicionales que se convierten en meses
+        totD %= 30;
+        }
+
+        // Verificar si los meses superan los 12
+        if (totM >= 12) {
+            // Incrementar años en 1 por cada 12 meses
+            totA += Math.floor(totM / 12);
+            // Restar los meses adicionales que se convierten en años
+            totM %= 12;
+        }
+
+
+        return  {totA, totM, totD};
+    };
+
+   // sumTotal.value = sumaTotal();
+
     const newNombre1 = ref('');
     const newAppaterno = ref('');
     const newApmaterno = ref('');
@@ -393,10 +488,12 @@
         if (mutation.storeId === 'datosBasicos') {
             handleDatosbasicosChange(datosBasicosStore.appaterno, datosBasicosStore.apmaterno, datosBasicosStore.nombre1, datosBasicosStore.codusuario);
             performAction(datosBasicosStore.codusuario);
+            performActionFS3(datosBasicosStore.codusuario);
             // handleExperienciaGralChange (ExpGralStore.idexp_hv, ExpGralStore.f_inicio_hv, ExpGralStore.f_fin_hv, ExpGralStore.funciones_hv, ExpGralStore.codusuario, ExpGralStore.sumatoria, ExpGralStore.codgestion, ExpGralStore.entidad_hv, ExpGralStore.cargo_hv, ExpGralStore.anyo, ExpGralStore.mes, ExpGralStore.dia, ExpGralStore.sumatoriatotal);
             performActionExpGral(datosBasicosStore.codusuario);
+
         }
-        });
+    });
 
 
     const PlanillaPStore = usePlanillaPStore();
@@ -417,18 +514,9 @@
         console.log('performAction:', codusuario);
         try {
 
-
-           // const confirmed = window.confirm('¿Estás seguro de seleccionar el CV?');
-/*
-            if (!confirmed) {
-                // El usuario canceló la acción
-                return;
-            }
-*/
             const url = `/formestudiossup3/index/codusuario/${codusuario}`;
             const response = await ApiService.get(url);
             const record = response.data;
-        //	return record;
 
             if (record && record.records && record.records.length > 0) {
                 console.log('Datos obtenidos:', JSON.stringify(record));
@@ -447,6 +535,49 @@
                 console.log('Ncalidaduniver:', data.value.Ncalidaduniver);
                 console.log('Nniveluniv:', data.value.Nniveluniv);
                 // Puedes realizar acciones adicionales después de una operación exitosa
+            } else {
+                console.error('Error: No se encontraron datos de educación superior');
+            }
+
+        }
+        catch (err) {
+            console.error('Error al realizar la solicitud:', err);
+            throw err;
+        }
+    };
+
+
+
+
+    const dataFS3 = ref({
+        Nidformestudios: '',
+        Ninstitucion: '',
+        Nnivelesc: '',
+        Nnrotitbachiller: '',
+        Ntitbachiller: '',
+        Ncursoesc: '',
+        Ncodusuario: '',
+        Ncodgestion: null
+    });
+
+    const performActionFS3 = async (codusuario) => {
+        try {
+
+            const url = `/formestudios3/index/codusuario/${codusuario}`;
+            const response = await ApiService.get(url);
+            const record = response.data;
+
+            if (record && record.records && record.records.length > 0) {
+                console.log('Datos obtenidos:', JSON.stringify(record));
+                const recordDataFS3 = record.records[0];
+                dataFS3.value.Nidformestudios = recordDataFS3.idformestudios;
+                dataFS3.value.Ninstitucion = recordDataFS3.institucion;
+                dataFS3.value.Nnivelesc = recordDataFS3.nivelesc;
+                dataFS3.value.Nnrotitbachiller = recordDataFS3.nrotitbachiller;
+                dataFS3.value.Ntitbachiller = recordDataFS3.titbachiller;
+                dataFS3.value.Ncursoesc = recordDataFS3.cursoesc;
+                dataFS3.value.Ncodusuario = recordDataFS3.codusuario;
+                dataFS3.value.Ncodgestion = recordDataFS3.codgestion;
             } else {
                 console.error('Error: No se encontraron datos de educación superior');
             }
@@ -519,7 +650,14 @@
                 dataPC.value.Nmesele = recordDataP.mesele;
                 dataPC.value.Nobsele = recordDataP.obsele;
 
-                console.log('Ndenomref:', dataPC.value.Ndenomref);
+                actualizarEstadoExpPerfil(totA, dataPC.value.Nanioelg);
+               /* if ( sumTotal >= dataPC.value.Nobselg  )
+                  EstadoExpPerfil.value = 'CUMPLE'
+                else
+                  EstadoExpPerfil.value = 'NO'
+
+                  */
+              //  console.log('Ndenomref:', dataPC.value.Ndenomref);
                 // Puedes realizar acciones adicionales después de una operación exitosa
             } else {
                 console.error('Error: No se encontraron datos de perfil');
@@ -570,7 +708,11 @@
          newSumatoriatotal = sumatoriatotal;
     };
 
-    const recordEG = ref({});
+
+    //({});
+    const selectedRows = ref([]);
+  //  sumaTotal();
+
 
     const performActionExpGral = async (codusuario) => {
         console.log('performActionExpGral:', codusuario);
@@ -579,11 +721,49 @@
             const url = `/experienciahv/index/codusuario/${codusuario}`;
             const response = await ApiService.get(url);
             recordEG.value = response.data;
-        //	return record;
 
+            //sumaTotal();
+
+        let totA = 0;
+        let totM = 0;
+        let totD = 0;
+
+        for ( const rec of recordEG.value.records )
+        {
+            totA += rec.a || 0;
+            totM += rec.m || 0;
+            totD += rec.d || 0;
+        }
+
+        if (totD >= 30) {
+        // Incrementar meses en 1 por cada 31 días
+        totM += Math.floor(totD / 30);
+        // Restar los días adicionales que se convierten en meses
+        totD %= 30;
+        }
+
+        // Verificar si los meses superan los 12
+        if (totM >= 12) {
+            // Incrementar años en 1 por cada 12 meses
+            totA += Math.floor(totM / 12);
+            // Restar los meses adicionales que se convierten en años
+            totM %= 12;
+        }
+
+     //   sumTotal.totA = totA;
+        sumTotal.value.totA = totA;
+        sumTotal.value.totM = totM;
+        sumTotal.value.totD = totD;
+
+        actualizarEstadoExpPerfil(totA, dataPC.value.Nanioelg);
+        /*
+             console.log ('Total de Años: ', totA);
+        console.log ('Total de Mes: ', sumTotal.totA);
+        console.log ('Total de Dias: ', sumTotal.value.totA);
+*/
     //      if (recordEG && recordEG.records && recordEG.records.length > 0) {
             if (recordEG.value && Array.isArray(recordEG.value.records) && recordEG.value.records.length > 0) {
-                console.log('Datos obtenidos:', JSON.stringify(recordEG.value));
+                console.log('Datos obtenidos EG:', JSON.stringify(recordEG.value));
                 const recordDataEG = recordEG.value.records[0];
 
                 dataEx.value.Nidexp_hv = recordDataEG.idexp_hv;
@@ -603,12 +783,15 @@
         }
     };
 
+
+
+
+
     const columnsEG = ref([
                     { name: 'entidad_hv', label: 'Entidad' },
                     { name: 'f_inicio_hv', label: 'Fecha de Inicio' },
                     { name: 'f_fin_hv', label: 'Fecha de Fin' },
-                    { name: 'funciones_hv', label: 'Funciones' },
-                    { name: 'cargo_hv', label: 'Cargo' },
+                    { name: 'funciones_hv', label: 'Funciones' }
                     // Agrega más columnas según sea necesario
                     ]);
     /*Experiencia fin*/
